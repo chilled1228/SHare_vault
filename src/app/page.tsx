@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import FeaturedSection from '@/components/FeaturedSection'
-import RecentPosts from '@/components/RecentPosts'
+import BlogList from '@/components/BlogList'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -9,16 +9,13 @@ export default function Home() {
       <Header />
       
       <main className="flex-1">
-
         {/* Featured Posts */}
         <div id="featured">
           <FeaturedSection />
         </div>
 
-        {/* Recent Posts */}
-        <RecentPosts />
-
-        
+        {/* All Blog Posts */}
+        <BlogList />
       </main>
 
       <Footer />
