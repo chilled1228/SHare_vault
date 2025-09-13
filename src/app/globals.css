@@ -460,3 +460,22 @@ a:hover {
     font-size: 1.75rem;
   }
 }
+
+/* Admin Layout Fixes */
+.admin-layout {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.admin-layout body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Prevent body scroll when sidebar is open on mobile */
+.sidebar-open {
+  overflow: hidden;
+}
+
+/* Sidebar transition fixes */
+.sidebar-transition {
+  transition: transform 0.2s ease-in-out;
+}
