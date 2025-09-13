@@ -315,12 +315,7 @@ function CreatePostPageContent() {
   )
 }
 
+
 export default function CreatePostPage() {
-  return (
-    <AuthProvider>
-      <AdminRouteGuard>
-        <CreatePostPageContent />
-      </AdminRouteGuard>
-    </AuthProvider>
-  )
+  return <CreatePostPageContent />
 }

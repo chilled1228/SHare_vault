@@ -320,12 +320,7 @@ function PostsManagementPageContent() {
   )
 }
 
+
 export default function PostsManagementPage() {
-  return (
-    <AuthProvider>
-      <AdminRouteGuard>
-        <PostsManagementPageContent />
-      </AdminRouteGuard>
-    </AuthProvider>
-  )
+  return <PostsManagementPageContent />
 }

@@ -6,7 +6,7 @@ import AdminLayout from '@/components/admin/AdminLayout'
 import { AuthProvider } from '@/lib/auth-context'
 import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 import { useAuth } from '@/lib/auth-context'
-import { Shield, UserCheck, UserX, Crown } from 'lucide-react'
+import { Shield, UserCheck, UserX, Crown, RefreshCw } from 'lucide-react'
 
 interface UserData {
   id: string
@@ -23,7 +23,7 @@ function AdminManagementPageContent() {
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
-  const { user } = useAuth()
+  const { user, refreshUser } = useAuth()
 
   useEffect(() => {
     if (user) {
@@ -52,6 +52,11 @@ function AdminManagementPageContent() {
         await authService.grantAdminAccess(userId)
       }
       
+      // Refresh current user if their status changed
+      if (userId === user?.uid) {
+        await refreshUser()
+      }
+      
       await fetchUsers()
       setMessage(`Admin access ${currentStatus ? 'revoked from' : 'granted to'} user successfully`)
       setTimeout(() => setMessage(''), 3000)
@@ -75,12 +80,21 @@ function AdminManagementPageContent() {
     <AdminLayout>
       <div className="space-y-6">
         {/* Header */}
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center">
-            <Shield className="mr-2" />
-            Admin Management
-          </h1>
-          <p className="text-gray-600 mt-1">Manage admin access for users</p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center">
+              <Shield className="mr-2" />
+              Admin Management
+            </h1>
+            <p className="text-gray-600 mt-1">Manage admin access for users</p>
+          </div>
+          <button
+            onClick={refreshUser}
+            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Refresh My Status
+          </button>
         </div>
 
         {/* Messages */}
@@ -208,11 +222,5 @@ function AdminManagementPageContent() {
 }
 
 export default function AdminManagementPage() {
-  return (
-    <AuthProvider>
-      <AdminRouteGuard>
-        <AdminManagementPageContent />
-      </AdminRouteGuard>
-    </AuthProvider>
-  )
+  return <AdminManagementPageContent />
 }

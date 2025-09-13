@@ -14,29 +14,30 @@ export default function AdminRouteGuard({ children }: AdminRouteGuardProps) {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (!isLoading) {
-      // Allow access to login page without authentication
-      if (pathname === '/admin/login') {
-        if (user) {
-          router.push('/admin')
-        }
-        return
-      }
+    if (isLoading) {
+      return // Wait for authentication to complete
+    }
 
-      // For all other admin routes, require authentication and admin access
-      if (!user) {
-        router.push('/admin/login')
-      } else if (!user.isAdmin) {
-        // User is authenticated but not an admin
-        // Allow access to seed page for setup
-        if (pathname !== '/admin/seed') {
-          router.push('/')
-        }
+    const isLoginPage = pathname === '/admin/login'
+    const isSeedPage = pathname === '/admin/seed'
+
+    if (isLoginPage) {
+      if (user) {
+        router.push('/admin')
       }
+      return
+    }
+
+    if (!user) {
+      router.push('/admin/login')
+      return
+    }
+
+    if (!user.isAdmin && !isSeedPage) {
+      router.push('/')
     }
   }, [user, isLoading, router, pathname])
 
-  // Show loading state
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -48,14 +49,19 @@ export default function AdminRouteGuard({ children }: AdminRouteGuardProps) {
     )
   }
 
-  // If on login page and authenticated, redirect to admin
-  if (pathname === '/admin/login' && user) {
-    return null
+  const isLoginPage = pathname === '/admin/login'
+  const isSeedPage = pathname === '/admin/seed'
+
+  if (isLoginPage && user) {
+    return null // Redirecting
   }
 
-  // If not on login page and not authenticated, redirect will happen in useEffect
-  if (!user && pathname !== '/admin/login') {
-    return null
+  if (!user && !isLoginPage) {
+    return null // Redirecting
+  }
+
+  if (user && !user.isAdmin && !isSeedPage) {
+    return null // Redirecting
   }
 
   return <>{children}</>

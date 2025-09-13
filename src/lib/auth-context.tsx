@@ -8,6 +8,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>
   googleLogin: () => Promise<void>
   logout: () => Promise<void>
+  refreshUser: () => Promise<void>
   isLoading: boolean
   error: string | null
 }
@@ -74,8 +75,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  const refreshUser = async (): Promise<void> => {
+    setIsLoading(true)
+    setError(null)
+    
+    try {
+      const refreshedUser = await authService.getCurrentUser()
+      setUser(refreshedUser)
+    } catch (err: any) {
+      setError(err.message)
+      throw err
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ user, login, googleLogin, logout, isLoading, error }}>
+    <AuthContext.Provider value={{ user, login, googleLogin, logout, refreshUser, isLoading, error }}>
       {children}
     </AuthContext.Provider>
   )

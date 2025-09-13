@@ -206,6 +206,25 @@ class AuthService {
   // Get current user
   async getCurrentUser(): Promise<AdminUser | null> {
     const firebaseUser = auth.currentUser
+    if (!firebaseUser) return null
+    
+    // Force re-fetch from Firestore by getting the user document directly
+    const userDocRef = doc(db, 'users', firebaseUser.uid)
+    const userDoc = await getDoc(userDocRef)
+    
+    if (userDoc.exists()) {
+      const userData = userDoc.data()
+      return {
+        uid: firebaseUser.uid,
+        email: firebaseUser.email,
+        displayName: firebaseUser.displayName,
+        photoURL: firebaseUser.photoURL,
+        emailVerified: firebaseUser.emailVerified,
+        isAdmin: userData.isAdmin || false,
+        provider: firebaseUser.providerData[0]?.providerId === 'google.com' ? 'google' : 'email'
+      }
+    }
+    
     return await this.transformFirebaseUser(firebaseUser)
   }
 
