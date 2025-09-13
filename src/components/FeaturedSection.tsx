@@ -1,0 +1,144 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { BlogPost } from '@/types/blog'
+import { BlogService } from '@/lib/blog-service'
+
+export default function FeaturedSection() {
+  const [posts, setPosts] = useState<BlogPost[]>([])
+  const [loading, setLoading] = useState(true)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const fetchFeaturedPosts = async () => {
+      try {
+        const fetchedPosts = await BlogService.getFeaturedPosts()
+        setPosts(fetchedPosts)
+      } catch (err) {
+        console.error('Error fetching featured posts:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchFeaturedPosts()
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-lg w-full max-w-6xl mx-auto overflow-hidden animate-pulse">
+            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[450px]">
+              <div className="p-6 md:p-8 flex flex-col justify-center space-y-4">
+                <div className="h-6 w-24 bg-gray-300 rounded-full"></div>
+                <div className="h-8 w-full bg-gray-300 rounded"></div>
+                <div className="h-6 w-48 bg-gray-300 rounded"></div>
+              </div>
+              <div className="bg-gray-300 min-h-[210px] md:min-h-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  if (posts.length === 0) {
+    return (
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-lg w-full max-w-6xl mx-auto overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[450px]">
+              <div className="p-6 md:p-8 flex flex-col justify-center">
+                <div className="text-center text-gray-600">
+                  No featured posts available yet.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  const currentSlide = posts[activeSlide]
+
+  return (
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto px-4">
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 w-full max-w-6xl mx-auto overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[450px]">
+            <div className="p-6 md:p-8 flex flex-col justify-center relative">
+              <div className="space-y-4">
+                <div className="inline-block">
+                  <span 
+                    className="text-white px-3 py-1 text-xs font-semibold uppercase tracking-wide rounded-full"
+                    style={{ backgroundColor: 'var(--primary)' }}
+                  >
+                    {currentSlide.category}
+                  </span>
+                </div>
+                <h1 className="text-xl md:text-2xl font-bold leading-tight" style={{ color: 'var(--foreground)' }}>
+                  {currentSlide.title}
+                </h1>
+                <div className="flex items-center text-sm" style={{ color: 'var(--foreground-muted)' }}>
+                  <p className="font-semibold" style={{ color: 'var(--foreground)' }}>{currentSlide.authorName}</p>
+                  <span className="mx-2">•</span>
+                  <p>{new Date(currentSlide.createdAt).toLocaleDateString()}</p>
+                </div>
+                <p className="text-gray-600 mt-4">
+                  {currentSlide.excerpt}
+                </p>
+                {currentSlide.readTime && (
+                  <div className="text-sm text-gray-500">
+                    {currentSlide.readTime} min read
+                  </div>
+                )}
+              </div>
+              
+              {/* Indicators */}
+              {posts.length > 1 && (
+                <div className="flex items-center space-x-2 absolute bottom-6 left-6 md:left-8 z-20">
+                  {posts.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveSlide(index)}
+                      className={`relative transition-all duration-300 ${
+                        activeSlide === index 
+                          ? 'w-8 h-3 rounded-full scale-110 border' 
+                          : 'w-3 h-3 rounded-full hover:scale-105 border'
+                      }`}
+                      style={{
+                        backgroundColor: activeSlide === index ? 'var(--primary)' : '#e2e8f0',
+                        borderColor: activeSlide === index ? 'var(--primary-text)' : '#cbd5e1'
+                      }}
+                    >
+                      {activeSlide === index && (
+                        <div 
+                          className="absolute inset-0 rounded-full animate-pulse opacity-50"
+                          style={{ backgroundColor: 'var(--primary)' }}
+                        ></div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="relative min-h-[210px] md:min-h-full p-3">
+              <div className="relative w-full h-full">
+                {currentSlide.imageUrl && (
+                  <img
+                    src={currentSlide.imageUrl}
+                    alt={currentSlide.title}
+                    className="absolute inset-0 w-full h-full object-cover rounded-r-xl"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:from-transparent md:via-transparent md:to-transparent md:bg-gradient-to-r md:from-black/20 rounded-r-xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
