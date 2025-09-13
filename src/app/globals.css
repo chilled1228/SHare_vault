@@ -1,6 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text&display=swap');
 @import "tailwindcss";
 
+/* Article Content Styles */
+.article-content blockquote {
+  border-left: 4px solid var(--primary);
+  background-color: var(--card);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  border-radius: 0.5rem;
+}
+
+.article-content h1, 
+.article-content h2, 
+.article-content h3, 
+.article-content h4 {
+  color: var(--primary);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.article-content h1 {
+  font-size: 2.5rem;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+  margin: 2.5rem 0 1.25rem 0;
+}
+
+.article-content h3 {
+  font-size: 1.75rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.article-content h4 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.article-content p {
+  color: var(--foreground);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.article-content strong {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .article-content h1 {
+    font-size: 2rem;
+  }
+  
+  .article-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .article-content h4 {
+    font-size: 1.25rem;
+  }
+}
+
 /* Mobile-first CSS variables and global styles for ShareVault - QuoteLoom inspired */
 :root {
   /* QuoteLoom Color Palette */

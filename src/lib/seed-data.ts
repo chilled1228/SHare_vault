@@ -3,6 +3,7 @@ import { BlogPost } from '@/types/blog'
 
 const samplePosts: Omit<BlogPost, 'id' | 'createdAt' | 'updatedAt'>[] = [
   {
+    slug: 'future-web-development-trends-2025',
     title: "The Future of Web Development: Trends to Watch in 2025",
     content: `Web development is evolving at an unprecedented pace. In 2025, we're seeing several key trends that are reshaping how we build applications:
 
@@ -28,6 +29,7 @@ As developers, staying current with these trends is crucial for building modern,
     readTime: 8
   },
   {
+    slug: 'mastering-react-server-components-guide',
     title: "Mastering React Server Components: A Complete Guide",
     content: `React Server Components (RSC) represent a paradigm shift in how we build React applications. Let's explore the key concepts:
 
@@ -73,6 +75,7 @@ This architectural pattern is transforming how we think about React application 
     readTime: 12
   },
   {
+    slug: 'building-accessible-web-applications-guidelines',
     title: "Building Accessible Web Applications: Essential Guidelines",
     content: `Web accessibility isn't just a requirement—it's a fundamental aspect of creating inclusive digital experiences. Here's how to build truly accessible applications:
 
@@ -137,6 +140,7 @@ By following these guidelines, you'll create applications that work for everyone
     readTime: 10
   },
   {
+    slug: 'css-grid-vs-flexbox-layout-systems',
     title: "CSS Grid vs Flexbox: When to Use Which Layout System",
     content: `Understanding when to use CSS Grid versus Flexbox is crucial for modern web layouts. Let's break down the differences:
 
@@ -218,6 +222,7 @@ Understanding these distinctions will help you choose the right tool for each la
     readTime: 7
   },
   {
+    slug: 'typescript-best-practices-large-applications',
     title: "TypeScript Best Practices for Large Applications",
     content: `TypeScript transforms JavaScript development, but using it effectively requires understanding best practices:
 
@@ -319,6 +324,7 @@ These practices will help you build robust, maintainable TypeScript applications
     readTime: 15
   },
   {
+    slug: 'performance-optimization-modern-web-techniques',
     title: "Performance Optimization: Modern Web Techniques",
     content: `Web performance directly impacts user experience and SEO. Here are essential optimization techniques:
 

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { BlogService } from '@/lib/blog-service'
 import { BlogPost } from '@/types/blog'
 import Header from '@/components/Header'
@@ -21,6 +22,18 @@ async function getPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
+export async function generateStaticParams() {
+  try {
+    const posts = await BlogService.getPosts(100)
+    return posts.map((post) => ({
+      slug: post.slug,
+    }))
+  } catch (error) {
+    console.error('Error generating static params:', error)
+    return []
+  }
+}
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = await getPost(params.slug)
   
@@ -32,36 +45,81 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} - Shair Vault`,
+    title: `${post.title}`,
     description: post.excerpt,
-    keywords: post.tags.join(', '),
-    authors: [{ name: post.authorName }],
+    keywords: post.tags,
+    authors: [{ name: post.authorName, url: `https://shairvault.com/author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}` }],
     category: post.category,
+    creator: post.authorName,
+    publisher: 'Shair Vault',
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      url: `https://shairvault.com/blog/${post.slug}`,
+      siteName: 'Shair Vault',
+      locale: 'en_US',
       authors: [post.authorName],
       publishedTime: post.createdAt.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
+      section: post.category,
       tags: post.tags,
       images: post.imageUrl ? [
         {
           url: post.imageUrl,
-          width: 800,
-          height: 600,
+          width: 1200,
+          height: 630,
           alt: post.title,
+          type: 'image/jpeg',
         }
-      ] : [],
+      ] : [
+        {
+          url: 'https://shairvault.com/og-image-blog.jpg',
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Shair Vault`,
+          type: 'image/jpeg',
+        }
+      ],
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@shairvault',
+      creator: '@shairvault',
       title: post.title,
       description: post.excerpt,
-      images: post.imageUrl ? [post.imageUrl] : [],
+      images: post.imageUrl ? [
+        {
+          url: post.imageUrl,
+          alt: post.title,
+        }
+      ] : [
+        {
+          url: 'https://shairvault.com/og-image-blog.jpg',
+          alt: `${post.title} - Shair Vault`,
+        }
+      ],
     },
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `https://shairvault.com/blog/${post.slug}`,
+    },
+    other: {
+      'article:author': post.authorName,
+      'article:section': post.category,
+      'article:tag': post.tags.join(','),
+      'article:published_time': post.createdAt.toISOString(),
+      'article:modified_time': post.updatedAt.toISOString(),
     },
   }
 }
@@ -86,31 +144,78 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
+    image: post.imageUrl ? {
+      '@type': 'ImageObject',
+      url: post.imageUrl,
+      width: 800,
+      height: 600
+    } : undefined,
     author: {
       '@type': 'Person',
       name: post.authorName,
+      url: `https://shairvault.com/author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`
     },
     publisher: {
       '@type': 'Organization',
       name: 'Shair Vault',
+      url: 'https://shairvault.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://shairvault.com/logo.png'
+      }
     },
     datePublished: post.createdAt.toISOString(),
     dateModified: post.updatedAt.toISOString(),
-    image: post.imageUrl,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://yourdomain.com/blog/${post.slug}`,
+      '@id': `https://shairvault.com/blog/${post.slug}`,
     },
-    keywords: post.tags.join(', '),
+    keywords: post.tags,
+    articleSection: post.category,
     wordCount: post.content.split(' ').length,
     timeRequired: `PT${post.readTime}M`,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'Blog',
+      '@id': 'https://shairvault.com/blog',
+      name: 'Shair Vault Blog'
+    },
+    about: {
+      '@type': 'Thing',
+      name: post.category
+    }
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://shairvault.com'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://shairvault.com/blog'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://shairvault.com/blog/${post.slug}`
+      }
+    ]
   }
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbSchema]) }}
       />
       
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
@@ -182,17 +287,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {/* Featured Image */}
               {post.imageUrl && (
-                <div className="mb-12">
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
-                  />
+                <div className="mb-12 relative">
+                  <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src={post.imageUrl}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                      priority={true}
+                    />
+                  </div>
                 </div>
               )}
 
               {/* Article Content */}
-              <div className="article-content">
+              <div className="article-content prose prose-lg max-w-none">
                 <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
               </div>
 
@@ -255,14 +365,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 function formatContent(content: string): string {
   // Convert markdown-style content to HTML with better typography
-  return content
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^# (.*$)/gm, '<h1 class="text-4xl font-bold mb-6 mt-8" style="color: var(--primary)">$1</h1>')
-    .replace(/^## (.*$)/gm, '<h2 class="text-3xl font-bold mb-4 mt-8" style="color: var(--primary)">$1</h2>')
-    .replace(/^### (.*$)/gm, '<h3 class="text-2xl font-bold mb-4 mt-6" style="color: var(--primary)">$1</h3>')
-    .replace(/^\*\*(.*?)\*\*/gm, '<strong class="font-bold" style="color: var(--primary)">$1</strong>')
-    .replace(/^\*(.*?)\*/gm, '<em>$1</em>')
-    .replace(/^(\d+\.)\s/gm, '<span class="quote-number" style="color: var(--primary); font-weight: bold;">$1</span> ')
-    .replace(/- \*(.*?)\*/gm, '- <em style="color: var(--muted-foreground)">$1</em>')
-    .replace(/^(.+)$/gm, '<p class="mb-6 leading-relaxed">$1</p>')
+  const formatted = content
+    // Handle blockquotes first
+    .replace(/^> (.*$)/gm, '<blockquote class="border-l-4 pl-6 py-4 my-6 italic text-lg leading-relaxed" style="border-color: var(--primary); background-color: var(--card); color: var(--muted-foreground);">$1</blockquote>')
+    
+    // Handle headings
+    .replace(/^# (.*$)/gm, '<h1 class="text-4xl md:text-5xl font-bold mb-6 mt-12 leading-tight" style="color: var(--primary);">$1</h1>')
+    .replace(/^## (.*$)/gm, '<h2 class="text-3xl md:text-4xl font-bold mb-5 mt-10 leading-tight" style="color: var(--primary);">$1</h2>')
+    .replace(/^### (.*$)/gm, '<h3 class="text-2xl md:text-3xl font-bold mb-4 mt-8 leading-tight" style="color: var(--primary);">$1</h3>')
+    .replace(/^#### (.*$)/gm, '<h4 class="text-xl md:text-2xl font-bold mb-4 mt-6 leading-tight" style="color: var(--primary);">$1</h4>')
+    
+    // Handle text formatting
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold" style="color: var(--primary);">$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+    
+    // Handle numbered lists (quotes)
+    .replace(/^(\d+\.)\s(.*)$/gm, '<div class="mb-4"><span class="quote-number font-bold text-lg mr-2" style="color: var(--primary);">$1</span><span class="leading-relaxed">$2</span></div>')
+    
+    // Handle unordered lists
+    .replace(/^- (.*)$/gm, '<li class="mb-2 ml-4 leading-relaxed">$1</li>')
+    
+    // Wrap consecutive list items in ul tags
+    .replace(/(<li.*?<\/li>\s*)+/g, '<ul class="list-disc list-inside mb-6 space-y-2">$&</ul>')
+    
+    // Handle paragraphs (do this last)
+    .replace(/^(?!<[h1-6]|<blockquote|<div|<ul|<li)(.+)$/gm, '<p class="mb-6 leading-relaxed text-lg" style="color: var(--foreground);">$1</p>')
+    
+    // Clean up double line breaks
+    .replace(/\n\n/g, '\n')
+    
+  return formatted
 }

@@ -4,6 +4,7 @@ import { BlogPost } from '@/types/blog'
 const mockPosts: BlogPost[] = [
   {
     id: '1',
+    slug: 'future-web-development-trends-2025',
     title: "The Future of Web Development: Trends to Watch in 2025",
     content: `Web development is evolving at an unprecedented pace. In 2025, we're seeing several key trends that are reshaping how we build applications:
 
@@ -26,6 +27,7 @@ const mockPosts: BlogPost[] = [
   },
   {
     id: '2',
+    slug: 'mastering-react-server-components-guide',
     title: "Mastering React Server Components: A Complete Guide",
     content: `React Server Components (RSC) represent a paradigm shift in how we build React applications. Let's explore the key concepts:
 
@@ -51,6 +53,7 @@ Server Components are a new type of component that runs exclusively on the serve
   },
   {
     id: '3',
+    slug: 'building-accessible-web-applications-guidelines',
     title: "Building Accessible Web Applications: Essential Guidelines",
     content: `Web accessibility isn't just a requirement—it's a fundamental aspect of creating inclusive digital experiences. Here's how to build truly accessible applications:
 
@@ -88,6 +91,7 @@ Ensure all interactive elements are keyboard accessible:
   },
   {
     id: '4',
+    slug: 'css-grid-vs-flexbox-layout-systems',
     title: "CSS Grid vs Flexbox: When to Use Which Layout System",
     content: `Understanding when to use CSS Grid versus Flexbox is crucial for modern web layouts. Let's break down the differences:
 
@@ -141,6 +145,7 @@ Use Flexbox for arranging items in a single direction:
   },
   {
     id: '5',
+    slug: 'typescript-best-practices-large-applications',
     title: "TypeScript Best Practices for Large Applications",
     content: `TypeScript transforms JavaScript development, but using it effectively requires understanding best practices:
 
@@ -212,6 +217,7 @@ class ApiError extends Error {
   },
   {
     id: '6',
+    slug: 'performance-optimization-modern-web-techniques',
     title: "Performance Optimization: Modern Web Techniques",
     content: `Web performance directly impacts user experience and SEO. Here are essential optimization techniques:
 

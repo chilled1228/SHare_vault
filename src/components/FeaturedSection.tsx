@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
 
@@ -125,15 +126,25 @@ export default function FeaturedSection() {
               )}
             </div>
             <div className="relative min-h-[210px] md:min-h-full p-3">
-              <div className="relative w-full h-full">
-                {currentSlide.imageUrl && (
-                  <img
+              <div className="relative w-full h-full overflow-hidden rounded-r-xl">
+                {currentSlide.imageUrl ? (
+                  <Image
                     src={currentSlide.imageUrl}
                     alt={currentSlide.title}
-                    className="absolute inset-0 w-full h-full object-cover rounded-r-xl"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={true}
                   />
+                ) : (
+                  <div 
+                    className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center"
+                    style={{ backgroundColor: 'var(--muted)' }}
+                  >
+                    <span className="text-gray-500">No Image</span>
+                  </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:from-transparent md:via-transparent md:to-transparent md:bg-gradient-to-r md:from-black/20 rounded-r-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:from-transparent md:via-transparent md:to-transparent md:bg-gradient-to-r md:from-black/20"></div>
               </div>
             </div>
           </div>

@@ -6,18 +6,31 @@ import Footer from '@/components/Footer'
 import BlogPostCard from '@/components/BlogPostCard'
 
 export const metadata: Metadata = {
-  title: 'Blog - Shair Vault',
-  description: 'Discover inspiring quotes, motivational content, and life wisdom on Shair Vault. Browse our collection of carefully curated blog posts.',
-  keywords: 'blog, quotes, inspiration, motivation, wisdom, life lessons',
+  title: 'Blog - Inspiring Stories and Life Wisdom',
+  description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
+  keywords: ['blog', 'inspiring stories', 'life wisdom', 'personal growth', 'motivation', 'self-improvement', 'philosophy', 'mindfulness'],
   openGraph: {
-    title: 'Blog - Shair Vault',
-    description: 'Discover inspiring quotes, motivational content, and life wisdom on Shair Vault.',
+    title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
+    description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
     type: 'website',
+    url: 'https://shairvault.com/blog',
+    images: [
+      {
+        url: '/og-image-blog.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Shair Vault Blog - Inspiring Stories and Life Wisdom',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Shair Vault',
-    description: 'Discover inspiring quotes, motivational content, and life wisdom on Shair Vault.',
+    title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
+    description: 'Read inspiring stories, life wisdom, and personal growth articles.',
+    images: ['/og-image-blog.jpg'],
+  },
+  alternates: {
+    canonical: 'https://shairvault.com/blog',
   },
 }
 
@@ -33,9 +46,48 @@ async function getAllPosts(): Promise<BlogPost[]> {
 export default async function BlogPage() {
   const posts = await getAllPosts()
   
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://shairvault.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://shairvault.com/blog"
+      }
+    ]
+  }
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Shair Vault Blog",
+    "description": "Read inspiring stories, life wisdom, and personal growth articles.",
+    "url": "https://shairvault.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shair Vault",
+      "url": "https://shairvault.com"
+    },
+    "inLanguage": "en-US"
+  }
+  
   return (
-    <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
-      <Header />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, blogSchema]) }}
+      />
+      
+      <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
+        <Header />
       
       <main className="flex-1">
         {/* Hero Section */}
@@ -84,5 +136,6 @@ export default async function BlogPage() {
 
       <Footer />
     </div>
+    </>
   )
 }
