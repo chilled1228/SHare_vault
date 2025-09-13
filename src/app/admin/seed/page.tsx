@@ -2,13 +2,18 @@
 
 import { useState } from 'react'
 import { BlogService } from '@/lib/blog-service'
+import { authService } from '@/lib/auth-service'
 import { seedDatabase } from '@/lib/seed-data'
 import AdminLayout from '@/components/admin/AdminLayout'
+import { AuthProvider } from '@/lib/auth-context'
+import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
+import { useAuth } from '@/lib/auth-context'
 
-export default function AdminSeedPage() {
+function AdminSeedPageContent() {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
+  const { user } = useAuth()
 
   const handleSeed = async () => {
     setLoading(true)
@@ -21,6 +26,27 @@ export default function AdminSeedPage() {
     } catch (err) {
       setError('Failed to seed database. Check Firebase configuration and try again.')
       console.error('Seeding error:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleMakeAdmin = async () => {
+    if (!user) {
+      setError('You must be logged in to make yourself an admin')
+      return
+    }
+
+    setLoading(true)
+    setMessage('')
+    setError('')
+
+    try {
+      await authService.grantAdminAccess(user.uid)
+      setMessage('You are now an admin! Please refresh the page.')
+    } catch (err) {
+      setError('Failed to grant admin access. Check Firebase configuration and try again.')
+      console.error('Admin grant error:', err)
     } finally {
       setLoading(false)
     }
@@ -81,6 +107,54 @@ export default function AdminSeedPage() {
           </div>
         </div>
       </div>
+        
+        {/* Admin Setup Section */}
+        <div className="bg-white rounded-lg shadow p-6">
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold mb-4">Admin Setup</h2>
+            <p className="text-gray-700 mb-4">
+              Make yourself an admin to access all admin features. 
+              {user && (
+                <span className="block mt-2">
+                  Current user: <strong>{user.email}</strong> 
+                  {user.isAdmin && <span className="text-green-600 ml-2">(Already Admin)</span>}
+                  {!user.isAdmin && <span className="text-orange-600 ml-2">(Not Admin)</span>}
+                </span>
+              )}
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <button
+              onClick={handleMakeAdmin}
+              disabled={loading || !user || user.isAdmin}
+              className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed mr-4"
+            >
+              {loading ? 'Setting up...' : 'Make Me Admin'}
+            </button>
+          </div>
+
+          <div className="mt-8 p-4 bg-purple-100 rounded-lg">
+            <h3 className="font-semibold mb-2 text-purple-900">Admin Instructions:</h3>
+            <ul className="space-y-1 text-sm text-purple-800">
+              <li>• Click "Make Me Admin" to grant yourself admin access</li>
+              <li>• Once you're an admin, you can manage other users via the Users page</li>
+              <li>• Admins can create, edit, and delete blog posts</li>
+              <li>• Admins can access all admin dashboard features</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </AdminLayout>
+  )
+}
+
+export default function AdminSeedPage() {
+  return (
+    <AuthProvider>
+      <AdminRouteGuard>
+        <AdminSeedPageContent />
+      </AdminRouteGuard>
+    </AuthProvider>
   )
 }

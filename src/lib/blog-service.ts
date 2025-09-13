@@ -32,6 +32,29 @@ export class BlogService {
     })
   }
 
+  static async getAllPosts(limitCount = 10): Promise<BlogPost[]> {
+    try {
+      const q = query(
+        collection(db, 'posts'),
+        orderBy('createdAt', 'desc'),
+        limit(limitCount)
+      )
+      const querySnapshot = await getDocs(q)
+      return querySnapshot.docs.map(doc => {
+        const data = doc.data()
+        return {
+          id: doc.id,
+          ...data,
+          createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : data.createdAt,
+          updatedAt: data.updatedAt?.toDate ? data.updatedAt.toDate() : data.updatedAt
+        } as BlogPost
+      })
+    } catch (error) {
+      console.error('Error in getAllPosts:', error)
+      throw error
+    }
+  }
+
   static async getFeaturedPosts(): Promise<BlogPost[]> {
     const q = query(
       collection(db, 'posts'),

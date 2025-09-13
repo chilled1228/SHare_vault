@@ -1,0 +1,449 @@
+[debug] [2025-09-13T06:05:33.075Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.076Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.077Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.077Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.077Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.098Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.098Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.099Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.099Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.099Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.101Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.101Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.101Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.101Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.101Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.102Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.102Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.102Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.102Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.102Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.102Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.102Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.103Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.103Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.103Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.120Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.120Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.120Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.120Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.120Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.121Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.121Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.121Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.121Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.121Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.122Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.122Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.122Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.122Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.122Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.123Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.123Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.123Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.123Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.123Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.124Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.124Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] Checked if tokens are valid: false, expires at: 1757743717073
+[debug] [2025-09-13T06:05:33.125Z] > refreshing access token with scopes: []
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-13T06:05:33.125Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.242Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.243Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.254Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:33.254Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.258Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.258Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.268Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.268Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.269Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.269Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.275Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.275Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.276Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.276Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.286Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:33.286Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.287Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.287Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.295Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.295Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.296Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.296Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.304Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.304Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.304Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.304Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.314Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:33.314Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.314Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.314Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.321Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:33.321Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.321Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.321Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.330Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.330Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.330Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.330Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.340Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.340Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.341Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.341Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.353Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.353Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.354Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.354Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.363Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:33.363Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.364Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.364Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.375Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.375Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.378Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.378Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.388Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:33.388Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:33.398Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-13T06:05:33.398Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-13T06:05:33.408Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:33.408Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:34.043Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:05:34.043Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:05:41.627Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.628Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.629Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.630Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:41.630Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.646Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.646Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.647Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.647Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.647Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.647Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.647Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:41.648Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.663Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.664Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.664Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:05:41.664Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:41.664Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.664Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.664Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.665Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.665Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:05:41.666Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:05:41.667Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:05:42.040Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:05:42.040Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:42.042Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:05:42.042Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.191Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:05:43.191Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.316Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:05:43.316Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:05:43.335Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:05:43.335Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:05:43.367Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:05:43.367Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.368Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:05:43.368Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.386Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:05:43.386Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.388Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:05:43.388Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.389Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:05:43.389Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.396Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:05:43.396Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:05:43.397Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:05:43.397Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:05:43.463Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:05:43.463Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:05:43.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:05:43.476Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:05:43.645Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:05:43.645Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:05:43.697Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:05:43.697Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:05:43.700Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:05:43.700Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:28:46.920Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:28:46.921Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:29:08.308Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:29:08.308Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:29:08.309Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:08.310Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:08.310Z] >>> [apiv2][query] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query [none]
+[debug] [2025-09-13T06:29:08.310Z] >>> [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"expression":[{"email":"bollywooodsong22@gmail.com"}],"limit":"1"}
+[debug] [2025-09-13T06:29:08.680Z] <<< [apiv2][status] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query 200
+[debug] [2025-09-13T06:29:08.680Z] <<< [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"recordsCount":"1","userInfo":[{"localId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3","email":"bollywooodsong22@gmail.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","emailVerified":true,"providerUserInfo":[{"providerId":"google.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","federatedId":"107571971356164499623","email":"bollywooodsong22@gmail.com","rawId":"107571971356164499623"}],"validSince":"1757744284","lastLoginAt":"1757744742912","createdAt":"1757744284930","lastRefreshAt":"2025-09-13T06:25:42.912Z"}]}
+[debug] [2025-09-13T06:29:25.654Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:29:25.654Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:29:25.655Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:25.655Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:25.655Z] >>> [apiv2][query] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query [none]
+[debug] [2025-09-13T06:29:25.655Z] >>> [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"expression":[{"userId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3"}],"limit":"1"}
+[debug] [2025-09-13T06:29:26.082Z] <<< [apiv2][status] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query 200
+[debug] [2025-09-13T06:29:26.082Z] <<< [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"recordsCount":"1","userInfo":[{"localId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3","email":"bollywooodsong22@gmail.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","emailVerified":true,"providerUserInfo":[{"providerId":"google.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","federatedId":"107571971356164499623","email":"bollywooodsong22@gmail.com","rawId":"107571971356164499623"}],"validSince":"1757744284","lastLoginAt":"1757744742912","createdAt":"1757744284930","lastRefreshAt":"2025-09-13T06:25:42.912Z"}]}
+[debug] [2025-09-13T06:29:26.082Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:26.082Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:26.082Z] >>> [apiv2][query] POST https://identitytoolkit.googleapis.com/v1/accounts:update [none]
+[debug] [2025-09-13T06:29:26.082Z] >>> [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/accounts:update {"customAttributes":"{\"admin\":\"true\"}","targetProjectId":"shair-vault","localId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3"}
+[debug] [2025-09-13T06:29:26.476Z] <<< [apiv2][status] POST https://identitytoolkit.googleapis.com/v1/accounts:update 200
+[debug] [2025-09-13T06:29:26.476Z] <<< [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/accounts:update {"kind":"identitytoolkit#SetAccountInfoResponse","localId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3","email":"bollywooodsong22@gmail.com","displayName":"Bollywood Song Lover","providerUserInfo":[{"providerId":"google.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","federatedId":"107571971356164499623","email":"bollywooodsong22@gmail.com","rawId":"107571971356164499623"}],"photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","emailVerified":true}
+[debug] [2025-09-13T06:29:26.476Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:26.477Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:29:26.477Z] >>> [apiv2][query] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query [none]
+[debug] [2025-09-13T06:29:26.477Z] >>> [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"expression":[{"userId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3"}],"limit":"1"}
+[debug] [2025-09-13T06:29:26.816Z] <<< [apiv2][status] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query 200
+[debug] [2025-09-13T06:29:26.816Z] <<< [apiv2][body] POST https://identitytoolkit.googleapis.com/v1/projects/shair-vault/accounts:query {"recordsCount":"1","userInfo":[{"localId":"3qnFh8u3KpgRWltcd9rYDSGvLhD3","email":"bollywooodsong22@gmail.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","emailVerified":true,"providerUserInfo":[{"providerId":"google.com","displayName":"Bollywood Song Lover","photoUrl":"https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c","federatedId":"107571971356164499623","email":"bollywooodsong22@gmail.com","rawId":"107571971356164499623"}],"validSince":"1757744284","lastLoginAt":"1757744742912","createdAt":"1757744284930","customAttributes":"{\"admin\":\"true\"}","lastRefreshAt":"2025-09-13T06:25:42.912Z"}]}
+[debug] [2025-09-13T06:39:31.752Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.753Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.754Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.754Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.754Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.755Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.755Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.755Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.755Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.756Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.756Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:31.756Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.774Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.774Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.774Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.774Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.775Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.775Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.775Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:31.775Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.785Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:31.786Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:31.786Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.787Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.787Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.787Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.787Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.788Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.788Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.788Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:31.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:33.523Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:33.523Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:33.524Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:33.524Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:33.548Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:33.548Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.549Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:33.549Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.554Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:33.554Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.561Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:33.561Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.573Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:33.573Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:33.580Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:33.580Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.585Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:33.585Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.585Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:33.585Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.587Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:33.587Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.591Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:33.591Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:33.844Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:33.844Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:33.844Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:33.844Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:33.854Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:39:33.854Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:39:33.860Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:33.860Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:33.862Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:39:33.862Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:39:41.132Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.133Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.133Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.133Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.133Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.134Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:41.134Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.151Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.151Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:41.152Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.167Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] Checked if tokens are valid: true, expires at: 1757747132398
+[debug] [2025-09-13T06:39:41.168Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:41.168Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.168Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.168Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.169Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.169Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [none]
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.170Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [none]
+[debug] [2025-09-13T06:39:41.171Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com x-goog-quota-user=projects/shair-vault
+[debug] [2025-09-13T06:39:41.542Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:41.542Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:41.851Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:41.851Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:42.816Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:42.817Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:42.831Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:42.831Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:42.837Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com 403
+[debug] [2025-09-13T06:39:42.837Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseio.com [omitted]
+[debug] [2025-09-13T06:39:42.845Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:42.845Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.854Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:42.854Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.858Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:42.858Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.863Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:42.863Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.864Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:42.864Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.869Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-13T06:39:42.869Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.872Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-13T06:39:42.872Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.910Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-13T06:39:42.910Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-13T06:39:42.923Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:39:42.923Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)
+[debug] [2025-09-13T06:39:43.187Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:43.187Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:43.205Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ 200
+[debug] [2025-09-13T06:39:43.205Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/shair-vault/services/ [omitted]
+[debug] [2025-09-13T06:39:43.207Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-13T06:39:43.207Z] > authorizing via signed-in user (bollywooodsong22@gmail.com)

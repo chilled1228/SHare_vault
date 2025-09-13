@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
+import { AuthProvider } from '@/lib/auth-context'
+import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 import { Save, Eye, X } from 'lucide-react'
 
 interface PostFormData {
@@ -19,10 +21,10 @@ interface PostFormData {
   featured: boolean
   published: boolean
   imageUrl: string
-  readTime?: number
+  readTime: number
 }
 
-export default function CreatePostPage() {
+function CreatePostPageContent() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState<PostFormData>({
@@ -37,7 +39,7 @@ export default function CreatePostPage() {
     featured: false,
     published: false,
     imageUrl: '',
-    readTime: undefined
+    readTime: 0
   })
   const [tagInput, setTagInput] = useState('')
   const [error, setError] = useState('')
@@ -310,5 +312,15 @@ export default function CreatePostPage() {
         </form>
       </div>
     </AdminLayout>
+  )
+}
+
+export default function CreatePostPage() {
+  return (
+    <AuthProvider>
+      <AdminRouteGuard>
+        <CreatePostPageContent />
+      </AdminRouteGuard>
+    </AuthProvider>
   )
 }

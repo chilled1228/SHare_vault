@@ -56,12 +56,7 @@ export default function Header() {
             <Link href="/quote-generator" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               QUOTE OF THE DAY GENERATOR
             </Link>
-            {process.env.NODE_ENV === 'development' && (
-              <Link href="/admin" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: '#ef4444'}}>
-                ADMIN
-              </Link>
-            )}
-            
+                        
           </div>
 
           {/* Mobile menu button */}
@@ -119,16 +114,7 @@ export default function Header() {
                 >
                   QUOTE OF THE DAY GENERATOR
                 </Link>
-                {process.env.NODE_ENV === 'development' && (
-                  <Link 
-                    href="/admin" 
-                    className="text-xl hover:opacity-80 transition-colors"
-                    style={{fontFamily: 'Anton, sans-serif', color: '#ef4444'}}
-                  >
-                    ADMIN
-                  </Link>
-                )}
-              </nav>
+                              </nav>
             </div>
           )}
         </nav>

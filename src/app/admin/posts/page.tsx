@@ -5,9 +5,11 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
+import { AuthProvider } from '@/lib/auth-context'
+import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 import { Edit, Trash2, Eye, Plus, Search, Filter } from 'lucide-react'
 
-export default function PostsManagementPage() {
+function PostsManagementPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const createdId = searchParams.get('created')
@@ -29,10 +31,11 @@ export default function PostsManagementPage() {
 
   const fetchPosts = async () => {
     try {
-      const allPosts = await BlogService.getPosts(100)
+      const allPosts = await BlogService.getAllPosts(100)
       setPosts(allPosts)
     } catch (error) {
       console.error('Error fetching posts:', error)
+      setPosts([])
     } finally {
       setLoading(false)
     }
@@ -61,11 +64,11 @@ export default function PostsManagementPage() {
   }
 
   const handleDelete = async () => {
-    if (!deleteModal.post) return
+    if (!deleteModal.post?.id) return
 
     try {
       await BlogService.deletePost(deleteModal.post.id)
-      setPosts(posts.filter(post => post.id !== deleteModal.post?.id))
+      setPosts(posts.filter(post => post.id !== deleteModal.post!.id))
       setDeleteModal({ open: false, post: undefined })
     } catch (error) {
       console.error('Error deleting post:', error)
@@ -73,6 +76,8 @@ export default function PostsManagementPage() {
   }
 
   const togglePublish = async (post: BlogPost) => {
+    if (!post.id) return
+    
     try {
       await BlogService.updatePost(post.id, { published: !post.published })
       setPosts(posts.map(p => 
@@ -84,6 +89,8 @@ export default function PostsManagementPage() {
   }
 
   const toggleFeatured = async (post: BlogPost) => {
+    if (!post.id) return
+    
     try {
       await BlogService.updatePost(post.id, { featured: !post.featured })
       setPosts(posts.map(p => 
@@ -309,6 +316,16 @@ export default function PostsManagementPage() {
           </div>
         </div>
       )}
-    </AdminLayout>
+        </AdminLayout>
+  )
+}
+
+export default function PostsManagementPage() {
+  return (
+    <AuthProvider>
+      <AdminRouteGuard>
+        <PostsManagementPageContent />
+      </AdminRouteGuard>
+    </AuthProvider>
   )
 }

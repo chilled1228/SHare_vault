@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
+import { AuthProvider } from '@/lib/auth-context'
+import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 
-export default function AdminDashboard() {
+function AdminDashboardContent() {
   const [stats, setStats] = useState({
     totalPosts: 0,
     publishedPosts: 0,
@@ -144,4 +146,8 @@ export default function AdminDashboard() {
       </div>
     </AdminLayout>
   )
+}
+
+export default function AdminDashboard() {
+  return <AdminDashboardContent />
 }

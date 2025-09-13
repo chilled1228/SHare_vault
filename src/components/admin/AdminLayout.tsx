@@ -3,13 +3,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useAuth } from '@/lib/auth-context'
 import { 
   Home, 
   FileText, 
   Plus, 
   Settings,
+  Users,
   Menu,
-  X
+  X,
+  LogOut
 } from 'lucide-react'
 
 interface AdminLayoutProps {
@@ -19,6 +22,7 @@ interface AdminLayoutProps {
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const pathname = usePathname()
+  const { user, logout } = useAuth()
 
   // Control body overflow when sidebar is open on mobile
   useEffect(() => {
@@ -37,6 +41,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     { href: '/admin', label: 'Dashboard', icon: Home },
     { href: '/admin/posts', label: 'All Posts', icon: FileText },
     { href: '/admin/posts/create', label: 'Create Post', icon: Plus },
+    { href: '/admin/users', label: 'Users', icon: Users },
     { href: '/admin/seed', label: 'Database', icon: Settings },
   ]
 
@@ -112,7 +117,25 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <div className="text-sm text-gray-600">
               Admin Dashboard
             </div>
-            <div className="w-8"></div> {/* Spacer for alignment */}
+            <div className="flex items-center space-x-3">
+              {user?.photoURL && (
+                <img 
+                  src={user.photoURL} 
+                  alt={user.displayName || 'Admin'} 
+                  className="w-8 h-8 rounded-full"
+                />
+              )}
+              <div className="text-sm text-gray-700">
+                Welcome, {user?.displayName || user?.email || 'Admin'}
+              </div>
+              <button
+                onClick={() => logout()}
+                className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors"
+                title="Logout"
+              >
+                <LogOut size={16} />
+              </button>
+            </div>
           </div>
         </header>
 
