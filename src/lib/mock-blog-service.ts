@@ -20,7 +20,7 @@ const mockPosts: BlogPost[] = [
     tags: ["trends", "AI", "WASM", "serverless"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=entropy",
     readTime: 8,
     createdAt: new Date('2025-01-15'),
     updatedAt: new Date('2025-01-15')
@@ -46,7 +46,7 @@ Server Components are a new type of component that runs exclusively on the serve
     tags: ["React", "Server Components", "JavaScript", "Performance"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop&crop=entropy",
     readTime: 12,
     createdAt: new Date('2025-01-14'),
     updatedAt: new Date('2025-01-14')
@@ -84,7 +84,7 @@ Ensure all interactive elements are keyboard accessible:
     tags: ["accessibility", "a11y", "WCAG", "inclusive design"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop&crop=entropy",
     readTime: 10,
     createdAt: new Date('2025-01-13'),
     updatedAt: new Date('2025-01-13')
@@ -138,7 +138,7 @@ Use Flexbox for arranging items in a single direction:
     tags: ["CSS", "Grid", "Flexbox", "layout", "design"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=entropy",
     readTime: 7,
     createdAt: new Date('2025-01-12'),
     updatedAt: new Date('2025-01-12')
@@ -210,7 +210,7 @@ class ApiError extends Error {
     tags: ["TypeScript", "best practices", "large applications", "patterns"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=entropy",
     readTime: 15,
     createdAt: new Date('2025-01-11'),
     updatedAt: new Date('2025-01-11')
@@ -274,7 +274,7 @@ Use tools like Lighthouse, Web Vitals, and Chrome DevTools for performance analy
     tags: ["performance", "optimization", "web vitals", "UX"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy",
     readTime: 11,
     createdAt: new Date('2025-01-10'),
     updatedAt: new Date('2025-01-10')

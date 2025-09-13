@@ -25,7 +25,7 @@ As developers, staying current with these trends is crucial for building modern,
     tags: ["trends", "AI", "WASM", "serverless"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=entropy",
     readTime: 8
   },
   {
@@ -71,7 +71,7 @@ This architectural pattern is transforming how we think about React application 
     tags: ["React", "Server Components", "JavaScript", "Performance"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop&crop=entropy",
     readTime: 12
   },
   {
@@ -136,7 +136,7 @@ By following these guidelines, you'll create applications that work for everyone
     tags: ["accessibility", "a11y", "WCAG", "inclusive design"],
     featured: true,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop&crop=entropy",
     readTime: 10
   },
   {
@@ -218,7 +218,7 @@ Understanding these distinctions will help you choose the right tool for each la
     tags: ["CSS", "Grid", "Flexbox", "layout", "design"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=entropy",
     readTime: 7
   },
   {
@@ -320,7 +320,7 @@ These practices will help you build robust, maintainable TypeScript applications
     tags: ["TypeScript", "best practices", "large applications", "patterns"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=entropy",
     readTime: 15
   },
   {
@@ -426,7 +426,7 @@ Implementing these techniques will significantly improve your application's perf
     tags: ["performance", "optimization", "web vitals", "UX"],
     featured: false,
     published: true,
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy",
     readTime: 11
   }
 ]

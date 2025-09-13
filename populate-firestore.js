@@ -120,7 +120,7 @@ Love is not just a feeling—it's a choice we make every day.`,
     featured: false,
     published: true,
     readTime: 6,
-    imageUrl: "https://images.unsplash.com/photo-1518621012420-8ab2fdc6aadb?w=800"
+    imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800"
   },
   {
     id: "wisdom-life-lessons",

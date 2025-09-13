@@ -147,7 +147,7 @@ Love is not just a feeling—it's a choice we make every day. It's about commitm
     published: true,
     createdAt: new Date("2024-01-08"),
     updatedAt: new Date("2024-01-08"),
-    imageUrl: "https://images.unsplash.com/photo-1518621012420-8ab2fdc6aadb?w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
     readTime: 5
   },
   {
