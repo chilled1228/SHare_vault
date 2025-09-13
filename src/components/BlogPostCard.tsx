@@ -41,7 +41,7 @@ export default function BlogPostCard({ post }: { post: BlogPost }) {
           </div>
           <div className="flex items-center text-sm mt-4 pt-4 border-t" style={{ borderColor: '#1a1a1a' }}>
             <p className="font-medium mr-3" style={{ color: '#1a1a1a' }}>{post.authorName}</p>
-            <p style={{ color: '#1a1a1a' }}>{new Date(post.createdAt).toLocaleDateString()}</p>
+            <p style={{ color: '#1a1a1a' }}>{new Date(post.createdAt).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</p>
           </div>
         </div>
       </div>

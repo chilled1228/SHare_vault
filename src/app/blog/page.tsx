@@ -94,23 +94,6 @@ export default async function BlogPage() {
         <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              style={{color: 'var(--primary)'}}
-            >
-              Our Blog
-            </h1>
-            <p 
-              className="text-xl md:text-2xl max-w-3xl mx-auto"
-              style={{color: 'var(--foreground-muted)'}}
-            >
-              Discover inspiring quotes, motivational content, and life wisdom to brighten your day and fuel your journey.
-            </p>
-          </div>
-        </section>
 
         {/* Posts Grid */}
         <section className="py-12">

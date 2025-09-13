@@ -12,12 +12,17 @@ export default function FeaturedSection() {
 
   useEffect(() => {
     const fetchFeaturedPosts = async () => {
+      let postsLength = 0
       try {
+        console.log('FeaturedSection: Starting to fetch featured posts...')
         const fetchedPosts = await BlogService.getFeaturedPosts()
+        postsLength = fetchedPosts.length
+        console.log('FeaturedSection: Fetched posts:', postsLength, fetchedPosts)
         setPosts(fetchedPosts)
       } catch (err) {
-        console.error('Error fetching featured posts:', err)
+        console.error('FeaturedSection: Error fetching featured posts:', err)
       } finally {
+        console.log('FeaturedSection: Setting loading to false, posts length:', postsLength)
         setLoading(false)
       }
     }
@@ -25,7 +30,10 @@ export default function FeaturedSection() {
     fetchFeaturedPosts()
   }, [])
 
+  console.log('FeaturedSection render: loading =', loading, 'posts.length =', posts.length)
+  
   if (loading) {
+    console.log('FeaturedSection: Rendering loading state')
     return (
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -45,6 +53,7 @@ export default function FeaturedSection() {
   }
 
   if (posts.length === 0) {
+    console.log('FeaturedSection: Rendering no posts state')
     return (
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -63,6 +72,7 @@ export default function FeaturedSection() {
   }
 
   const currentSlide = posts[activeSlide]
+  console.log('FeaturedSection: Rendering main content, currentSlide:', currentSlide?.title)
 
   return (
     <section className="py-12 md:py-20">
@@ -85,7 +95,7 @@ export default function FeaturedSection() {
                 <div className="flex items-center text-sm" style={{ color: 'var(--foreground-muted)' }}>
                   <p className="font-semibold" style={{ color: 'var(--foreground)' }}>{currentSlide.authorName}</p>
                   <span className="mx-2">•</span>
-                  <p>{new Date(currentSlide.createdAt).toLocaleDateString()}</p>
+                  <p>{new Date(currentSlide.createdAt).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</p>
                 </div>
                 <p className="text-gray-600 mt-4">
                   {currentSlide.excerpt}

@@ -1,10 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, Search, ChevronDown } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -18,9 +26,11 @@ export default function Header() {
           
           
           {/* Center - Logo */}
-          <h1 className="text-6xl text-center mb-0 absolute left-1/2 transform -translate-x-1/2" style={{fontFamily: 'Anton, sans-serif', color: 'var(--foreground)'}}>
-            ShareVault
-          </h1>
+          <Link href="/">
+            <h1 className="text-6xl text-center mb-0 absolute left-1/2 transform -translate-x-1/2 hover:opacity-80 transition-opacity cursor-pointer" style={{fontFamily: 'Anton, sans-serif', color: 'var(--foreground)'}}>
+              ShareVault
+            </h1>
+          </Link>
           
           
         </header>
@@ -30,22 +40,22 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex justify-center items-center space-x-8">
             <div className="relative group">
-              <a href="#" className="text-xl flex items-center hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+              <Link href="/blog" className="text-xl flex items-center hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
                 QUOTES <ChevronDown className="ml-1 w-4 h-4" />
-              </a>
+              </Link>
             </div>
-            <a href="#" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+            <Link href="/self-care" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               SELF-CARE
-            </a>
-            <a href="#" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+            </Link>
+            <Link href="/personal-growth" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               PERSONAL GROWTH
-            </a>
-            <a href="#" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+            </Link>
+            <Link href="/productivity" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               PRODUCTIVITY
-            </a>
-            <a href="#" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+            </Link>
+            <Link href="/quote-generator" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               QUOTE OF THE DAY GENERATOR
-            </a>
+            </Link>
             
           </div>
 
@@ -69,46 +79,41 @@ export default function Header() {
           {isMenuOpen && (
             <div className="md:hidden mt-4 pt-4 border-t" style={{borderColor: 'var(--primary)'}}>
               <nav className="flex flex-col space-y-4 items-center">
-                <a 
-                  href="#" 
+                <Link 
+                  href="/blog" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   QUOTES
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  href="/self-care" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   SELF-CARE
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  href="/personal-growth" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   PERSONAL GROWTH
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  href="/productivity" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   PRODUCTIVITY
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  href="/quote-generator" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   QUOTE OF THE DAY GENERATOR
-                </a>
+                </Link>
               </nav>
             </div>
           )}
