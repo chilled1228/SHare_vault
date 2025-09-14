@@ -19,16 +19,46 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/category/motivation`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/category/life-wisdom`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/category/personal-growth`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/category/inspiration`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/cookie-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
     },
   ]
 

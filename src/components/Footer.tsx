@@ -145,13 +145,13 @@ export default function Footer() {
             © 2023 ShareVault. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6">
-            <a href="#" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            <a href="/privacy-policy" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            <a href="/terms-of-service" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            <a href="/cookie-policy" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
               Cookie Policy
             </a>
           </div>

@@ -479,3 +479,94 @@ a:hover {
 .sidebar-transition {
   transition: transform 0.2s ease-in-out;
 }
+
+/* Minimal prose styling for policy pages */
+.prose {
+  font-family: "Crimson Text", serif;
+  line-height: 1.8;
+}
+
+.prose h1 {
+  font-family: "Anton", sans-serif;
+  color: var(--primary);
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.prose h2 {
+  font-family: "Anton", sans-serif;
+  color: var(--primary);
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.prose h3 {
+  font-family: "Anton", sans-serif;
+  color: var(--primary);
+  font-weight: 400;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  color: var(--foreground);
+}
+
+.prose ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.prose ul li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose strong {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .prose-lg {
+    font-size: 1.25rem;
+    line-height: 1.9;
+  }
+}

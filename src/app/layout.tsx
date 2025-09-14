@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth",
+    default: "Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives",
     template: "%s | Shair Vault"
   },
-  description: "Discover inspiring stories, life wisdom, and personal growth insights at Shair Vault. Read thought-provoking articles on self-improvement, motivation, and life philosophy.",
-  keywords: ["inspiration", "life wisdom", "personal growth", "motivation", "self-improvement", "stories", "philosophy", "mindfulness"],
+  description: "Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.",
+  keywords: ["inspiring quotes", "life wisdom quotes", "motivational stories", "personal growth", "daily inspiration", "meaningful quotes", "life philosophy", "wisdom stories", "inspirational content", "uplifting quotes"],
   authors: [{ name: "Shair Vault Team" }],
   creator: "Shair Vault",
   publisher: "Shair Vault",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://shairvault.com',
-    title: 'Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth',
-    description: 'Discover inspiring stories, life wisdom, and personal growth insights at Shair Vault. Read thought-provoking articles on self-improvement, motivation, and life philosophy.',
+    title: 'Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.',
     siteName: 'Shair Vault',
     images: [
       {
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth',
-    description: 'Discover inspiring stories, life wisdom, and personal growth insights at Shair Vault.',
+    title: 'Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives.',
     images: ['/og-image.jpg'],
     creator: '@shairvault',
   },

@@ -41,20 +41,36 @@ export default function Header() {
           <div className="hidden md:flex justify-center items-center space-x-8">
             <div className="relative group">
               <Link href="/blog" className="text-xl flex items-center hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
-                QUOTES <ChevronDown className="ml-1 w-4 h-4" />
+                STORIES <ChevronDown className="ml-1 w-4 h-4" />
               </Link>
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style={{backgroundColor: 'var(--card)', border: '1px solid var(--border)'}}>
+                <div className="p-2">
+                  <Link href="/category/motivation" className="block px-4 py-2 rounded hover:bg-gray-50 transition-colors" style={{color: 'var(--foreground)'}}>
+                    🔥 Motivation
+                  </Link>
+                  <Link href="/category/life-wisdom" className="block px-4 py-2 rounded hover:bg-gray-50 transition-colors" style={{color: 'var(--foreground)'}}>
+                    🧠 Life Wisdom
+                  </Link>
+                  <Link href="/category/personal-growth" className="block px-4 py-2 rounded hover:bg-gray-50 transition-colors" style={{color: 'var(--foreground)'}}>
+                    🌱 Personal Growth
+                  </Link>
+                  <Link href="/category/inspiration" className="block px-4 py-2 rounded hover:bg-gray-50 transition-colors" style={{color: 'var(--foreground)'}}>
+                    ✨ Inspiration
+                  </Link>
+                </div>
+              </div>
             </div>
-            <Link href="/self-care" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
-              SELF-CARE
+            <Link href="/category/motivation" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+              MOTIVATION
             </Link>
-            <Link href="/personal-growth" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+            <Link href="/category/life-wisdom" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+              LIFE WISDOM
+            </Link>
+            <Link href="/category/personal-growth" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
               PERSONAL GROWTH
             </Link>
-            <Link href="/productivity" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
-              PRODUCTIVITY
-            </Link>
-            <Link href="/quote-generator" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
-              QUOTE OF THE DAY GENERATOR
+            <Link href="/category/inspiration" className="text-xl hover:opacity-80 transition-colors" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+              INSPIRATION
             </Link>
                         
           </div>
@@ -84,35 +100,35 @@ export default function Header() {
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
                 >
-                  QUOTES
+                  ALL STORIES
                 </Link>
                 <Link 
-                  href="/self-care" 
+                  href="/category/motivation" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
                 >
-                  SELF-CARE
+                  🔥 MOTIVATION
                 </Link>
                 <Link 
-                  href="/personal-growth" 
+                  href="/category/life-wisdom" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
                 >
-                  PERSONAL GROWTH
+                  🧠 LIFE WISDOM
                 </Link>
                 <Link 
-                  href="/productivity" 
+                  href="/category/personal-growth" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
                 >
-                  PRODUCTIVITY
+                  🌱 PERSONAL GROWTH
                 </Link>
                 <Link 
-                  href="/quote-generator" 
+                  href="/category/inspiration" 
                   className="text-xl hover:opacity-80 transition-colors"
                   style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}
                 >
-                  QUOTE OF THE DAY GENERATOR
+                  ✨ INSPIRATION
                 </Link>
                               </nav>
             </div>
