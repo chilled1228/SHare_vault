@@ -52,18 +52,31 @@ export default function PrivacyPolicyPage() {
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
         <Header />
         
-        <main className="flex-1 py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-3xl font-bold mb-4 text-center" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+        <main className="flex-1">
+          {/* Hero Section */}
+          <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 100%)' }}>
+            <div className="container mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
                 Privacy Policy
               </h1>
-              
-              <div className="text-center mb-12" style={{color: 'var(--foreground-muted)'}}>
+              <p className="text-xl text-white/80 mb-6">
+                Your privacy matters to us
+              </p>
+              <div className="text-white/70">
                 <p className="text-sm">Last updated: September 13, 2025</p>
               </div>
+            </div>
+          </div>
 
-              <div className="prose prose-lg max-w-none" style={{color: 'var(--foreground)'}}>
+          {/* Content Section */}
+          <div className="py-16">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div 
+                  className="rounded-2xl p-8 md:p-12 shadow-lg"
+                  style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}
+                >
+                  <div className="prose prose-lg max-w-none" style={{color: 'var(--foreground)'}}>
                   <h2>1. Information We Collect</h2>
                   <p>At ShareVault, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
 
@@ -132,7 +145,9 @@ export default function PrivacyPolicyPage() {
 
                   <h2>10. Contact Information</h2>
                   <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-                  <p>Email: <a href="mailto:hello@shairvault.com">hello@shairvault.com</a></p>
+                  <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

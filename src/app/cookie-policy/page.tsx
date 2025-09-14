@@ -52,18 +52,31 @@ export default function CookiePolicyPage() {
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
         <Header />
         
-        <main className="flex-1 py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-3xl font-bold mb-4 text-center" style={{fontFamily: 'Anton, sans-serif', color: 'var(--primary)'}}>
+        <main className="flex-1">
+          {/* Hero Section */}
+          <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%)' }}>
+            <div className="container mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
                 Cookie Policy
               </h1>
-              
-              <div className="text-center mb-12" style={{color: 'var(--foreground-muted)'}}>
+              <p className="text-xl text-white/80 mb-6">
+                Understanding our use of cookies
+              </p>
+              <div className="text-white/70">
                 <p className="text-sm">Last updated: September 13, 2025</p>
               </div>
+            </div>
+          </div>
 
-              <div className="prose prose-lg max-w-none" style={{color: 'var(--foreground)'}}>
+          {/* Content Section */}
+          <div className="py-16">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div 
+                  className="rounded-2xl p-8 md:p-12 shadow-lg"
+                  style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}
+                >
+                  <div className="prose prose-lg max-w-none" style={{color: 'var(--foreground)'}}>
                   <h2>1. What Are Cookies?</h2>
                   <p>Cookies are small text files that are stored on your device when you visit a website. They help websites remember information about your visit, which can make it easier to visit the site again and make the site more useful to you.</p>
 
@@ -192,13 +205,15 @@ export default function CookiePolicyPage() {
                   <h2>9. Links to Other Policies</h2>
                   <p>This Cookie Policy should be read in conjunction with our:</p>
                   <ul>
-                    <li><a href="/privacy-policy">Privacy Policy</a> - How we collect and use your personal information</li>
-                    <li><a href="/terms-of-service">Terms of Service</a> - The terms governing your use of our website</li>
+                    <li><a href="/privacy-policy" style={{color: 'var(--primary)'}}>Privacy Policy</a> - How we collect and use your personal information</li>
+                    <li><a href="/terms-of-service" style={{color: 'var(--primary)'}}>Terms of Service</a> - The terms governing your use of our website</li>
                   </ul>
 
                   <h2>10. Contact Information</h2>
                   <p>If you have any questions about this Cookie Policy or our use of cookies, please contact us at:</p>
-                  <p>Email: <a href="mailto:hello@shairvault.com">hello@shairvault.com</a></p>
+                  <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Footer Link Styles */
+.footer-link {
+  color: var(--muted-foreground);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
+
 /* Article Content Styles */
 .article-content blockquote {
   border-left: 4px solid var(--primary);

@@ -167,4 +167,23 @@ export class BlogService {
       } as BlogPost
     })
   }
+
+  // Get all unique categories from published posts
+  static async getCategories(): Promise<string[]> {
+    const q = query(
+      collection(db, 'posts'),
+      where('published', '==', true)
+    )
+    const querySnapshot = await getDocs(q)
+    const categories = new Set<string>()
+    
+    querySnapshot.docs.forEach(doc => {
+      const data = doc.data()
+      if (data.category) {
+        categories.add(data.category)
+      }
+    })
+    
+    return Array.from(categories).sort()
+  }
 }

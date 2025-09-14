@@ -6,6 +6,7 @@ import { BlogService } from '@/lib/blog-service'
 import { BlogPost } from '@/types/blog'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import RelatedPosts from '@/components/RelatedPosts'
 
 interface BlogPostPageProps {
   params: {
@@ -359,6 +360,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   ← Back to Home
                 </Link>
               </div>
+            </div>
+            
+            {/* Related Posts Section */}
+            <div className="container mx-auto px-4 py-16">
+              <RelatedPosts currentPost={post} limit={3} />
             </div>
           </article>
         </main>

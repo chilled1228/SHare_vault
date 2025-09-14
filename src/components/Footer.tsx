@@ -1,44 +1,79 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Mail, Twitter, Github, Linkedin, Rss } from 'lucide-react'
+import { BlogService } from '@/lib/blog-service'
 
 export default function Footer() {
+  const [categories, setCategories] = useState<string[]>([])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const fetchedCategories = await BlogService.getCategories()
+        setCategories(fetchedCategories.slice(0, 5)) // Show only first 5 categories
+      } catch (error) {
+        console.error('Error fetching categories:', error)
+      }
+    }
+
+    fetchCategories()
+  }, [])
+  // Helper function to convert category name to slug
+  const categoryToSlug = (category: string) => {
+    return category.toLowerCase().replace(/\s+/g, '-')
+  }
+
+  // Helper function to format category display name
+  const formatCategoryName = (category: string) => {
+    return category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')
+  }
+
   return (
-    <footer className="bg-light-neutral text-primary-text border-t border-primary-text/10">
-      <div className="container">
+    <footer style={{backgroundColor: 'var(--card)', borderTop: '1px solid var(--border)'}}>
+      <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="py-12">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="col-span-2 lg:col-span-2">
-              <h3 className="text-xl font-bold mb-4 text-primary-text">ShareVault</h3>
-              <p className="text-secondary-text mb-6 max-w-md">
-                Your go-to destination for insightful articles on web development, design, and technology. 
-                Join our community of passionate developers and designers.
+              <h3 className="text-xl font-bold mb-4" style={{color: 'var(--primary)', fontFamily: 'Anton, sans-serif'}}>
+                Shair Vault
+              </h3>
+              <p className="mb-6 max-w-md" style={{color: 'var(--muted-foreground)'}}>
+                Discover wisdom, inspiration, and motivation through our carefully curated collection of quotes and stories. 
+                Join thousands finding daily inspiration.
               </p>
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
-                  className="p-2 bg-warm-orange/20 text-warm-orange hover:bg-warm-orange/30 rounded-lg transition-colors"
+                  href="https://twitter.com/shairvault" 
+                  className="p-2 rounded-lg transition-colors hover:scale-110"
+                  style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
-                  className="p-2 bg-warm-orange/20 text-warm-orange hover:bg-warm-orange/30 rounded-lg transition-colors"
+                  href="https://github.com/shairvault" 
+                  className="p-2 rounded-lg transition-colors hover:scale-110"
+                  style={{backgroundColor: 'var(--accent-purple-soft)', color: 'var(--primary)'}}
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
-                  className="p-2 bg-warm-orange/20 text-warm-orange hover:bg-warm-orange/30 rounded-lg transition-colors"
+                  href="https://linkedin.com/company/shairvault" 
+                  className="p-2 rounded-lg transition-colors hover:scale-110"
+                  style={{backgroundColor: 'var(--accent-green-soft)', color: 'var(--primary)'}}
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
-                  className="p-2 bg-warm-orange/20 text-warm-orange hover:bg-warm-orange/30 rounded-lg transition-colors"
+                  href="/rss.xml" 
+                  className="p-2 rounded-lg transition-colors hover:scale-110"
+                  style={{backgroundColor: 'var(--accent-pink-soft)', color: 'var(--primary)'}}
                   aria-label="RSS Feed"
                 >
                   <Rss className="w-5 h-5" />
@@ -48,77 +83,87 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4 text-primary-text">Quick Links</h4>
+              <h4 className="font-semibold mb-4" style={{color: 'var(--foreground)'}}>Quick Links</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
+                  <Link href="/" className="footer-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    All Posts
-                  </a>
+                  <Link href="/blog" className="footer-link">
+                    All Stories
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    Categories
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
+                  <Link href="/about" className="footer-link">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
+                  <Link href="/contact" className="footer-link">
                     Contact
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/disclaimer" className="footer-link">
+                    Disclaimer
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Categories */}
+            {/* Dynamic Categories */}
             <div>
-              <h4 className="font-semibold mb-4 text-primary-text">Categories</h4>
+              <h4 className="font-semibold mb-4" style={{color: 'var(--foreground)'}}>Categories</h4>
               <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    Web Development
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    Design
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    React
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    TypeScript
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-secondary-text hover:text-bold-red-orange transition-colors">
-                    Performance
-                  </a>
-                </li>
+                {categories.length > 0 ? (
+                  categories.map((category) => (
+                    <li key={category}>
+                      <Link 
+                        href={`/category/${categoryToSlug(category)}`} 
+                        className="footer-link"
+                      >
+                        {formatCategoryName(category)}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <>
+                    <li>
+                      <Link href="/category/motivation" className="footer-link">
+                        Motivation
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/category/life-wisdom" className="footer-link">
+                        Life Wisdom
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/category/personal-growth" className="footer-link">
+                        Personal Growth
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/category/inspiration" className="footer-link">
+                        Inspiration
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
         </div>
 
         {/* Newsletter Section */}
-        <div className="py-8 border-t border-primary-text/10">
+        <div className="py-8" style={{borderTop: '1px solid var(--border)'}}>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex-1">
-              <h4 className="font-semibold mb-2 text-primary-text">Stay Updated</h4>
-              <p className="text-secondary-text text-sm">
-                Subscribe to our newsletter for the latest articles and updates.
+              <h4 className="font-semibold mb-2" style={{color: 'var(--foreground)'}}>Stay Inspired</h4>
+              <p className="text-sm" style={{color: 'var(--muted-foreground)'}}>
+                Get daily wisdom and motivation delivered to your inbox.
               </p>
             </div>
             <div className="flex-1 md:max-w-md">
@@ -127,11 +172,19 @@ export default function Footer() {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-white/80 border border-primary-text/20 rounded-lg focus:ring-2 focus:ring-warm-orange focus:border-transparent text-primary-text placeholder-secondary-text"
+                    className="w-full px-4 py-3 rounded-lg focus:ring-2 transition-colors"
+                    style={{
+                      backgroundColor: 'var(--background)',
+                      border: '1px solid var(--border)',
+                      color: 'var(--foreground)'
+                    }}
                   />
-                  <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-text" />
+                  <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{color: 'var(--muted-foreground)'}} />
                 </div>
-                <button className="btn bg-bold-red-orange text-white px-6 py-3 whitespace-nowrap hover:bg-opacity-90">
+                <button 
+                  className="px-6 py-3 rounded-lg font-medium text-white transition-colors hover:opacity-90"
+                  style={{background: 'linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%)'}}
+                >
                   Subscribe
                 </button>
               </div>
@@ -140,20 +193,23 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-primary-text/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-secondary-text text-sm">
-            © 2023 ShareVault. All rights reserved.
+        <div className="py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style={{borderTop: '1px solid var(--border)'}}>
+          <p className="text-sm" style={{color: 'var(--muted-foreground)'}}>
+            © 2025 Shair Vault. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6">
-            <a href="/privacy-policy" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            <Link href="/privacy-policy" className="footer-link text-sm">
               Privacy Policy
-            </a>
-            <a href="/terms-of-service" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            </Link>
+            <Link href="/terms-of-service" className="footer-link text-sm">
               Terms of Service
-            </a>
-            <a href="/cookie-policy" className="text-secondary-text hover:text-bold-red-orange text-sm transition-colors">
+            </Link>
+            <Link href="/cookie-policy" className="footer-link text-sm">
               Cookie Policy
-            </a>
+            </Link>
+            <Link href="/disclaimer" className="footer-link text-sm">
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>
