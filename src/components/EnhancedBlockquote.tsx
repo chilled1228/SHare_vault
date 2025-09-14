@@ -16,43 +16,53 @@ export default function EnhancedBlockquote({ content, postTitle, postUrl }: Enha
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(content)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      // Create a temporary element to strip HTML tags
+      const tempEl = document.createElement('div');
+      tempEl.innerHTML = content;
+      const textContent = tempEl.innerText || '';
+
+      await navigator.clipboard.writeText(textContent);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (error) {
       errorHandler.error('Failed to copy text to clipboard', error as Error, {
         component: 'EnhancedBlockquote',
         action: 'copy'
-      })
+      });
     }
-  }
+  };
 
   const handleShare = async () => {
+    // Create a temporary element to strip HTML tags for plain text sharing
+    const tempEl = document.createElement('div');
+    tempEl.innerHTML = content;
+    const textContent = tempEl.innerText || '';
+
     const shareData = {
       title: postTitle ? `Quote from "${postTitle}"` : 'Inspiring Quote',
-      text: content,
+      text: textContent,
       url: postUrl || window.location.href
-    }
+    };
 
     try {
       if (navigator.share) {
-        await navigator.share(shareData)
-        setShared(true)
-        setTimeout(() => setShared(false), 2000)
+        await navigator.share(shareData);
+        setShared(true);
+        setTimeout(() => setShared(false), 2000);
       } else {
         // Fallback to copying share text
-        const shareText = `"${content}"\n\n${shareData.title}\n${shareData.url}`
-        await navigator.clipboard.writeText(shareText)
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
+        const shareText = `"${textContent}"\n\n${shareData.title}\n${shareData.url}`;
+        await navigator.clipboard.writeText(shareText);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
       }
     } catch (error) {
       errorHandler.error('Failed to share content', error as Error, {
         component: 'EnhancedBlockquote',
         action: 'share'
-      })
+      });
     }
-  }
+  };
 
   return (
     <div 
