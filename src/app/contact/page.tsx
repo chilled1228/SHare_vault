@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, getImageUrl, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Shair Vault',
@@ -10,10 +11,10 @@ export const metadata: Metadata = {
     title: 'Contact Us | Shair Vault',
     description: 'Get in touch with Shair Vault. We love hearing from our community and are always here to help.',
     type: 'website',
-    url: 'https://shairvault.com/contact',
+    url: getCanonicalUrl('contact'),
     images: [
       {
-        url: 'https://shairvault.com/og-contact.jpg',
+        url: getImageUrl('og-contact.jpg'),
         width: 1200,
         height: 630,
         alt: 'Contact Shair Vault',
@@ -24,10 +25,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Us | Shair Vault',
     description: 'Get in touch with Shair Vault. We love hearing from our community and are always here to help.',
-    images: ['https://shairvault.com/og-contact.jpg'],
+    images: [getImageUrl('og-contact.jpg')],
   },
   alternates: {
-    canonical: 'https://shairvault.com/contact',
+    canonical: getCanonicalUrl('contact'),
   },
 }
 
@@ -40,13 +41,13 @@ export default function ContactPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Contact",
-        "item": "https://shairvault.com/contact"
+        "item": getCanonicalUrl('contact')
       }
     ]
   }
@@ -95,11 +96,11 @@ export default function ContactPage() {
                       For general inquiries, feedback, or collaboration opportunities
                     </p>
                     <a 
-                      href="mailto:hello@shairvault.com" 
+                      href={`mailto:${SITE_EMAIL}`} 
                       className="inline-block px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-90"
                       style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
                     >
-                      hello@shairvault.com
+                      {SITE_EMAIL}
                     </a>
                   </div>
 

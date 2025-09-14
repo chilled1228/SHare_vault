@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, getImageUrl, BASE_URL, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'Disclaimer | Shair Vault',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Disclaimer | Shair Vault',
     description: 'Read Shair Vault\'s disclaimer regarding the content, accuracy, and usage of information provided on our website.',
     type: 'website',
-    url: 'https://shairvault.com/disclaimer',
+    url: getCanonicalUrl('disclaimer'),
   },
   twitter: {
     card: 'summary_large_image',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Read Shair Vault\'s disclaimer regarding the content, accuracy, and usage of information provided on our website.',
   },
   alternates: {
-    canonical: 'https://shairvault.com/disclaimer',
+    canonical: getCanonicalUrl('disclaimer'),
   },
 }
 
@@ -31,13 +32,13 @@ export default function DisclaimerPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Disclaimer",
-        "item": "https://shairvault.com/disclaimer"
+        "item": getCanonicalUrl('disclaimer')
       }
     ]
   }
@@ -79,7 +80,7 @@ export default function DisclaimerPage() {
                   <div className="prose prose-lg max-w-none" style={{color: 'var(--foreground)'}}>
 
                     <h2>1. General Information</h2>
-                    <p>The information on this website - https://shairvault.com - is provided on an &quot;as is&quot; basis. To the fullest extent permitted by law, this Company:</p>
+                    <p>The information on this website - {BASE_URL} - is provided on an &quot;as is&quot; basis. To the fullest extent permitted by law, this Company:</p>
                     <ul>
                       <li>Excludes all representations and warranties relating to this website and its contents</li>
                       <li>Excludes all liability for damages arising out of or in connection with your use of this website</li>
@@ -164,7 +165,7 @@ export default function DisclaimerPage() {
 
                     <h2>14. Contact Information</h2>
                     <p>If you have any questions about this disclaimer or need clarification on any content, please contact us at:</p>
-                    <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                    <p>Email: <a href={`mailto:${SITE_EMAIL}`} style={{color: 'var(--primary)'}}>{SITE_EMAIL}</a></p>
 
                     <div 
                       className="mt-8 p-4 rounded-lg"

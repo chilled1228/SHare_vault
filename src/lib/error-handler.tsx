@@ -3,6 +3,8 @@
  * Replaces console.log statements with proper error tracking
  */
 
+import React from 'react'
+
 interface ErrorContext {
   component?: string
   action?: string

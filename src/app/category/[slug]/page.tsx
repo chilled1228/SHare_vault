@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { LazyBlogList } from '@/components/PerformanceLoader'
+import { getCanonicalUrl, getCategoryUrl, getImageUrl } from '@/lib/seo-utils'
 
 interface CategoryPageProps {
   params: {
@@ -58,10 +59,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       title: `${category.name} Stories & Quotes | Shair Vault`,
       description: category.description,
       type: 'website',
-      url: `https://shairvault.com/category/${slug}`,
+      url: getCategoryUrl(slug),
       images: [
         {
-          url: `/og-${slug}.jpg`,
+          url: getImageUrl(`og-${slug}.jpg`),
           width: 1200,
           height: 630,
           alt: `${category.name} - Shair Vault`,
@@ -72,10 +73,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       card: 'summary_large_image',
       title: `${category.name} Stories & Quotes | Shair Vault`,
       description: category.description,
-      images: [`/og-${slug}.jpg`],
+      images: [getImageUrl(`og-${slug}.jpg`)],
     },
     alternates: {
-      canonical: `https://shairvault.com/category/${slug}`,
+      canonical: getCategoryUrl(slug),
     },
   }
 }
@@ -96,19 +97,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Categories",
-        "item": "https://shairvault.com/categories"
+        "item": getCanonicalUrl('categories')
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": category.name,
-        "item": `https://shairvault.com/category/${slug}`
+        "item": getCategoryUrl(slug)
       }
     ]
   }
@@ -118,7 +119,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     "@type": "CollectionPage",
     "name": `${category.name} Stories & Quotes`,
     "description": category.description,
-    "url": `https://shairvault.com/category/${slug}`,
+    "url": getCategoryUrl(slug),
     "mainEntity": {
       "@type": "ItemList",
       "name": `${category.name} Articles`,

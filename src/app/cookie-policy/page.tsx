@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | ShareVault',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Cookie Policy | ShareVault',
     description: 'Learn how ShareVault uses cookies and similar technologies to enhance your browsing experience.',
     type: 'website',
-    url: 'https://shairvault.com/cookie-policy',
+    url: getCanonicalUrl('cookie-policy'),
   },
   twitter: {
     card: 'summary_large_image',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Learn how ShareVault uses cookies and similar technologies to enhance your browsing experience.',
   },
   alternates: {
-    canonical: 'https://shairvault.com/cookie-policy',
+    canonical: getCanonicalUrl('cookie-policy'),
   },
 }
 
@@ -31,13 +32,13 @@ export default function CookiePolicyPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Cookie Policy",
-        "item": "https://shairvault.com/cookie-policy"
+        "item": getCanonicalUrl('cookie-policy')
       }
     ]
   }
@@ -211,7 +212,7 @@ export default function CookiePolicyPage() {
 
                   <h2>10. Contact Information</h2>
                   <p>If you have any questions about this Cookie Policy or our use of cookies, please contact us at:</p>
-                  <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                  <p>Email: <a href={`mailto:${SITE_EMAIL}`} style={{color: 'var(--primary)'}}>{SITE_EMAIL}</a></p>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { getCanonicalUrl, getImageUrl, getBlogUrl } from '@/lib/seo-utils'
 import { BlogService } from '@/lib/blog-service'
 import { BlogPost } from '@/types/blog'
 import Header from '@/components/Header'
@@ -13,10 +14,10 @@ export const metadata: Metadata = {
     title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
     description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
     type: 'website',
-    url: 'https://shairvault.com/blog',
+    url: getBlogUrl(),
     images: [
       {
-        url: '/og-image-blog.jpg',
+        url: getImageUrl('og-image-blog.jpg'),
         width: 1200,
         height: 630,
         alt: 'Shair Vault Blog - Inspiring Stories and Life Wisdom',
@@ -27,10 +28,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
     description: 'Read inspiring stories, life wisdom, and personal growth articles.',
-    images: ['/og-image-blog.jpg'],
+    images: [getImageUrl('og-image-blog.jpg')],
   },
   alternates: {
-    canonical: 'https://shairvault.com/blog',
+    canonical: getBlogUrl(),
   },
 }
 
@@ -54,13 +55,13 @@ export default async function BlogPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://shairvault.com/blog"
+        "item": getBlogUrl()
       }
     ]
   }
@@ -70,11 +71,11 @@ export default async function BlogPage() {
     "@type": "Blog",
     "name": "Shair Vault Blog",
     "description": "Read inspiring stories, life wisdom, and personal growth articles.",
-    "url": "https://shairvault.com/blog",
+    "url": getBlogUrl(),
     "publisher": {
       "@type": "Organization",
       "name": "Shair Vault",
-      "url": "https://shairvault.com"
+      "url": getCanonicalUrl()
     },
     "inLanguage": "en-US"
   }

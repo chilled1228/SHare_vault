@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
+import { getCanonicalUrl } from '@/lib/seo-utils'
 import EnhancedBlockquote from './EnhancedBlockquote'
 
 interface BlogContentRendererProps {
@@ -10,7 +11,7 @@ interface BlogContentRendererProps {
 }
 
 export default function BlogContentRenderer({ content, postTitle, postSlug }: BlogContentRendererProps) {
-  const postUrl = `https://shairvault.com/${postSlug}`
+  const postUrl = getCanonicalUrl(postSlug)
 
   const renderedContent = useMemo(() => {
     // Extract both markdown and HTML blockquotes
@@ -28,7 +29,7 @@ export default function BlogContentRenderer({ content, postTitle, postSlug }: Bl
     // Extract HTML blockquotes and preserve structure
     while ((match = htmlBlockquoteRegex.exec(content)) !== null) {
       // Keep the HTML structure but clean up formatting
-      let cleanContent = match[1]
+      const cleanContent = match[1]
         .replace(/\s+/g, ' ') // Normalize whitespace
         .trim()
       blockquotes.push(cleanContent)
@@ -42,7 +43,7 @@ export default function BlogContentRenderer({ content, postTitle, postSlug }: Bl
 
     // Replace HTML blockquotes with placeholders
     processedContent = processedContent.replace(htmlBlockquoteRegex, (match, quote) => {
-      let cleanContent = quote
+      const cleanContent = quote
         .replace(/\s+/g, ' ')
         .trim()
       const index = blockquotes.indexOf(cleanContent)

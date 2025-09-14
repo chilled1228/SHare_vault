@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | ShareVault',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | ShareVault',
     description: 'Learn how ShareVault collects, uses, and protects your personal information.',
     type: 'website',
-    url: 'https://shairvault.com/privacy-policy',
+    url: getCanonicalUrl('privacy-policy'),
   },
   twitter: {
     card: 'summary_large_image',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Learn how ShareVault collects, uses, and protects your personal information.',
   },
   alternates: {
-    canonical: 'https://shairvault.com/privacy-policy',
+    canonical: getCanonicalUrl('privacy-policy'),
   },
 }
 
@@ -31,13 +32,13 @@ export default function PrivacyPolicyPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Privacy Policy",
-        "item": "https://shairvault.com/privacy-policy"
+        "item": getCanonicalUrl('privacy-policy')
       }
     ]
   }
@@ -145,7 +146,7 @@ export default function PrivacyPolicyPage() {
 
                   <h2>10. Contact Information</h2>
                   <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-                  <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                  <p>Email: <a href={`mailto:${SITE_EMAIL}`} style={{color: 'var(--primary)'}}>{SITE_EMAIL}</a></p>
                   </div>
                 </div>
               </div>

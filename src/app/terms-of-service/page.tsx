@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'Terms of Service | ShareVault',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Terms of Service | ShareVault',
     description: 'Read ShareVault\'s Terms of Service that govern your use of our website and services.',
     type: 'website',
-    url: 'https://shairvault.com/terms-of-service',
+    url: getCanonicalUrl('terms-of-service'),
   },
   twitter: {
     card: 'summary_large_image',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Read ShareVault\'s Terms of Service that govern your use of our website and services.',
   },
   alternates: {
-    canonical: 'https://shairvault.com/terms-of-service',
+    canonical: getCanonicalUrl('terms-of-service'),
   },
 }
 
@@ -31,13 +32,13 @@ export default function TermsOfServicePage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Terms of Service",
-        "item": "https://shairvault.com/terms-of-service"
+        "item": getCanonicalUrl('terms-of-service')
       }
     ]
   }
@@ -177,7 +178,7 @@ export default function TermsOfServicePage() {
 
                   <h2>17. Contact Information</h2>
                   <p>If you have any questions about these Terms of Service, please contact us at:</p>
-                  <p>Email: <a href="mailto:hello@shairvault.com" style={{color: 'var(--primary)'}}>hello@shairvault.com</a></p>
+                  <p>Email: <a href={`mailto:${SITE_EMAIL}`} style={{color: 'var(--primary)'}}>{SITE_EMAIL}</a></p>
                   </div>
                 </div>
               </div>

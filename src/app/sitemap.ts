@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { BlogService } from '@/lib/blog-service'
+import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://shairvault.com'
+  const baseUrl = getCanonicalUrl()
   
   // Static pages
   const staticPages = [

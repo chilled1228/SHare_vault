@@ -8,7 +8,7 @@ export async function seedAdminUser() {
   
   try {
     await setDoc(doc(db, 'admins', adminUid), {
-      email: 'admin@shairvault.com',
+      email: 'blog.boopul@gmail.com',
       role: 'admin',
       createdAt: new Date(),
       permissions: ['read', 'write', 'delete']

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getCanonicalUrl, getImageUrl, BASE_URL, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'About Us | Shair Vault',
@@ -10,10 +11,10 @@ export const metadata: Metadata = {
     title: 'About Us | Shair Vault',
     description: 'Learn about Shair Vault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
     type: 'website',
-    url: 'https://shairvault.com/about',
+    url: getCanonicalUrl('about'),
     images: [
       {
-        url: 'https://shairvault.com/og-about.jpg',
+        url: getImageUrl('og-about.jpg'),
         width: 1200,
         height: 630,
         alt: 'About Shair Vault - Inspiration & Motivation',
@@ -24,10 +25,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Us | Shair Vault',
     description: 'Learn about Shair Vault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
-    images: ['https://shairvault.com/og-about.jpg'],
+    images: [getImageUrl('og-about.jpg')],
   },
   alternates: {
-    canonical: 'https://shairvault.com/about',
+    canonical: getCanonicalUrl('about'),
   },
 }
 
@@ -40,13 +41,13 @@ export default function AboutPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": "https://shairvault.com/about"
+        "item": getCanonicalUrl('about')
       }
     ]
   }
@@ -55,7 +56,7 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Shair Vault",
-    "url": "https://shairvault.com",
+    "url": BASE_URL,
     "description": "Your trusted destination for inspiring quotes, motivational stories, and life wisdom to fuel your personal growth journey.",
     "sameAs": [
       "https://twitter.com/shairvault",
@@ -229,7 +230,7 @@ export default function AboutPage() {
                     Have a question, suggestion, or just want to share your story? We&apos;d love to hear from you.
                   </p>
                   <a 
-                    href="mailto:hello@shairvault.com" 
+                    href={`mailto:${SITE_EMAIL}`} 
                     className="inline-block px-8 py-3 rounded-lg text-white font-medium transition-colors hover:opacity-90"
                     style={{background: 'linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%)'}}
                   >

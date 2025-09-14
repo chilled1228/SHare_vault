@@ -210,6 +210,9 @@ export default function Footer() {
             <Link href="/disclaimer" className="footer-link text-sm">
               Disclaimer
             </Link>
+            <Link href="/dmca" className="footer-link text-sm">
+              DMCA
+            </Link>
           </div>
         </div>
       </div>

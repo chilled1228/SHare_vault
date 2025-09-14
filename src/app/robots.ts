@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://shairvault.com'
+  const baseUrl = getCanonicalUrl()
 
   return {
     rules: [

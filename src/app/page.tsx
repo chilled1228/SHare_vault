@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { getCanonicalUrl, getImageUrl } from '@/lib/seo-utils'
 import Header from '@/components/Header'
 import FeaturedSection from '@/components/FeaturedSection'
 import { LazyBlogList } from '@/components/PerformanceLoader'
@@ -12,10 +13,10 @@ export const metadata: Metadata = {
     title: 'Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth',
     description: 'Discover inspiring stories, life wisdom, and personal growth insights. Read thought-provoking articles on motivation, self-improvement, mindfulness, and life philosophy.',
     type: 'website',
-    url: 'https://shairvault.com',
+    url: getCanonicalUrl(),
     images: [
       {
-        url: '/og-image-home.jpg',
+        url: getImageUrl('og-image-home.jpg'),
         width: 1200,
         height: 630,
         alt: 'Shair Vault - Your source for inspiring stories and life wisdom',
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth',
     description: 'Discover inspiring stories, life wisdom, and personal growth insights.',
-    images: ['/og-image-home.jpg'],
+    images: [getImageUrl('og-image-home.jpg')],
   },
   alternates: {
-    canonical: 'https://shairvault.com',
+    canonical: getCanonicalUrl(),
   },
 }
 
@@ -42,7 +43,7 @@ export default function Home() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shairvault.com"
+        "item": getCanonicalUrl()
       }
     ]
   }

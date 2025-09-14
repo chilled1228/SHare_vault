@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shairvault.com/sitemap.xml
+Sitemap: https://sharevault.in/sitemap.xml
 
 # Block admin areas
 Disallow: /admin/

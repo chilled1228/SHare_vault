@@ -4,10 +4,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BlogService } from '@/lib/blog-service'
 import { BlogPost } from '@/types/blog'
+import { getCanonicalUrl, getRobotsMeta } from '@/lib/seo-utils'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import RelatedPosts from '@/components/RelatedPosts'
 import BlogContentRenderer from '@/components/BlogContentRenderer'
+import PersonSchema from '@/components/PersonSchema'
 
 interface BlogPostPageProps {
   params: {
@@ -47,30 +49,23 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
+  const canonicalUrl = getCanonicalUrl(post.slug)
+  const robotsMeta = getRobotsMeta(`/${post.slug}`)
+  
   return {
     title: `${post.title}`,
     description: post.excerpt,
     keywords: post.tags,
-    authors: [{ name: post.authorName, url: `https://shairvault.com/author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}` }],
+    authors: [{ name: post.authorName, url: `${getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`)}` }],
     category: post.category,
     creator: post.authorName,
     publisher: 'Shair Vault',
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    robots: robotsMeta,
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://shairvault.com/${post.slug}`,
+      url: canonicalUrl,
       siteName: 'Shair Vault',
       locale: 'en_US',
       authors: [post.authorName],
@@ -88,7 +83,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         }
       ] : [
         {
-          url: 'https://shairvault.com/og-image-blog.jpg',
+          url: `${getCanonicalUrl('og-image-blog.jpg')}`,
           width: 1200,
           height: 630,
           alt: `${post.title} - Shair Vault`,
@@ -109,13 +104,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         }
       ] : [
         {
-          url: 'https://shairvault.com/og-image-blog.jpg',
+          url: `${getCanonicalUrl('og-image-blog.jpg')}`,
           alt: `${post.title} - Shair Vault`,
         }
       ],
     },
     alternates: {
-      canonical: `https://shairvault.com/${post.slug}`,
+      canonical: canonicalUrl,
     },
     other: {
       'article:author': post.authorName,
@@ -135,6 +130,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  const canonicalUrl = getCanonicalUrl(post.slug)
+
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
@@ -151,43 +148,106 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     image: post.imageUrl ? {
       '@type': 'ImageObject',
       url: post.imageUrl,
-      width: 800,
-      height: 600
+      width: 1200,
+      height: 630,
+      caption: post.title
     } : undefined,
     author: {
       '@type': 'Person',
       name: post.authorName,
-      url: `https://shairvault.com/author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`
+      url: getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`),
+      knowsAbout: [post.category, 'inspiration', 'life wisdom', 'personal growth']
     },
     publisher: {
       '@type': 'Organization',
       name: 'Shair Vault',
-      url: 'https://shairvault.com',
+      url: getCanonicalUrl(),
       logo: {
         '@type': 'ImageObject',
-        url: 'https://shairvault.com/logo.png'
-      }
+        url: getCanonicalUrl('logo.png'),
+        width: 400,
+        height: 400
+      },
+      sameAs: [
+        'https://twitter.com/shairvault',
+        'https://instagram.com/shairvault'
+      ]
     },
     datePublished: post.createdAt.toISOString(),
     dateModified: post.updatedAt.toISOString(),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://shairvault.com/${post.slug}`,
+      '@id': canonicalUrl,
+      lastReviewed: post.updatedAt.toISOString()
     },
-    keywords: post.tags,
+    keywords: post.tags.join(', '),
     articleSection: post.category,
     wordCount: post.content.split(' ').length,
     timeRequired: `PT${post.readTime}M`,
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'Blog',
-      '@id': 'https://shairvault.com/blog',
-      name: 'Shair Vault Blog'
+      '@id': getCanonicalUrl('blog'),
+      name: 'Shair Vault Blog',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Shair Vault'
+      }
     },
     about: {
       '@type': 'Thing',
-      name: post.category
-    }
+      name: post.category,
+      description: `Content related to ${post.category.toLowerCase()} and personal development`
+    },
+    accessibilityAPI: 'ARIA',
+    accessibilityControl: ['fullKeyboardControl', 'fullMouseControl'],
+    accessibilityFeature: ['alternativeText', 'readingOrder'],
+    accessibilityHazard: 'none',
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'General Public'
+    },
+    citation: post.tags.map(tag => `#${tag}`),
+    commentCount: 0,
+    discusses: post.tags.map(tag => ({
+      '@type': 'Thing',
+      name: tag
+    })),
+    educationalLevel: 'Beginner',
+    genre: post.category,
+    isAccessibleForFree: true,
+    isFamilyFriendly: true,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    potentialAction: {
+      '@type': 'ReadAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: canonicalUrl,
+        inLanguage: 'en-US'
+      }
+    },
+    spatialCoverage: {
+      '@type': 'Place',
+      name: 'Worldwide'
+    },
+    temporalCoverage: '2024/Present',
+    thumbnailUrl: post.imageUrl || getCanonicalUrl('og-image-blog.jpg'),
+    translationOfWork: {
+      '@type': 'CreativeWork',
+      name: post.title
+    },
+    workTranslation: [
+      {
+        '@type': 'CreativeWork',
+        inLanguage: 'en-GB',
+        name: post.title
+      },
+      {
+        '@type': 'CreativeWork',
+        inLanguage: 'en-CA',
+        name: post.title
+      }
+    ]
   }
 
   const breadcrumbSchema = {
@@ -198,19 +258,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://shairvault.com'
+        item: getCanonicalUrl()
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://shairvault.com/blog'
+        item: getCanonicalUrl('blog')
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://shairvault.com/${post.slug}`
+        item: canonicalUrl
       }
     ]
   }
@@ -224,6 +284,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      
+      {/* Person Schema for author */}
+      <PersonSchema
+        name={post.authorName}
+        description={`Passionate writer sharing insights about ${post.category.toLowerCase()}, inspiration, and life wisdom.`}
+        url={getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`)}
+        jobTitle="Content Writer"
+        worksFor="Shair Vault"
       />
       
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
