@@ -71,7 +71,7 @@ export default function RelatedPosts({ currentPost, limit = 3 }: RelatedPostsPro
   return (
     <section className="mt-16">
       <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{color: 'var(--primary)'}}>
-        ✨ Related Stories You'll Love
+        ✨ Related Stories You&apos;ll Love
       </h2>
       
       <div className="grid md:grid-cols-3 gap-6">

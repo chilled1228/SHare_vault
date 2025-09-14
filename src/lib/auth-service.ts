@@ -9,7 +9,7 @@ import {
   createUserWithEmailAndPassword,
   getIdTokenResult,
 } from 'firebase/auth'
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore'
+import { doc, getDoc, setDoc, serverTimestamp, updateDoc, collection, getDocs } from 'firebase/firestore'
 import { auth, db } from '@/lib/firebase'
 
 export interface AdminUser {
@@ -136,6 +136,9 @@ class AuthService {
         throw new Error('Access denied: Admin privileges required')
       } */
 
+      if (!adminUser) {
+        throw new Error('Failed to create user profile')
+      }
       return adminUser
     } catch (error: any) {
       console.error('Google sign-in error:', error)
@@ -174,6 +177,9 @@ class AuthService {
         throw new Error('Access denied: Admin privileges required')
       } */
 
+      if (!adminUser) {
+        throw new Error('Failed to create user profile')
+      }
       return adminUser
     } catch (error: any) {
       console.error('Email sign-in error:', error)

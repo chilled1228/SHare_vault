@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import FeaturedSection from '@/components/FeaturedSection'
-import BlogList from '@/components/BlogList'
+import { LazyBlogList } from '@/components/PerformanceLoader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -63,8 +63,8 @@ export default function Home() {
             <FeaturedSection />
           </div>
 
-          {/* All Blog Posts */}
-          <BlogList />
+          {/* All Blog Posts - Lazy loaded */}
+          <LazyBlogList limit={12} />
         </main>
 
         <Footer />

@@ -146,7 +146,7 @@ function AdminManagementPageContent() {
                           <div className="text-sm font-medium text-gray-900">
                             {userData.displayName || 'Unknown'}
                             {userData.id === user?.uid && (
-                              <Crown className="inline ml-1 w-4 h-4 text-yellow-500" title="You" />
+                              <Crown className="inline ml-1 w-4 h-4 text-yellow-500" />
                             )}
                           </div>
                           <div className="text-xs text-gray-500">

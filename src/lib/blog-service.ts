@@ -55,13 +55,13 @@ export class BlogService {
     }
   }
 
-  static async getFeaturedPosts(): Promise<BlogPost[]> {
+  static async getFeaturedPosts(limitCount = 3): Promise<BlogPost[]> {
     const q = query(
       collection(db, 'posts'),
       where('featured', '==', true),
       where('published', '==', true),
       orderBy('createdAt', 'desc'),
-      limit(3)
+      limit(limitCount)
     )
     const querySnapshot = await getDocs(q)
     return querySnapshot.docs.map(doc => {
@@ -148,12 +148,13 @@ export class BlogService {
     await deleteObject(storageRef)
   }
 
-  static async getPostsByCategory(category: string): Promise<BlogPost[]> {
+  static async getPostsByCategory(category: string, limitCount = 20): Promise<BlogPost[]> {
     const q = query(
       collection(db, 'posts'),
       where('category', '==', category),
       where('published', '==', true),
-      orderBy('createdAt', 'desc')
+      orderBy('createdAt', 'desc'),
+      limit(limitCount)
     )
     const querySnapshot = await getDocs(q)
     return querySnapshot.docs.map(doc => {

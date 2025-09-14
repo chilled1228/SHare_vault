@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { useAuth } from '@/lib/auth-context'
 import { Eye, EyeOff, Shield, Lock, Mail, Chrome } from 'lucide-react'
 
@@ -170,9 +171,9 @@ export default function AdminLoginPage() {
         <div className="mt-6 text-center text-sm text-gray-500">
           <p>
             Return to{' '}
-            <a href="/" className="text-blue-600 hover:text-blue-500">
+            <Link href="/" className="text-blue-600 hover:text-blue-500">
               main site
-            </a>
+            </Link>
           </p>
         </div>
       </div>

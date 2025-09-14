@@ -2,8 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import BlogList from '@/components/BlogList'
-import { BlogService } from '@/lib/blog-service'
+import { LazyBlogList } from '@/components/PerformanceLoader'
 
 interface CategoryPageProps {
   params: {
@@ -173,7 +172,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
           {/* Category Posts */}
           <div className="py-12">
-            <BlogList category={slug} />
+            <LazyBlogList category={slug} limit={20} />
           </div>
         </main>
 
