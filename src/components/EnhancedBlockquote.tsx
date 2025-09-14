@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Copy, Share2, Check, Quote } from 'lucide-react'
+import { errorHandler } from '@/lib/error-handler'
 
 interface EnhancedBlockquoteProps {
   content: string
@@ -19,7 +20,10 @@ export default function EnhancedBlockquote({ content, postTitle, postUrl }: Enha
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (error) {
-      console.error('Failed to copy:', error)
+      errorHandler.error('Failed to copy text to clipboard', error as Error, {
+        component: 'EnhancedBlockquote',
+        action: 'copy'
+      })
     }
   }
 
@@ -43,7 +47,10 @@ export default function EnhancedBlockquote({ content, postTitle, postUrl }: Enha
         setTimeout(() => setCopied(false), 2000)
       }
     } catch (error) {
-      console.error('Failed to share:', error)
+      errorHandler.error('Failed to share content', error as Error, {
+        component: 'EnhancedBlockquote',
+        action: 'share'
+      })
     }
   }
 

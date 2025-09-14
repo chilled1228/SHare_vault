@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
+import { errorHandler } from '@/lib/error-handler'
 
 interface RelatedPostsProps {
   currentPost: BlogPost
@@ -32,7 +33,11 @@ export default function RelatedPosts({ currentPost, limit = 3 }: RelatedPostsPro
         
         setRelatedPosts(filtered)
       } catch (error) {
-        console.error('Error fetching related posts:', error)
+        errorHandler.error('Error fetching related posts', error as Error, {
+          component: 'RelatedPosts',
+          action: 'fetchRelatedPosts',
+          metadata: { currentPostId: currentPost.id }
+        })
       } finally {
         setLoading(false)
       }

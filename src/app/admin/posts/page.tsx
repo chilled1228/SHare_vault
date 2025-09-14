@@ -8,6 +8,7 @@ import AdminLayout from '@/components/admin/AdminLayout'
 import { AuthProvider } from '@/lib/auth-context'
 import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 import { Edit, Trash2, Eye, Plus, Search, Filter } from 'lucide-react'
+import { errorHandler } from '@/lib/error-handler'
 
 function PostsManagementPageContent() {
   const router = useRouter()
@@ -36,7 +37,10 @@ function PostsManagementPageContent() {
       const allPosts = await BlogService.getAllPosts(100)
       setPosts(allPosts)
     } catch (error) {
-      console.error('Error fetching posts:', error)
+      errorHandler.error('Error fetching posts', error as Error, {
+        component: 'PostsManagementPage',
+        action: 'fetchPosts'
+      })
       setPosts([])
     } finally {
       setLoading(false)
@@ -73,7 +77,11 @@ function PostsManagementPageContent() {
       setPosts(posts.filter(post => post.id !== deleteModal.post!.id))
       setDeleteModal({ open: false, post: undefined })
     } catch (error) {
-      console.error('Error deleting post:', error)
+      errorHandler.error('Error deleting post', error as Error, {
+        component: 'PostsManagementPage',
+        action: 'deletePost',
+        metadata: { postId: deleteModal.post.id }
+      })
     }
   }
 
@@ -86,7 +94,11 @@ function PostsManagementPageContent() {
         p.id === post.id ? { ...p, published: !p.published } : p
       ))
     } catch (error) {
-      console.error('Error toggling publish status:', error)
+      errorHandler.error('Error toggling publish status', error as Error, {
+        component: 'PostsManagementPage',
+        action: 'togglePublish',
+        metadata: { postId: post.id }
+      })
     }
   }
 
@@ -99,7 +111,11 @@ function PostsManagementPageContent() {
         p.id === post.id ? { ...p, featured: !p.featured } : p
       ))
     } catch (error) {
-      console.error('Error toggling featured status:', error)
+      errorHandler.error('Error toggling featured status', error as Error, {
+        component: 'PostsManagementPage',
+        action: 'toggleFeatured',
+        metadata: { postId: post.id }
+      })
     }
   }
 

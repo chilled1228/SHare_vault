@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth'
 import { doc, getDoc, setDoc, serverTimestamp, updateDoc, collection, getDocs } from 'firebase/firestore'
 import { auth, db } from '@/lib/firebase'
+import { errorHandler } from '@/lib/error-handler'
 
 export interface AdminUser {
   uid: string
@@ -78,7 +79,11 @@ class AuthService {
       
       return false
     } catch (error) {
-      console.error('Error checking admin status:', error)
+      errorHandler.error('Error checking admin status', error as Error, {
+        component: 'AuthService',
+        action: 'isAdminUser',
+        metadata: { uid: firebaseUser.uid }
+      })
       return false
     }
   }
@@ -141,7 +146,10 @@ class AuthService {
       }
       return adminUser
     } catch (error: any) {
-      console.error('Google sign-in error:', error)
+      errorHandler.error('Google sign-in error', error as Error, {
+        component: 'AuthService',
+        action: 'signInWithGoogle'
+      })
 
       if (error.code === 'auth/popup-closed-by-user') {
         throw new Error('Sign-in was cancelled')
@@ -182,7 +190,11 @@ class AuthService {
       }
       return adminUser
     } catch (error: any) {
-      console.error('Email sign-in error:', error)
+      errorHandler.error('Email sign-in error', error as Error, {
+        component: 'AuthService',
+        action: 'signInWithEmail',
+        metadata: { email }
+      })
 
       if (
         error.code === 'auth/user-not-found' ||
@@ -204,7 +216,10 @@ class AuthService {
     try {
       await signOut(auth)
     } catch (error) {
-      console.error('Sign-out error:', error)
+      errorHandler.error('Sign-out error', error as Error, {
+        component: 'AuthService',
+        action: 'signOut'
+      })
       throw new Error('Failed to sign out')
     }
   }
@@ -254,7 +269,11 @@ class AuthService {
         updatedAt: serverTimestamp()
       })
     } catch (error) {
-      console.error('Error granting admin access:', error)
+      errorHandler.error('Error granting admin access', error as Error, {
+        component: 'AuthService',
+        action: 'grantAdminAccess',
+        metadata: { uid }
+      })
       throw error
     }
   }
@@ -268,7 +287,11 @@ class AuthService {
         updatedAt: serverTimestamp()
       })
     } catch (error) {
-      console.error('Error revoking admin access:', error)
+      errorHandler.error('Error revoking admin access', error as Error, {
+        component: 'AuthService',
+        action: 'revokeAdminAccess',
+        metadata: { uid }
+      })
       throw error
     }
   }
@@ -283,7 +306,10 @@ class AuthService {
         ...doc.data()
       }))
     } catch (error) {
-      console.error('Error getting all users:', error)
+      errorHandler.error('Error getting all users', error as Error, {
+        component: 'AuthService',
+        action: 'getAllUsers'
+      })
       throw error
     }
   }

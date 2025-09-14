@@ -2,6 +2,7 @@ import { collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, query, 
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage'
 import { db, storage } from '@/lib/firebase'
 import { BlogPost, MediaFile } from '@/types/blog'
+import { errorHandler } from '@/lib/error-handler'
 
 export class BlogService {
   static async createPost(post: Omit<BlogPost, 'id' | 'createdAt' | 'updatedAt'>): Promise<string> {
@@ -50,7 +51,11 @@ export class BlogService {
         } as BlogPost
       })
     } catch (error) {
-      console.error('Error in getAllPosts:', error)
+      errorHandler.error('Error in getAllPosts', error as Error, {
+        component: 'BlogService',
+        action: 'getAllPosts',
+        metadata: { limitCount }
+      })
       throw error
     }
   }
@@ -247,7 +252,11 @@ export class BlogService {
       // Slug already exists
       return false
     } catch (error) {
-      console.error('Error checking slug uniqueness:', error)
+      errorHandler.error('Error checking slug uniqueness', error as Error, {
+        component: 'BlogService',
+        action: 'isSlugUnique',
+        metadata: { slug, excludeId }
+      })
       // If there's an error, allow the slug (fail safe)
       return true
     }

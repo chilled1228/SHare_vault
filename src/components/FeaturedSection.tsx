@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
+import { errorHandler } from '@/lib/error-handler'
 
 export default function FeaturedSection() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -12,17 +13,19 @@ export default function FeaturedSection() {
 
   useEffect(() => {
     const fetchFeaturedPosts = async () => {
-      let postsLength = 0
       try {
-        console.log('FeaturedSection: Starting to fetch featured posts...')
         const fetchedPosts = await BlogService.getFeaturedPosts()
-        postsLength = fetchedPosts.length
-        console.log('FeaturedSection: Fetched posts:', postsLength, fetchedPosts)
         setPosts(fetchedPosts)
+        errorHandler.success('Featured posts loaded successfully', {
+          component: 'FeaturedSection',
+          metadata: { postsCount: fetchedPosts.length }
+        })
       } catch (err) {
-        console.error('FeaturedSection: Error fetching featured posts:', err)
+        errorHandler.error('Failed to fetch featured posts', err as Error, {
+          component: 'FeaturedSection',
+          action: 'fetchFeaturedPosts'
+        })
       } finally {
-        console.log('FeaturedSection: Setting loading to false, posts length:', postsLength)
         setLoading(false)
       }
     }
@@ -30,10 +33,7 @@ export default function FeaturedSection() {
     fetchFeaturedPosts()
   }, [])
 
-  console.log('FeaturedSection render: loading =', loading, 'posts.length =', posts.length)
-  
   if (loading) {
-    console.log('FeaturedSection: Rendering loading state')
     return (
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -53,7 +53,6 @@ export default function FeaturedSection() {
   }
 
   if (posts.length === 0) {
-    console.log('FeaturedSection: Rendering no posts state')
     return (
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -72,7 +71,6 @@ export default function FeaturedSection() {
   }
 
   const currentSlide = posts[activeSlide]
-  console.log('FeaturedSection: Rendering main content, currentSlide:', currentSlide?.title)
 
   return (
     <section className="py-12 md:py-20">
