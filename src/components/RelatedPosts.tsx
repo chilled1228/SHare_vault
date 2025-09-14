@@ -77,7 +77,7 @@ export default function RelatedPosts({ currentPost, limit = 3 }: RelatedPostsPro
       <div className="grid md:grid-cols-3 gap-6">
         {relatedPosts.map((post) => (
           <article key={post.id} className="group">
-            <Link href={`/blog/${post.slug}`}>
+            <Link href={`/${post.slug}`}>
               <div 
                 className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1"
                 style={{backgroundColor: 'var(--card)', border: '1px solid var(--border)'}}

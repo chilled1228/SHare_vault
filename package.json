@@ -11,6 +11,7 @@
     "perf": "npm run build && npm run start"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.888.0",
     "critters": "^0.0.23",
     "dotenv": "^17.2.2",
     "firebase": "^12.2.1",

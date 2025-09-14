@@ -24,7 +24,7 @@ const BlogPostCard = memo(function BlogPostCard({
     }).format(date)
   }
   return (
-    <Link href={`/blog/${post.slug}`} className="block">
+    <Link href={`/${post.slug}`} className="block">
       <div className="max-w-sm w-full bg-card rounded-xl overflow-hidden border group cursor-pointer transition-all duration-300 hover:border-warm-orange/60 hover:shadow-md flex flex-col" style={{ borderColor: '#1a1a1a' }}>
         {/* Image Section */}
         <div className="relative p-3">

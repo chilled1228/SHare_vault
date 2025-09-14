@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import { BlogPost } from '@/types/blog'
 import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
@@ -9,7 +9,7 @@ import { AuthProvider } from '@/lib/auth-context'
 import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
 import { authService } from '@/lib/auth-service'
 import MediaUpload from '@/components/admin/MediaUpload'
-import { Save, Eye, X, Upload, FileText, Globe } from 'lucide-react'
+import { Save, Eye, X, Upload, FileText, Globe, ArrowLeft } from 'lucide-react'
 
 interface PostFormData {
   title: string
@@ -40,14 +40,19 @@ interface AdminUser {
   isAdmin: boolean
 }
 
-function CreatePostPageContent() {
+function EditPostPageContent() {
   const router = useRouter()
+  const params = useParams()
+  const postId = params.id as string
+  
   const [loading, setLoading] = useState(false)
+  const [pageLoading, setPageLoading] = useState(true)
   const [adminUsers, setAdminUsers] = useState<AdminUser[]>([])
   const [loadingAdmins, setLoadingAdmins] = useState(true)
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([])
   const [slugValidation, setSlugValidation] = useState<{ isValid: boolean; message: string }>({ isValid: true, message: '' })
   const [isSlugManuallyEdited, setIsSlugManuallyEdited] = useState(false)
+  const [originalPost, setOriginalPost] = useState<BlogPost | null>(null)
   const [formData, setFormData] = useState<PostFormData>({
     title: '',
     slug: '',
@@ -64,6 +69,60 @@ function CreatePostPageContent() {
   })
   const [tagInput, setTagInput] = useState('')
   const [error, setError] = useState('')
+
+  const categories = [
+    'Motivation',
+    'Wisdom',
+    'Love & Relationships',
+    'Humor',
+    'Daily Inspiration',
+    'Success',
+    'Life Lessons',
+    'Philosophy'
+  ]
+
+  // Load the post data
+  useEffect(() => {
+    const loadPost = async () => {
+      try {
+        const post = await BlogService.getPostById(postId)
+        if (!post) {
+          setError('Post not found')
+          return
+        }
+
+        setOriginalPost(post)
+        setFormData({
+          title: post.title,
+          slug: post.slug,
+          content: post.content,
+          excerpt: post.excerpt,
+          authorId: post.authorId,
+          authorName: post.authorName,
+          category: post.category,
+          tags: post.tags,
+          featured: post.featured,
+          published: post.published,
+          imageUrl: post.imageUrl || '',
+          readTime: post.readTime
+        })
+
+        // Check if slug has been manually edited by comparing with generated slug
+        const generatedSlug = generateSlug(post.title)
+        setIsSlugManuallyEdited(post.slug !== generatedSlug)
+
+      } catch (error) {
+        console.error('Error loading post:', error)
+        setError('Failed to load post')
+      } finally {
+        setPageLoading(false)
+      }
+    }
+
+    if (postId) {
+      loadPost()
+    }
+  }, [postId])
 
   // Fetch admin users on component mount
   useEffect(() => {
@@ -84,33 +143,15 @@ function CreatePostPageContent() {
     fetchAdminUsers()
   }, [])
 
-  const categories = [
-    'Motivation',
-    'Wisdom',
-    'Love & Relationships',
-    'Humor',
-    'Daily Inspiration',
-    'Success',
-    'Life Lessons',
-    'Philosophy'
-  ]
-
   const sanitizeSlug = (slug: string) => {
     return slug
       .toLowerCase()
-      // Remove invisible Unicode characters (like zero-width space)
       .replace(/[\u200B-\u200D\uFEFF]/g, '')
-      // Remove special characters but keep alphanumeric, spaces, and hyphens
       .replace(/[^\w\s-]/g, '')
-      // Replace multiple spaces with single space
       .replace(/\s+/g, ' ')
-      // Trim whitespace from start and end
       .trim()
-      // Replace spaces with hyphens
       .replace(/\s/g, '-')
-      // Replace multiple consecutive hyphens with single hyphen
       .replace(/-+/g, '-')
-      // Remove leading/trailing hyphens
       .replace(/^-+|-+$/g, '')
   }
 
@@ -132,32 +173,25 @@ function CreatePostPageContent() {
     setFormData(prev => {
       const updated = { ...prev, [field]: value }
       
-      // Handle title changes
       if (field === 'title') {
-        // Only auto-generate slug if it hasn't been manually edited
         if (!isSlugManuallyEdited && (!prev.slug || prev.slug === generateSlug(prev.title))) {
           updated.slug = generateSlug(value)
-          // Validate the generated slug
           const validation = validateSlug(updated.slug)
           setSlugValidation(validation)
         }
       }
       
-      // Handle slug changes
       if (field === 'slug') {
-        // Mark slug as manually edited if user types in it
         if (value !== generateSlug(prev.title)) {
           setIsSlugManuallyEdited(true)
         }
         
-        // Sanitize and validate the slug
         const sanitizedSlug = sanitizeSlug(value)
         updated.slug = sanitizedSlug
         const validation = validateSlug(sanitizedSlug)
         setSlugValidation(validation)
       }
       
-      // Calculate read time based on content
       if (field === 'content') {
         const wordsPerMinute = 200
         const wordCount = value.trim().split(/\s+/).length
@@ -182,7 +216,6 @@ function CreatePostPageContent() {
   const handleMediaUpload = (files: UploadedFile[]) => {
     setUploadedFiles(prev => [...prev, ...files])
     
-    // If it's an image and no featured image is set, use the first image as featured
     const firstImage = files.find(file => file.type.startsWith('image/'))
     if (firstImage && !formData.imageUrl) {
       setFormData(prev => ({
@@ -220,7 +253,6 @@ function CreatePostPageContent() {
     e.preventDefault()
     setError('')
     
-    // Validation
     if (!formData.title || !formData.content || !formData.authorId || !formData.authorName) {
       setError('Please fill in all required fields including selecting an author')
       return
@@ -231,7 +263,6 @@ function CreatePostPageContent() {
       return
     }
 
-    // Validate slug
     const slugValidationResult = validateSlug(formData.slug)
     if (!slugValidationResult.isValid) {
       setError(`Slug error: ${slugValidationResult.message}`)
@@ -241,24 +272,24 @@ function CreatePostPageContent() {
     setLoading(true)
 
     try {
-      // Check slug uniqueness
-      const isUnique = await BlogService.isSlugUnique(formData.slug)
+      // Check slug uniqueness (exclude current post)
+      const isUnique = await BlogService.isSlugUnique(formData.slug, postId)
       if (!isUnique) {
         setError('This slug already exists. Please choose a different slug.')
         setLoading(false)
         return
       }
-      // Override published status if provided
+
       const postData = publishStatus !== undefined 
         ? { ...formData, published: publishStatus }
         : formData
 
-      const postId = await BlogService.createPost(postData)
+      await BlogService.updatePost(postId, postData)
       const status = postData.published ? 'published' : 'draft'
-      router.push(`/admin/posts?created=${postId}&status=${status}`)
+      router.push(`/admin/posts?updated=${postId}&status=${status}`)
     } catch (err) {
-      console.error('Error creating post:', err)
-      setError('Failed to create post. Please try again.')
+      console.error('Error updating post:', err)
+      setError('Failed to update post. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -273,17 +304,56 @@ function CreatePostPageContent() {
   }
 
   const handlePreview = () => {
-    // Save form data to localStorage for preview
     localStorage.setItem('previewPost', JSON.stringify(formData))
     window.open('/admin/preview', '_blank')
+  }
+
+  if (pageLoading) {
+    return (
+      <AdminLayout>
+        <div className="flex items-center justify-center h-64">
+          <div className="text-lg">Loading post...</div>
+        </div>
+      </AdminLayout>
+    )
+  }
+
+  if (error && !originalPost) {
+    return (
+      <AdminLayout>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-md">
+            <p className="text-sm text-red-800">{error}</p>
+          </div>
+          <button
+            onClick={() => router.push('/admin/posts')}
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
+            Back to Posts
+          </button>
+        </div>
+      </AdminLayout>
+    )
   }
 
   return (
     <AdminLayout>
       <div className="max-w-4xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Create New Post</h1>
-          <p className="text-gray-600 mt-1">Create a new blog post</p>
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <div className="flex items-center">
+              <button
+                onClick={() => router.push('/admin/posts')}
+                className="mr-4 p-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+              >
+                <ArrowLeft size={20} />
+              </button>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Edit Post</h1>
+                <p className="text-gray-600 mt-1">Update your blog post</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {error && (
@@ -447,6 +517,50 @@ function CreatePostPageContent() {
               </div>
 
               <div className="md:col-span-2">
+                <label htmlFor="tags" className="block text-sm font-medium text-gray-700 mb-1">
+                  Tags
+                </label>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    id="tags"
+                    value={tagInput}
+                    onChange={(e) => setTagInput(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Add a tag and press Enter"
+                  />
+                  <button
+                    type="button"
+                    onClick={addTag}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Add
+                  </button>
+                </div>
+                
+                {formData.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {formData.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                      >
+                        {tag}
+                        <button
+                          type="button"
+                          onClick={() => removeTag(tag)}
+                          className="ml-1 inline-flex items-center justify-center w-4 h-4 text-blue-400 hover:text-blue-600"
+                        >
+                          <X size={12} />
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="md:col-span-2">
                 <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
                   Content *
                 </label>
@@ -529,14 +643,14 @@ function CreatePostPageContent() {
                     />
                     <label htmlFor="published" className="ml-2 flex items-center text-sm text-gray-700">
                       <Globe className="w-4 h-4 mr-1" />
-                      Publish Now
+                      Published
                     </label>
                   </div>
                 </div>
                 <p className="text-xs text-gray-500">
                   {formData.published 
-                    ? 'This post will be publicly visible immediately after creation.'
-                    : 'This post will be saved as a draft and won\'t be publicly visible until published.'
+                    ? 'This post is publicly visible.'
+                    : 'This post is saved as a draft and won\'t be publicly visible until published.'
                   }
                 </p>
               </div>
@@ -547,7 +661,7 @@ function CreatePostPageContent() {
           <div className="flex justify-between items-center">
             <button
               type="button"
-              onClick={() => router.back()}
+              onClick={() => router.push('/admin/posts')}
               className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 flex items-center"
             >
               <X className="w-4 h-4 mr-2" />
@@ -587,11 +701,11 @@ function CreatePostPageContent() {
                 className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 flex items-center"
               >
                 {loading ? (
-                  <>Publishing...</>
+                  <>Updating...</>
                 ) : (
                   <>
-                    <Globe className="w-4 h-4 mr-2" />
-                    Publish Now
+                    <Save className="w-4 h-4 mr-2" />
+                    Update Post
                   </>
                 )}
               </button>
@@ -603,7 +717,6 @@ function CreatePostPageContent() {
   )
 }
 
-
-export default function CreatePostPage() {
-  return <CreatePostPageContent />
+export default function EditPostPage() {
+  return <EditPostPageContent />
 }

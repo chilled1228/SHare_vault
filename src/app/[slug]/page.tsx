@@ -7,6 +7,7 @@ import { BlogPost } from '@/types/blog'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import RelatedPosts from '@/components/RelatedPosts'
+import BlogContentRenderer from '@/components/BlogContentRenderer'
 
 interface BlogPostPageProps {
   params: {
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://shairvault.com/blog/${post.slug}`,
+      url: `https://shairvault.com/${post.slug}`,
       siteName: 'Shair Vault',
       locale: 'en_US',
       authors: [post.authorName],
@@ -114,7 +115,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       ],
     },
     alternates: {
-      canonical: `https://shairvault.com/blog/${post.slug}`,
+      canonical: `https://shairvault.com/${post.slug}`,
     },
     other: {
       'article:author': post.authorName,
@@ -171,7 +172,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     dateModified: post.updatedAt.toISOString(),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://shairvault.com/blog/${post.slug}`,
+      '@id': `https://shairvault.com/${post.slug}`,
     },
     keywords: post.tags,
     articleSection: post.category,
@@ -209,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://shairvault.com/blog/${post.slug}`
+        item: `https://shairvault.com/${post.slug}`
       }
     ]
   }
@@ -309,9 +310,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
 
               {/* Article Content */}
-              <div className="article-content prose prose-lg max-w-none">
-                <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
-              </div>
+              <BlogContentRenderer 
+                content={post.content}
+                postTitle={post.title}
+                postSlug={post.slug}
+              />
 
               {/* Tags */}
               <div className="mt-12 pt-8 border-t" style={{borderColor: 'var(--border)'}}>
@@ -375,36 +378,3 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   )
 }
 
-function formatContent(content: string): string {
-  // Convert markdown-style content to HTML with better typography
-  const formatted = content
-    // Handle blockquotes first
-    .replace(/^> (.*$)/gm, '<blockquote class="border-l-4 pl-6 py-4 my-6 italic text-lg leading-relaxed" style="border-color: var(--primary); background-color: var(--card); color: var(--muted-foreground);">$1</blockquote>')
-    
-    // Handle headings
-    .replace(/^# (.*$)/gm, '<h1 class="text-4xl md:text-5xl font-bold mb-6 mt-12 leading-tight" style="color: var(--primary);">$1</h1>')
-    .replace(/^## (.*$)/gm, '<h2 class="text-3xl md:text-4xl font-bold mb-5 mt-10 leading-tight" style="color: var(--primary);">$1</h2>')
-    .replace(/^### (.*$)/gm, '<h3 class="text-2xl md:text-3xl font-bold mb-4 mt-8 leading-tight" style="color: var(--primary);">$1</h3>')
-    .replace(/^#### (.*$)/gm, '<h4 class="text-xl md:text-2xl font-bold mb-4 mt-6 leading-tight" style="color: var(--primary);">$1</h4>')
-    
-    // Handle text formatting
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold" style="color: var(--primary);">$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-    
-    // Handle numbered lists (quotes)
-    .replace(/^(\d+\.)\s(.*)$/gm, '<div class="mb-4"><span class="quote-number font-bold text-lg mr-2" style="color: var(--primary);">$1</span><span class="leading-relaxed">$2</span></div>')
-    
-    // Handle unordered lists
-    .replace(/^- (.*)$/gm, '<li class="mb-2 ml-4 leading-relaxed">$1</li>')
-    
-    // Wrap consecutive list items in ul tags
-    .replace(/(<li.*?<\/li>\s*)+/g, '<ul class="list-disc list-inside mb-6 space-y-2">$&</ul>')
-    
-    // Handle paragraphs (do this last)
-    .replace(/^(?!<[h1-6]|<blockquote|<div|<ul|<li)(.+)$/gm, '<p class="mb-6 leading-relaxed text-lg" style="color: var(--foreground);">$1</p>')
-    
-    // Clean up double line breaks
-    .replace(/\n\n/g, '\n')
-    
-  return formatted
-}

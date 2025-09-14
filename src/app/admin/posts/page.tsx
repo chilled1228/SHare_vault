@@ -13,6 +13,8 @@ function PostsManagementPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const createdId = searchParams.get('created')
+  const updatedId = searchParams.get('updated')
+  const createdStatus = searchParams.get('status')
   
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([])
@@ -115,9 +117,12 @@ function PostsManagementPageContent() {
     <AdminLayout>
       <div className="space-y-4">
         {/* Success message */}
-        {createdId && (
+        {(createdId || updatedId) && (
           <div className="bg-green-50 border border-green-200 rounded-md p-4">
-            <p className="text-sm text-green-800">Post created successfully!</p>
+            <p className="text-sm text-green-800">
+              {createdId && `Post ${createdStatus === 'draft' ? 'saved as draft' : 'published'} successfully!`}
+              {updatedId && `Post ${createdStatus === 'draft' ? 'updated and saved as draft' : 'updated and published'} successfully!`}
+            </p>
           </div>
         )}
 
@@ -254,8 +259,15 @@ function PostsManagementPageContent() {
                           >
                             <Filter size={16} />
                           </button>
+                          <button
+                            onClick={() => router.push(`/admin/posts/edit/${post.id}`)}
+                            className="p-1 text-gray-600 hover:bg-gray-50 rounded"
+                            title="Edit post"
+                          >
+                            <Edit size={16} />
+                          </button>
                           <a
-                            href={`/blog/${post.slug}`}
+                            href={`/${post.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-1 text-blue-600 hover:bg-blue-50 rounded"

@@ -186,4 +186,70 @@ export class BlogService {
     
     return Array.from(categories).sort()
   }
+
+  // Get draft posts (for admin)
+  static async getDraftPosts(limitCount = 10): Promise<BlogPost[]> {
+    const q = query(
+      collection(db, 'posts'),
+      where('published', '==', false),
+      orderBy('updatedAt', 'desc'),
+      limit(limitCount)
+    )
+    const querySnapshot = await getDocs(q)
+    return querySnapshot.docs.map(doc => {
+      const data = doc.data()
+      return {
+        id: doc.id,
+        ...data,
+        createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : data.createdAt,
+        updatedAt: data.updatedAt?.toDate ? data.updatedAt.toDate() : data.updatedAt
+      } as BlogPost
+    })
+  }
+
+  // Publish a draft post
+  static async publishPost(id: string): Promise<void> {
+    const docRef = doc(db, 'posts', id)
+    await updateDoc(docRef, {
+      published: true,
+      updatedAt: new Date()
+    })
+  }
+
+  // Unpublish a post (make it draft)
+  static async unpublishPost(id: string): Promise<void> {
+    const docRef = doc(db, 'posts', id)
+    await updateDoc(docRef, {
+      published: false,
+      updatedAt: new Date()
+    })
+  }
+
+  // Check if slug already exists
+  static async isSlugUnique(slug: string, excludeId?: string): Promise<boolean> {
+    try {
+      const q = query(
+        collection(db, 'posts'),
+        where('slug', '==', slug),
+        limit(1)
+      )
+      const querySnapshot = await getDocs(q)
+      
+      // If no documents found, slug is unique
+      if (querySnapshot.empty) return true
+      
+      // If we're editing a post, exclude it from the check
+      if (excludeId) {
+        const existingDoc = querySnapshot.docs[0]
+        return existingDoc.id === excludeId
+      }
+      
+      // Slug already exists
+      return false
+    } catch (error) {
+      console.error('Error checking slug uniqueness:', error)
+      // If there's an error, allow the slug (fail safe)
+      return true
+    }
+  }
 }
