@@ -473,7 +473,7 @@ function CreatePostPageContent() {
                   Media Upload
                 </h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  Upload images, videos, or documents for your post. Files will be saved in the Shair_vault folder.
+                  Upload images, videos, or documents for your post. Files will be saved in the ShareVault folder.
                 </p>
               </div>
               <MediaUpload 

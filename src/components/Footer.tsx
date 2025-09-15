@@ -39,7 +39,7 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="col-span-2 lg:col-span-2">
               <h3 className="text-xl font-bold mb-4" style={{color: 'var(--primary)', fontFamily: 'Anton, sans-serif'}}>
-                Shair Vault
+                ShareVault
               </h3>
               <p className="mb-6 max-w-md" style={{color: 'var(--muted-foreground)'}}>
                 Discover wisdom, inspiration, and motivation through our carefully curated collection of quotes and stories. 
@@ -47,7 +47,7 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4">
                 <a 
-                  href="https://twitter.com/shairvault" 
+                  href="https://twitter.com/sharevault" 
                   className="p-2 rounded-lg transition-colors hover:scale-110"
                   style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
                   aria-label="Twitter"
@@ -55,7 +55,7 @@ export default function Footer() {
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://github.com/shairvault" 
+                  href="https://github.com/sharevault" 
                   className="p-2 rounded-lg transition-colors hover:scale-110"
                   style={{backgroundColor: 'var(--accent-purple-soft)', color: 'var(--primary)'}}
                   aria-label="GitHub"
@@ -63,7 +63,7 @@ export default function Footer() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/company/shairvault" 
+                  href="https://linkedin.com/company/sharevault" 
                   className="p-2 rounded-lg transition-colors hover:scale-110"
                   style={{backgroundColor: 'var(--accent-green-soft)', color: 'var(--primary)'}}
                   aria-label="LinkedIn"
@@ -195,7 +195,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style={{borderTop: '1px solid var(--border)'}}>
           <p className="text-sm" style={{color: 'var(--muted-foreground)'}}>
-            © 2025 Shair Vault. All rights reserved.
+            © 2025 ShareVault. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6">
             <Link href="/privacy-policy" className="footer-link text-sm">

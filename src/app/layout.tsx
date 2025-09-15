@@ -17,14 +17,14 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives",
-    template: "%s | Shair Vault"
+    default: "ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives",
+    template: "%s | ShareVault"
   },
   description: "Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.",
   keywords: ["inspiring quotes", "life wisdom quotes", "motivational stories", "personal growth", "daily inspiration", "meaningful quotes", "life philosophy", "wisdom stories", "inspirational content", "uplifting quotes"],
-  authors: [{ name: "Shair Vault Team" }],
-  creator: "Shair Vault",
-  publisher: "Shair Vault",
+  authors: [{ name: "ShareVault Team" }],
+  creator: "ShareVault",
+  publisher: "ShareVault",
   metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: getCanonicalUrl(),
@@ -40,24 +40,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: getCanonicalUrl(),
-    title: 'Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    title: 'ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
     description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.',
-    siteName: 'Shair Vault',
+    siteName: 'ShareVault',
     images: [
       {
         url: getImageUrl('og-image.jpg'),
         width: 1200,
         height: 630,
-        alt: 'Shair Vault - Inspiring Stories and Life Wisdom',
+        alt: 'ShareVault - Inspiring Stories and Life Wisdom',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shair Vault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    title: 'ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
     description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives.',
     images: [getImageUrl('og-image.jpg')],
-    creator: '@shairvault',
+    creator: '@sharevault',
   },
   verification: {
     google: 'your-google-verification-code',
@@ -72,12 +72,12 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Shair Vault",
+    "name": "ShareVault",
     "url": getCanonicalUrl(),
-    "logo": getImageUrl('logo.png'),
+    "logo": getImageUrl('logo.svg'),
     "sameAs": [
-      "https://twitter.com/shairvault",
-      "https://instagram.com/shairvault"
+      "https://twitter.com/sharevault",
+      "https://instagram.com/sharevault"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -89,12 +89,12 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Shair Vault",
+    "name": "ShareVault",
     "url": getCanonicalUrl(),
-    "description": "Discover inspiring stories, life wisdom, and personal growth insights at Shair Vault.",
+    "description": "Discover inspiring stories, life wisdom, and personal growth insights at ShareVault.",
     "publisher": {
       "@type": "Organization",
-      "name": "Shair Vault"
+      "name": "ShareVault"
     },
     "potentialAction": {
       "@type": "SearchAction",

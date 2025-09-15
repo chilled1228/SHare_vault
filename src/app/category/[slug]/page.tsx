@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   // If no predefined category and no posts found, return 404 metadata
   if (!predefinedCategory && categoryPosts.length === 0) {
     return {
-      title: 'Category Not Found - Shair Vault',
+      title: 'Category Not Found - ShareVault',
       description: 'The requested category could not be found.'
     }
   }
@@ -87,11 +87,11 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const categoryColor = predefinedCategory?.color || getCategoryColor(slug)
 
   return {
-    title: `${categoryName} Stories & Quotes | Shair Vault`,
+    title: `${categoryName} Stories & Quotes | ShareVault`,
     description: `Discover ${categoryName.toLowerCase()} stories, quotes, and insights. ${categoryDescription}`,
     keywords: [categoryName.toLowerCase(), 'quotes', 'stories', 'inspiration', 'wisdom'],
     openGraph: {
-      title: `${categoryName} Stories & Quotes | Shair Vault`,
+      title: `${categoryName} Stories & Quotes | ShareVault`,
       description: categoryDescription,
       type: 'website',
       url: getCategoryUrl(slug),
@@ -100,13 +100,13 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
           url: getImageUrl(`og-${slug}.jpg`),
           width: 1200,
           height: 630,
-          alt: `${categoryName} - Shair Vault`,
+          alt: `${categoryName} - ShareVault`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${categoryName} Stories & Quotes | Shair Vault`,
+      title: `${categoryName} Stories & Quotes | ShareVault`,
       description: categoryDescription,
       images: [getImageUrl(`og-${slug}.jpg`)],
     },

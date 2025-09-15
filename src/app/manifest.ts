@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Shair Vault - Inspiring Stories, Life Wisdom & Personal Growth',
-    short_name: 'Shair Vault',
+    name: 'ShareVault - Inspiring Stories, Life Wisdom & Personal Growth',
+    short_name: 'ShareVault',
     description: 'Discover inspiring stories, life wisdom, and personal growth insights. Read thought-provoking articles on motivation, self-improvement, mindfulness, and life philosophy.',
     start_url: '/',
     display: 'standalone',
@@ -11,19 +11,19 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#ff3494',
     icons: [
       {
-        src: '/icon-192x192.png',
+        src: '/logo.svg',
         sizes: '192x192',
-        type: 'image/png',
+        type: 'image/svg+xml',
       },
       {
-        src: '/icon-512x512.png',
+        src: '/logo.svg',
         sizes: '512x512',
-        type: 'image/png',
+        type: 'image/svg+xml',
       },
       {
-        src: '/apple-touch-icon.png',
+        src: '/logo.svg',
         sizes: '180x180',
-        type: 'image/png',
+        type: 'image/svg+xml',
         purpose: 'any',
       },
     ],

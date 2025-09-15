@@ -4,12 +4,12 @@ import Footer from '@/components/Footer'
 import { getCanonicalUrl, getImageUrl, BASE_URL, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: 'About Us | Shair Vault',
-  description: 'Learn about Shair Vault - your trusted destination for inspiring quotes, motivational stories, and life wisdom to fuel your personal growth journey.',
-  keywords: ['about shair vault', 'inspiration', 'motivation', 'personal growth', 'life wisdom', 'quotes'],
+  title: 'About Us | ShareVault',
+  description: 'Learn about ShareVault - your trusted destination for inspiring quotes, motivational stories, and life wisdom to fuel your personal growth journey.',
+  keywords: ['about sharevault', 'inspiration', 'motivation', 'personal growth', 'life wisdom', 'quotes'],
   openGraph: {
-    title: 'About Us | Shair Vault',
-    description: 'Learn about Shair Vault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
+    title: 'About Us | ShareVault',
+    description: 'Learn about ShareVault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
     type: 'website',
     url: getCanonicalUrl('about'),
     images: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
         url: getImageUrl('og-about.jpg'),
         width: 1200,
         height: 630,
-        alt: 'About Shair Vault - Inspiration & Motivation',
+        alt: 'About ShareVault - Inspiration & Motivation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | Shair Vault',
-    description: 'Learn about Shair Vault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
+    title: 'About Us | ShareVault',
+    description: 'Learn about ShareVault - your trusted destination for inspiring quotes, motivational stories, and life wisdom.',
     images: [getImageUrl('og-about.jpg')],
   },
   alternates: {
@@ -55,17 +55,17 @@ export default function AboutPage() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Shair Vault",
+    "name": "ShareVault",
     "url": BASE_URL,
     "description": "Your trusted destination for inspiring quotes, motivational stories, and life wisdom to fuel your personal growth journey.",
     "sameAs": [
-      "https://twitter.com/shairvault",
-      "https://github.com/shairvault",
-      "https://linkedin.com/company/shairvault"
+      "https://twitter.com/sharevault",
+      "https://github.com/sharevault",
+      "https://linkedin.com/company/sharevault"
     ],
     "founder": {
       "@type": "Person",
-      "name": "Shair Vault Team"
+      "name": "ShareVault Team"
     }
   }
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%)' }}>
             <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
-                About Shair Vault
+                About ShareVault
               </h1>
               <p className="text-xl text-white/80 mb-6 max-w-2xl mx-auto">
                 Empowering lives through wisdom, inspiration, and motivation
@@ -111,7 +111,7 @@ export default function AboutPage() {
                       Our Mission
                     </h2>
                     <p className="text-xl leading-relaxed" style={{color: 'var(--foreground)'}}>
-                      At Shair Vault, we believe that everyone deserves to live an inspired, motivated, and fulfilling life. 
+                      At ShareVault, we believe that everyone deserves to live an inspired, motivated, and fulfilling life. 
                       Our mission is to curate and share the most powerful quotes, stories, and wisdom that can transform 
                       perspectives and ignite personal growth.
                     </p>

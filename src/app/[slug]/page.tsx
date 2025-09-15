@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   
   if (!post) {
     return {
-      title: 'Post Not Found - Shair Vault',
+      title: 'Post Not Found - ShareVault',
       description: 'The requested blog post could not be found.'
     }
   }
@@ -61,14 +61,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     authors: [{ name: post.authorName, url: `${getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`)}` }],
     category: post.category,
     creator: post.authorName,
-    publisher: 'Shair Vault',
+    publisher: 'ShareVault',
     robots: robotsMeta,
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       url: canonicalUrl,
-      siteName: 'Shair Vault',
+      siteName: 'ShareVault',
       locale: 'en_US',
       authors: [post.authorName],
       publishedTime: post.createdAt.toISOString(),
@@ -88,15 +88,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
           url: `${getCanonicalUrl('og-image-blog.jpg')}`,
           width: 1200,
           height: 630,
-          alt: `${post.title} - Shair Vault`,
+          alt: `${post.title} - ShareVault`,
           type: 'image/jpeg',
         }
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@shairvault',
-      creator: '@shairvault',
+      site: '@sharevault',
+      creator: '@sharevault',
       title: post.title,
       description: post.excerpt,
       images: post.imageUrl ? [
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       ] : [
         {
           url: `${getCanonicalUrl('og-image-blog.jpg')}`,
-          alt: `${post.title} - Shair Vault`,
+          alt: `${post.title} - ShareVault`,
         }
       ],
     },
@@ -162,17 +162,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Shair Vault',
+      name: 'ShareVault',
       url: getCanonicalUrl(),
       logo: {
         '@type': 'ImageObject',
-        url: getCanonicalUrl('logo.png'),
+        url: getCanonicalUrl('logo.svg'),
         width: 400,
         height: 400
       },
       sameAs: [
-        'https://twitter.com/shairvault',
-        'https://instagram.com/shairvault'
+        'https://twitter.com/sharevault',
+        'https://instagram.com/sharevault'
       ]
     },
     datePublished: post.createdAt.toISOString(),
@@ -190,10 +190,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     isPartOf: {
       '@type': 'Blog',
       '@id': getCanonicalUrl('blog'),
-      name: 'Shair Vault Blog',
+      name: 'ShareVault Blog',
       publisher: {
         '@type': 'Organization',
-        name: 'Shair Vault'
+        name: 'ShareVault'
       }
     },
     about: {
@@ -294,7 +294,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         description={`Passionate writer sharing insights about ${post.category.toLowerCase()}, inspiration, and life wisdom.`}
         url={getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`)}
         jobTitle="Content Writer"
-        worksFor="Shair Vault"
+        worksFor="ShareVault"
       />
       
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
@@ -426,7 +426,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Navigation */}
-              <div className="mt-12 flex justify-center">
+              <div className="mt-12 mb-8 flex justify-center">
                 <Link
                   href="/"
                   className="btn btn-primary px-6 py-3 text-lg"
@@ -440,6 +440,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="container mx-auto px-4 py-16">
               <RelatedPosts currentPost={post} limit={3} />
             </div>
+            
+            {/* Additional spacing before footer */}
+            <div className="pb-12"></div>
           </article>
         </main>
 

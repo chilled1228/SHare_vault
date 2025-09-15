@@ -15,7 +15,7 @@ export interface UploadResult {
 }
 
 export class R2UploadService {
-  static async uploadFile(file: File, folder = 'Shair_vault'): Promise<UploadResult> {
+  static async uploadFile(file: File, folder = 'ShareVault'): Promise<UploadResult> {
     try {
       // Generate unique filename
       const timestamp = Date.now()
@@ -50,7 +50,7 @@ export class R2UploadService {
     }
   }
 
-  static async uploadMultipleFiles(files: File[], folder = 'Shair_vault'): Promise<UploadResult[]> {
+  static async uploadMultipleFiles(files: File[], folder = 'ShareVault'): Promise<UploadResult[]> {
     const uploadPromises = files.map(file => this.uploadFile(file, folder))
     return Promise.all(uploadPromises)
   }

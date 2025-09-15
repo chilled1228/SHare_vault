@@ -37,8 +37,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Upload files to R2 in Shair_vault folder
-    const uploadResults = await R2UploadService.uploadMultipleFiles(files, 'Shair_vault')
+    // Upload files to R2 in ShareVault folder
+    const uploadResults = await R2UploadService.uploadMultipleFiles(files, 'ShareVault')
 
     return NextResponse.json({
       success: true,

@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: 'All Categories | Shair Vault',
+  title: 'All Categories | ShareVault',
   description: 'Explore all our inspiring content categories including motivation, life wisdom, personal growth, and inspiration. Find the perfect stories and quotes for your journey.',
   keywords: ['categories', 'motivation', 'life wisdom', 'personal growth', 'inspiration', 'quotes', 'stories'],
   openGraph: {
-    title: 'All Categories | Shair Vault',
+    title: 'All Categories | ShareVault',
     description: 'Explore all our inspiring content categories including motivation, life wisdom, personal growth, and inspiration.',
     type: 'website',
     url: getCanonicalUrl('categories'),
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
         url: '/og-categories.jpg',
         width: 1200,
         height: 630,
-        alt: 'All Categories - Shair Vault',
+        alt: 'All Categories - ShareVault',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'All Categories | Shair Vault',
+    title: 'All Categories | ShareVault',
     description: 'Explore all our inspiring content categories.',
     images: ['/og-categories.jpg'],
   },
@@ -165,7 +165,7 @@ export default function CategoriesPage() {
                 Ready to Get Inspired?
               </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto" style={{color: 'var(--muted-foreground)'}}>
-                Join thousands of readers who start their day with wisdom and motivation from Shair Vault.
+                Join thousands of readers who start their day with wisdom and motivation from ShareVault.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

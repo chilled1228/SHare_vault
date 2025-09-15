@@ -4,12 +4,12 @@ import Footer from '@/components/Footer'
 import { getCanonicalUrl, getImageUrl, SITE_EMAIL } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Shair Vault',
-  description: 'Get in touch with Shair Vault. We love hearing from our community and are always here to help with questions, suggestions, or collaborations.',
-  keywords: ['contact shair vault', 'get in touch', 'feedback', 'collaboration', 'support'],
+  title: 'Contact Us | ShareVault',
+  description: 'Get in touch with ShareVault. We love hearing from our community and are always here to help with questions, suggestions, or collaborations.',
+  keywords: ['contact sharevault', 'get in touch', 'feedback', 'collaboration', 'support'],
   openGraph: {
-    title: 'Contact Us | Shair Vault',
-    description: 'Get in touch with Shair Vault. We love hearing from our community and are always here to help.',
+    title: 'Contact Us | ShareVault',
+    description: 'Get in touch with ShareVault. We love hearing from our community and are always here to help.',
     type: 'website',
     url: getCanonicalUrl('contact'),
     images: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
         url: getImageUrl('og-contact.jpg'),
         width: 1200,
         height: 630,
-        alt: 'Contact Shair Vault',
+        alt: 'Contact ShareVault',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Shair Vault',
-    description: 'Get in touch with Shair Vault. We love hearing from our community and are always here to help.',
+    title: 'Contact Us | ShareVault',
+    description: 'Get in touch with ShareVault. We love hearing from our community and are always here to help.',
     images: [getImageUrl('og-contact.jpg')],
   },
   alternates: {
@@ -118,7 +118,7 @@ export default function ContactPage() {
                     </p>
                     <div className="flex justify-center space-x-4">
                       <a 
-                        href="https://twitter.com/shairvault" 
+                        href="https://twitter.com/sharevault" 
                         className="p-3 rounded-lg transition-colors hover:scale-110"
                         style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
                         aria-label="Twitter"
@@ -126,7 +126,7 @@ export default function ContactPage() {
                         🐦
                       </a>
                       <a 
-                        href="https://linkedin.com/company/shairvault" 
+                        href="https://linkedin.com/company/sharevault" 
                         className="p-3 rounded-lg transition-colors hover:scale-110"
                         style={{backgroundColor: 'var(--accent-green-soft)', color: 'var(--primary)'}}
                         aria-label="LinkedIn"

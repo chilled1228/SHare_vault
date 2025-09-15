@@ -73,7 +73,7 @@ export default function Header() {
           {/* Center - Logo */}
           <Link href="/">
             <h1 className="text-6xl text-center mb-0 absolute left-1/2 transform -translate-x-1/2 hover:opacity-80 transition-opacity cursor-pointer" style={{fontFamily: 'Anton, sans-serif', color: 'var(--foreground)'}}>
-              Shair Vault
+              ShareVault
             </h1>
           </Link>
           

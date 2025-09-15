@@ -5,14 +5,14 @@ import { db } from './firebase'
 export async function seedSamplePosts() {
   const samplePosts = [
     {
-      title: "Welcome to Shair Vault",
-      slug: "welcome-to-shair-vault",
+      title: "Welcome to ShareVault",
+      slug: "welcome-to-sharevault",
       content: `
-# Welcome to Shair Vault
+# Welcome to ShareVault
 
-This is your first blog post on Shair Vault! 
+This is your first blog post on ShareVault! 
 
-Shair Vault is a modern blogging platform built with Next.js, Firebase, and TypeScript. It provides a seamless experience for content creators and readers alike.
+ShareVault is a modern blogging platform built with Next.js, Firebase, and TypeScript. It provides a seamless experience for content creators and readers alike.
 
 ## Features
 
@@ -23,13 +23,13 @@ Shair Vault is a modern blogging platform built with Next.js, Firebase, and Type
 
 Get started by creating your first post and sharing your thoughts with the world!
       `,
-      excerpt: "Welcome to Shair Vault - your modern blogging platform",
+      excerpt: "Welcome to ShareVault - your modern blogging platform",
       authorName: "Admin User",
       category: "Announcements",
       published: true,
       featured: true,
       imageUrl: "",
-      tags: ["welcome", "shair-vault", "announcement"],
+      tags: ["welcome", "sharevault", "announcement"],
       createdAt: new Date(),
       updatedAt: new Date()
     },

@@ -5,7 +5,7 @@ import { getCanonicalUrl, getRobotsMeta } from '@/lib/seo-utils';
 
 export const metadata: Metadata = {
   title: 'DMCA Policy',
-  description: 'DMCA Policy for Shair Vault. We respect the intellectual property rights of others and expect our users to do the same.',
+  description: 'DMCA Policy for ShareVault. We respect the intellectual property rights of others and expect our users to do the same.',
   alternates: {
     canonical: getCanonicalUrl('/dmca'),
   },
@@ -20,7 +20,7 @@ export default function DMCAPage() {
           <article className="prose prose-lg">
             <h1>DMCA Policy</h1>
             <p>
-              Shair Vault ("we", "us", or "our") respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998, the text of which may be found on the U.S. Copyright Office website at <Link href="http://www.copyright.gov/legislation/dmca.pdf" target="_blank" rel="noopener noreferrer">http://www.copyright.gov/legislation/dmca.pdf</Link>, we will respond expeditiously to claims of copyright infringement committed using our service that are reported to our Designated Copyright Agent identified below.
+              ShareVault ("we", "us", or "our") respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998, the text of which may be found on the U.S. Copyright Office website at <Link href="http://www.copyright.gov/legislation/dmca.pdf" target="_blank" rel="noopener noreferrer">http://www.copyright.gov/legislation/dmca.pdf</Link>, we will respond expeditiously to claims of copyright infringement committed using our service that are reported to our Designated Copyright Agent identified below.
             </p>
 
             <h2>1. Infringement Notification</h2>
@@ -66,7 +66,7 @@ export default function DMCAPage() {
             </p>
             <p>
               <strong>Copyright Agent</strong><br />
-              Shair Vault<br />
+              ShareVault<br />
               [Your Company Address]<br />
               [Your City, State, Zip Code]<br />
               Email: <Link href="mailto:blog.boopul@gmail.com">blog.boopul@gmail.com</Link>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
   keywords: ['blog', 'inspiring stories', 'life wisdom', 'personal growth', 'motivation', 'self-improvement', 'philosophy', 'mindfulness'],
   openGraph: {
-    title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
+    title: 'Blog - Inspiring Stories and Life Wisdom | ShareVault',
     description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
     type: 'website',
     url: getBlogUrl(),
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
         url: getImageUrl('og-image-blog.jpg'),
         width: 1200,
         height: 630,
-        alt: 'Shair Vault Blog - Inspiring Stories and Life Wisdom',
+        alt: 'ShareVault Blog - Inspiring Stories and Life Wisdom',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Inspiring Stories and Life Wisdom | Shair Vault',
+    title: 'Blog - Inspiring Stories and Life Wisdom | ShareVault',
     description: 'Read inspiring stories, life wisdom, and personal growth articles.',
     images: [getImageUrl('og-image-blog.jpg')],
   },
@@ -71,12 +71,12 @@ export default async function BlogPage() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Shair Vault Blog",
+    "name": "ShareVault Blog",
     "description": "Read inspiring stories, life wisdom, and personal growth articles.",
     "url": getBlogUrl(),
     "publisher": {
       "@type": "Organization",
-      "name": "Shair Vault",
+      "name": "ShareVault",
       "url": getCanonicalUrl()
     },
     "inLanguage": "en-US"
