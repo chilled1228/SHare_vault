@@ -156,13 +156,11 @@ export class BlogService {
   static async getPostsByCategory(category: string, limitCount = 20): Promise<BlogPost[]> {
     const q = query(
       collection(db, 'posts'),
-      where('category', '==', category),
       where('published', '==', true),
       orderBy('createdAt', 'desc'),
-      limit(limitCount)
     )
     const querySnapshot = await getDocs(q)
-    return querySnapshot.docs.map(doc => {
+    const allPosts = querySnapshot.docs.map(doc => {
       const data = doc.data()
       return {
         id: doc.id,
@@ -171,6 +169,12 @@ export class BlogService {
         updatedAt: data.updatedAt?.toDate ? data.updatedAt.toDate() : data.updatedAt
       } as BlogPost
     })
+
+    const filteredPosts = allPosts.filter(post => 
+      post.category.toLowerCase() === category.toLowerCase()
+    );
+
+    return filteredPosts.slice(0, limitCount);
   }
 
   // Get all unique categories from published posts
