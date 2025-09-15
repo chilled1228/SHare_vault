@@ -87,9 +87,11 @@ export default function FeaturedSection() {
                     {currentSlide.category}
                   </span>
                 </div>
-                <h1 className="text-xl md:text-2xl font-bold leading-tight" style={{ color: 'var(--foreground)' }}>
-                  {currentSlide.title}
-                </h1>
+                <a href={`/blog/${currentSlide.slug}`} className="block">
+                  <h1 className="text-xl md:text-2xl font-bold leading-tight hover:opacity-80 transition-opacity" style={{ color: 'var(--foreground)' }}>
+                    {currentSlide.title}
+                  </h1>
+                </a>
                 <div className="flex items-center text-sm" style={{ color: 'var(--foreground-muted)' }}>
                   <p className="font-semibold" style={{ color: 'var(--foreground)' }}>{currentSlide.authorName}</p>
                   <span className="mx-2">•</span>
@@ -134,7 +136,7 @@ export default function FeaturedSection() {
               )}
             </div>
             <div className="relative min-h-[210px] md:min-h-full p-3">
-              <div className="relative w-full h-full overflow-hidden rounded-r-xl">
+              <a href={`/blog/${currentSlide.slug}`} className="relative w-full h-full overflow-hidden rounded-r-xl block">
                 {currentSlide.imageUrl ? (
                   <Image
                     src={currentSlide.imageUrl}
@@ -155,7 +157,7 @@ export default function FeaturedSection() {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:from-transparent md:via-transparent md:to-transparent md:bg-gradient-to-r md:from-black/20"></div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
