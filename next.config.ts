@@ -5,6 +5,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig: NextConfig = {
+  // Modern browser targeting to reduce polyfills
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],

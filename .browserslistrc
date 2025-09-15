@@ -1,0 +1,14 @@
+# Modern browser targeting to reduce polyfills and improve performance
+# Supports browsers with >95% global usage and modern feature support
+last 2 versions
+not dead
+> 0.5%
+maintained node versions
+
+# Modern browsers with ES2022+ support
+Chrome >= 103
+Edge >= 103
+Firefox >= 102
+Safari >= 15.4
+iOS >= 15.4
+Opera >= 89
