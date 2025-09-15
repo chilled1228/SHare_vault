@@ -111,6 +111,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ff3494" />
         <meta name="color-scheme" content="light" />
+        <meta name="p:domain_verify" content="71bd64919a32b7a70a990f19faaa7719" />
         
         {/* Internationalization and hreflang tags */}
         <link rel="alternate" hrefLang="en-US" href={getCanonicalUrl()} />
