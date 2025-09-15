@@ -285,6 +285,10 @@ function EditPostPageContent() {
         : formData
 
       await BlogService.updatePost(postId, postData)
+      
+      // Force refresh the router to clear Next.js cache
+      router.refresh()
+      
       const status = postData.published ? 'published' : 'draft'
       router.push(`/admin/posts?updated=${postId}&status=${status}`)
     } catch (err) {

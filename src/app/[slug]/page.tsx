@@ -26,6 +26,8 @@ async function getPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export async function generateStaticParams() {
   try {
     const posts = await BlogService.getPosts(100)

@@ -6,6 +6,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BlogPostCard from '@/components/BlogPostCard'
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export const metadata: Metadata = {
   title: 'Blog - Inspiring Stories and Life Wisdom',
   description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',

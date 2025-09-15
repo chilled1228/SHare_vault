@@ -5,6 +5,8 @@ import FeaturedSection from '@/components/FeaturedSection'
 import { LazyBlogList } from '@/components/PerformanceLoader'
 import Footer from '@/components/Footer'
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export const metadata: Metadata = {
   title: 'Inspiring Stories, Life Wisdom & Personal Growth',
   description: 'Discover inspiring stories, life wisdom, and personal growth insights. Read thought-provoking articles on motivation, self-improvement, mindfulness, and life philosophy.',
