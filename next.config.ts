@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-          maxSize: 244000,
+          maxSize: 200000, // Reduced from 244000
         },
         common: {
           name: 'common',
@@ -66,13 +66,46 @@ const nextConfig: NextConfig = {
           priority: 5,
           chunks: 'all',
           enforce: true,
+          maxSize: 150000,
+        },
+        firebase: {
+          test: /[\\/]node_modules[\\/](@firebase|firebase)[\\/]/,
+          name: 'firebase',
+          chunks: 'all',
+          priority: 10,
+          maxSize: 200000,
+        },
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react',
+          chunks: 'all',
+          priority: 10,
+          maxSize: 150000,
         },
       };
+      
+      // Enable module concatenation for better minification
+      config.optimization.concatenateModules = true;
+      
+      // Better minification
+      config.optimization.minimizer = [
+        ...config.optimization.minimizer,
+      ];
     }
 
-    // Tree shaking
+    // Enhanced tree shaking
     config.optimization.usedExports = true;
     config.optimization.sideEffects = false;
+    config.optimization.providedExports = true;
+
+    // Remove console logs in production
+    if (!dev) {
+      config.optimization.minimizer.forEach((plugin: any) => {
+        if (plugin.constructor.name === 'TerserPlugin') {
+          plugin.options.terserOptions.compress.drop_console = true;
+        }
+      });
+    }
 
     return config;
   },
@@ -103,6 +136,14 @@ const nextConfig: NextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.firebaseapp.com *.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: blob: *.firebasestorage.app *.googleusercontent.com; connect-src 'self' *.firebase.googleapis.com *.firebaseio.com *.googleapis.com *.gstatic.com; frame-src 'self' *.firebaseapp.com; object-src 'none'; base-uri 'self';",
+          },
         ],
       },
       {
@@ -116,6 +157,15 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/(.*)\\.(jpg|jpeg|png|gif|svg|webp|avif)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*)\\.(js|css)',
         headers: [
           {
             key: 'Cache-Control',
@@ -138,6 +188,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400',
+          },
+        ],
+      },
+      {
+        source: '/manifest.webmanifest',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800',
           },
         ],
       },

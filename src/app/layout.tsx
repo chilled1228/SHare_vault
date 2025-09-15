@@ -120,9 +120,15 @@ export default function RootLayout({
         {/* Critical resource preloading */}
         <link rel="preconnect" href="https://firestore.googleapis.com" />
         <link rel="preconnect" href="https://firebase.googleapis.com" />
+        <link rel="preconnect" href="https://shair-vault.firebaseapp.com" />
         
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        {/* Preload critical CSS and fonts */}
+        <link rel="preload" href="/fonts/geist-sans.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/geist-mono.woff2" as="font" type="font/woff2" crossOrigin="" />
+        
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
         
         <script
           type="application/ld+json"
