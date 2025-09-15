@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { BASE_URL, SITE_EMAIL, getCanonicalUrl, getRobotsMeta, getImageUrl } from "@/lib/seo-utils";
 import ClientProviders from "@/components/ClientProviders";
 import WebVitals from "@/components/WebVitals";
-
-const geistSans = localFont({
-  src: "./fonts/geist-sans.woff2",
-  variable: "--font-geist-sans",
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const geistMono = localFont({
-  src: "./fonts/geist-mono.woff2",
-  variable: "--font-geist-mono",
-  fallback: ["ui-monospace", "monospace"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -134,12 +121,9 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
               body { 
                 background: #faf9f7; 
-                font-family: "Crimson Text", serif; 
                 font-weight: 600;
-                font-display: swap;
               }
               .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
               @media (min-width: 768px) { .container { padding: 0 2rem; } }
@@ -149,14 +133,9 @@ export default function RootLayout({
         />
         
         {/* DNS prefetch for external resources */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         
-        {/* Preload Google Fonts for LCP */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+        {/* Removed external font preconnects to avoid font-related changes */}
         
         <script
           type="application/ld+json"
@@ -171,9 +150,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`antialiased`}>
         <WebVitals />
         <ClientProviders>
           {children}
