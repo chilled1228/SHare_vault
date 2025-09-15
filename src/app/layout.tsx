@@ -134,16 +134,11 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @font-face {
-                font-family: 'Crimson Text';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url(https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400&display=swap);
-              }
+              @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
               body { 
                 background: #faf9f7; 
                 font-family: "Crimson Text", serif; 
+                font-weight: 600;
                 font-display: swap;
               }
               .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
@@ -161,6 +156,7 @@ export default function RootLayout({
         {/* Preload Google Fonts for LCP */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
         
         <script
           type="application/ld+json"
