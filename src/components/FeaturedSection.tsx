@@ -143,6 +143,8 @@ export default function FeaturedSection() {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={true}
+                    fetchPriority="high"
+                    loading="eager"
                   />
                 ) : (
                   <div 

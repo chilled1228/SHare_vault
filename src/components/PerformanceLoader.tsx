@@ -25,6 +25,30 @@ const LazyBlogList = dynamic(() => import('./LazyBlogList'), {
   ssr: false, // Only render on client side after initial load
 })
 
+// Lazy load Header for better performance
+const LazyHeader = dynamic(() => import('./Header'), {
+  loading: () => (
+    <header className="border-b">
+      <div className="container mx-auto px-4 py-4">
+        <div className="text-center">Loading header...</div>
+      </div>
+    </header>
+  ),
+  ssr: false,
+})
+
+// Lazy load Featured Section
+const LazyFeaturedSection = dynamic(() => import('./FeaturedSection'), {
+  loading: () => (
+    <section className="py-12">
+      <div className="container mx-auto px-4">
+        <div className="bg-white border rounded-2xl shadow-lg w-full max-w-6xl mx-auto overflow-hidden h-[450px] animate-pulse"></div>
+      </div>
+    </section>
+  ),
+  ssr: false,
+})
+
 const LazyRelatedPosts = dynamic(() => import('./RelatedPosts'), {
   loading: () => (
     <div className="animate-pulse">
@@ -113,4 +137,4 @@ export default function PerformanceLoader({
 }
 
 // Export individual lazy components for direct use
-export { LazyBlogList, LazyRelatedPosts }
+export { LazyBlogList, LazyRelatedPosts, LazyHeader, LazyFeaturedSection }

@@ -1,9 +1,18 @@
 import { Metadata } from 'next'
 import { getCanonicalUrl, getImageUrl } from '@/lib/seo-utils'
-import Header from '@/components/Header'
-import FeaturedSection from '@/components/FeaturedSection'
-import { LazyBlogList } from '@/components/PerformanceLoader'
-import Footer from '@/components/Footer'
+import { LazyHeader, LazyFeaturedSection, LazyBlogList } from '@/components/PerformanceLoader'
+import dynamic from 'next/dynamic'
+
+// Lazy load Footer component to reduce initial bundle size
+const LazyFooter = dynamic(() => import('@/components/Footer'), {
+  loading: () => (
+    <footer className="bg-gray-100 border-t">
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center text-gray-600">Loading footer...</div>
+      </div>
+    </footer>
+  ),
+})
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
@@ -58,19 +67,19 @@ export default function Home() {
       />
       
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
-        <Header />
+        <LazyHeader />
         
         <main className="flex-1">
           {/* Featured Posts */}
           <div id="featured">
-            <FeaturedSection />
+            <LazyFeaturedSection />
           </div>
 
           {/* All Blog Posts - Lazy loaded */}
           <LazyBlogList limit={12} />
         </main>
 
-        <Footer />
+        <LazyFooter />
       </div>
     </>
   )
