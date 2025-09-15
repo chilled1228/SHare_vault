@@ -88,8 +88,8 @@ export default function FeaturedSection() {
                     {currentSlide.category}
                   </span>
                 </div>
-                <Link href={`/${currentSlide.slug}`} className="block">
-                  <h1 className="text-xl md:text-2xl font-bold leading-tight hover:opacity-80 transition-opacity" style={{ color: 'var(--foreground)' }}>
+                <Link href={`/${currentSlide.slug}`} className="block cursor-pointer">
+                  <h1 className="text-xl md:text-2xl font-bold leading-tight hover:opacity-80 transition-opacity cursor-pointer" style={{ color: 'var(--foreground)' }}>
                     {currentSlide.title}
                   </h1>
                 </Link>
@@ -137,7 +137,7 @@ export default function FeaturedSection() {
               )}
             </div>
             <div className="relative min-h-[210px] md:min-h-full p-3">
-              <Link href={`/${currentSlide.slug}`} className="relative w-full h-full overflow-hidden rounded-r-xl block">
+              <Link href={`/${currentSlide.slug}`} className="relative w-full h-full overflow-hidden rounded-r-xl block cursor-pointer">
                 {currentSlide.imageUrl ? (
                   <Image
                     src={currentSlide.imageUrl}

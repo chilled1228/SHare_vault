@@ -265,8 +265,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Blog',
-        item: getCanonicalUrl('blog')
+        name: post.category,
+        item: getCanonicalUrl(`category/${post.category.toLowerCase().replace(/\s+/g, '-')}`)
       },
       {
         '@type': 'ListItem',
@@ -308,8 +308,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Home
               </Link>
               <span>/</span>
-              <Link href="/blog" className="hover:opacity-80" style={{color: 'var(--primary)'}}>
-                Blog
+              <Link href={`/category/${post.category.toLowerCase().replace(/\s+/g, '-')}`} className="hover:opacity-80" style={{color: 'var(--primary)'}}>
+                {post.category}
               </Link>
               <span>/</span>
               <span className="truncate">{post.title}</span>
