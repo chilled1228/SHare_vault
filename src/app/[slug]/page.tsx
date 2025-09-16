@@ -171,8 +171,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         height: 400
       },
       sameAs: [
-        'https://twitter.com/sharevault',
-        'https://instagram.com/sharevault'
+        
+        
       ]
     },
     datePublished: post.createdAt.toISOString(),

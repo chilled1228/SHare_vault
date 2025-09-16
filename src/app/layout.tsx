@@ -64,8 +64,8 @@ export default function RootLayout({
     "url": getCanonicalUrl(),
     "logo": getImageUrl('logo.svg'),
     "sameAs": [
-      "https://twitter.com/sharevault",
-      "https://instagram.com/sharevault"
+      
+      
     ],
     "contactPoint": {
       "@type": "ContactPoint",

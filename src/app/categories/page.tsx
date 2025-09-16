@@ -6,11 +6,11 @@ import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: 'All Categories | ShareVault',
-  description: 'Explore all our inspiring content categories including motivation, life wisdom, personal growth, and inspiration. Find the perfect stories and quotes for your journey.',
+  description: 'Explore inspiring content categories like motivation, life wisdom, and personal growth. Find the perfect stories and quotes for your journey.',
   keywords: ['categories', 'motivation', 'life wisdom', 'personal growth', 'inspiration', 'quotes', 'stories'],
   openGraph: {
     title: 'All Categories | ShareVault',
-    description: 'Explore all our inspiring content categories including motivation, life wisdom, personal growth, and inspiration.',
+    description: 'Explore inspiring content categories like motivation, life wisdom, and personal growth. Find the perfect stories and quotes for your journey.',
     type: 'website',
     url: getCanonicalUrl('categories'),
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'All Categories | ShareVault',
-    description: 'Explore all our inspiring content categories.',
+    description: 'Explore inspiring content categories like motivation, life wisdom, and personal growth. Find the perfect stories and quotes for your journey.',
     images: ['/og-categories.jpg'],
   },
   alternates: {

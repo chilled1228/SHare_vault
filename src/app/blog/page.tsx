@@ -10,7 +10,7 @@ export const revalidate = 60 // Revalidate every 60 seconds
 
 export const metadata: Metadata = {
   title: 'Blog - Inspiring Stories and Life Wisdom',
-  description: 'Read inspiring stories, life wisdom, and personal growth articles. Discover motivation, self-improvement tips, and philosophical insights to transform your life.',
+  description: 'Explore inspiring stories, life wisdom, and personal growth articles. Find motivation and self-improvement tips to transform your life.',
   keywords: ['blog', 'inspiring stories', 'life wisdom', 'personal growth', 'motivation', 'self-improvement', 'philosophy', 'mindfulness'],
   openGraph: {
     title: 'Blog - Inspiring Stories and Life Wisdom | ShareVault',

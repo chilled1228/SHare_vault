@@ -59,9 +59,9 @@ export default function AboutPage() {
     "url": BASE_URL,
     "description": "Your trusted destination for inspiring quotes, motivational stories, and life wisdom to fuel your personal growth journey.",
     "sameAs": [
-      "https://twitter.com/sharevault",
-      "https://github.com/sharevault",
-      "https://linkedin.com/company/sharevault"
+      
+      
+      
     ],
     "founder": {
       "@type": "Person",

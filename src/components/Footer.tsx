@@ -45,33 +45,7 @@ export default function Footer() {
                 Discover wisdom, inspiration, and motivation through our carefully curated collection of quotes and stories. 
                 Join thousands finding daily inspiration.
               </p>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://twitter.com/sharevault" 
-                  className="p-2 rounded-lg transition-colors hover:scale-110"
-                  style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://github.com/sharevault" 
-                  className="p-2 rounded-lg transition-colors hover:scale-110"
-                  style={{backgroundColor: 'var(--accent-purple-soft)', color: 'var(--primary)'}}
-                  aria-label="GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://linkedin.com/company/sharevault" 
-                  className="p-2 rounded-lg transition-colors hover:scale-110"
-                  style={{backgroundColor: 'var(--accent-green-soft)', color: 'var(--primary)'}}
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                
-              </div>
+              
             </div>
 
             {/* Quick Links */}

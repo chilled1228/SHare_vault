@@ -68,7 +68,7 @@ export default function Home() {
       
       <div className="min-h-screen flex flex-col" style={{backgroundColor: 'var(--background)'}}>
         <LazyHeader />
-        
+        <h1 className="visually-hidden">Inspiring Stories, Life Wisdom & Personal Growth</h1>
         <main className="flex-1">
           {/* Featured Posts */}
           <div id="featured">

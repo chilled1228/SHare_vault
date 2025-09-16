@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   return {
     title: `${categoryName} Stories & Quotes | ShareVault`,
-    description: `Discover ${categoryName.toLowerCase()} stories, quotes, and insights. ${categoryDescription}`,
+    description: categoryDescription,
     keywords: [categoryName.toLowerCase(), 'quotes', 'stories', 'inspiration', 'wisdom'],
     openGraph: {
       title: `${categoryName} Stories & Quotes | ShareVault`,

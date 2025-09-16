@@ -11,13 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/admin/',
-          '/api/',
-          '/private/',
-          '/_next/',
-          '/draft/',
-          '/preview/',
-          '/*?draft=*',
-          '/*?preview=*',
         ],
       },
       {
@@ -25,10 +18,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/admin/',
-          '/api/',
-          '/private/',
-          '/draft/',
-          '/preview/',
         ],
       },
     ],

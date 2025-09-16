@@ -105,36 +105,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Social Media */}
-                  <div 
-                    className="rounded-2xl p-8 shadow-lg text-center"
-                    style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}
-                  >
-                    <div className="text-4xl mb-4">🌐</div>
-                    <h3 className="text-2xl font-bold mb-4" style={{color: 'var(--primary)', fontFamily: 'Anton, sans-serif'}}>
-                      Follow Us
-                    </h3>
-                    <p className="mb-6" style={{color: 'var(--muted-foreground)'}}>
-                      Stay connected and join our growing community
-                    </p>
-                    <div className="flex justify-center space-x-4">
-                      <a 
-                        href="https://twitter.com/sharevault" 
-                        className="p-3 rounded-lg transition-colors hover:scale-110"
-                        style={{backgroundColor: 'var(--accent-blue-soft)', color: 'var(--primary)'}}
-                        aria-label="Twitter"
-                      >
-                        🐦
-                      </a>
-                      <a 
-                        href="https://linkedin.com/company/sharevault" 
-                        className="p-3 rounded-lg transition-colors hover:scale-110"
-                        style={{backgroundColor: 'var(--accent-green-soft)', color: 'var(--primary)'}}
-                        aria-label="LinkedIn"
-                      >
-                        💼
-                      </a>
-                    </div>
-                  </div>
+                  
                 </div>
 
                 {/* Contact Form */}

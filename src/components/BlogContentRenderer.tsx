@@ -10,6 +10,36 @@ interface BlogContentRendererProps {
   postSlug: string
 }
 
+const sanitizeHtml = (html: string): string => {
+  if (typeof DOMParser === 'undefined') {
+    // Simple regex-based sanitization for server-side or environments without DOMParser
+    // This is a basic fallback and might not cover all cases
+    return html.replace(/<a\s+(?:[^>]*?\s+)?href="((?!https?:\/\/www\.sharevault\.in)[^"]*)"[^>]*>(.*?)<\/a>/g, '$2');
+  }
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const links = doc.querySelectorAll('a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('https://www.sharevault.in') && !href.startsWith('/')) {
+      // This is an external link that we don't want.
+      // We can either remove the link and keep the text, or remove the element entirely.
+      // Let's keep the text content.
+      const text = link.textContent;
+      if (text) {
+        link.parentNode?.replaceChild(document.createTextNode(text), link);
+      } else {
+        link.parentNode?.removeChild(link);
+      }
+    }
+  });
+
+  return doc.body.innerHTML;
+};
+
+
 export default function BlogContentRenderer({ content, postTitle, postSlug }: BlogContentRendererProps) {
   const postUrl = getCanonicalUrl(postSlug)
 
@@ -97,10 +127,11 @@ export default function BlogContentRenderer({ content, postTitle, postSlug }: Bl
       
       // Regular HTML content
       if (part.trim()) {
+        const sanitizedPart = sanitizeHtml(part);
         return (
           <div
             key={`content-${index}`}
-            dangerouslySetInnerHTML={{ __html: part }}
+            dangerouslySetInnerHTML={{ __html: sanitizedPart }}
           />
         )
       }
