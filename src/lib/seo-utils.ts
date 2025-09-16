@@ -2,7 +2,7 @@
  * SEO utilities for canonical URLs and other SEO functions
  */
 
-export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sharevault.in'
+export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sharevault.in'
 export const SITE_EMAIL = process.env.NEXT_PUBLIC_SITE_EMAIL || 'blog.boopul@gmail.com'
 
 export function getCanonicalUrl(path: string = ''): string {
@@ -39,9 +39,8 @@ export function getAlternateUrls(path: string = ''): Record<string, string> {
   
   return {
     'en-US': getCanonicalUrl(cleanPath),
-    'en-GB': getCanonicalUrl(`en-GB/${cleanPath}`),
-    'en-CA': getCanonicalUrl(`en-CA/${cleanPath}`),
-    'en-AU': getCanonicalUrl(`en-AU/${cleanPath}`),
+    
+    
   }
 }
 

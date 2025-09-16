@@ -7,7 +7,7 @@ import WebVitals from "@/components/WebVitals";
 export const metadata: Metadata = {
   title: {
     default: "ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives",
-    template: "%s | ShareVault"
+    template: "%s"
   },
   description: "Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.",
   keywords: ["inspiring quotes", "life wisdom quotes", "motivational stories", "personal growth", "daily inspiration", "meaningful quotes", "life philosophy", "wisdom stories", "inspirational content", "uplifting quotes"],
@@ -19,12 +19,11 @@ export const metadata: Metadata = {
     canonical: getCanonicalUrl(),
     languages: {
       'en-US': getCanonicalUrl(),
-      'en-GB': getCanonicalUrl('en-GB'),
-      'en-CA': getCanonicalUrl('en-CA'),
-      'en-AU': getCanonicalUrl('en-AU'),
+      
+      
     },
   },
-  robots: getRobotsMeta('/'),
+  
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -102,9 +101,8 @@ export default function RootLayout({
         
         {/* Internationalization and hreflang tags */}
         <link rel="alternate" hrefLang="en-US" href={getCanonicalUrl()} />
-        <link rel="alternate" hrefLang="en-GB" href={getCanonicalUrl('en-GB')} />
-        <link rel="alternate" hrefLang="en-CA" href={getCanonicalUrl('en-CA')} />
-        <link rel="alternate" hrefLang="en-AU" href={getCanonicalUrl('en-AU')} />
+        
+        
         <link rel="alternate" hrefLang="x-default" href={getCanonicalUrl()} />
         
         {/* Critical resource preloading */}

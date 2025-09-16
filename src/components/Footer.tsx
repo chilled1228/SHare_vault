@@ -70,14 +70,7 @@ export default function Footer() {
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a 
-                  href="/rss.xml" 
-                  className="p-2 rounded-lg transition-colors hover:scale-110"
-                  style={{backgroundColor: 'var(--accent-pink-soft)', color: 'var(--primary)'}}
-                  aria-label="RSS Feed"
-                >
-                  <Rss className="w-5 h-5" />
-                </a>
+                
               </div>
             </div>
 

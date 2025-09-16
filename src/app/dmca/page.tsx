@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getCanonicalUrl, getRobotsMeta } from '@/lib/seo-utils';
@@ -6,10 +5,10 @@ import { getCanonicalUrl, getRobotsMeta } from '@/lib/seo-utils';
 export const metadata: Metadata = {
   title: 'DMCA Policy',
   description: 'DMCA Policy for ShareVault. We respect the intellectual property rights of others and expect our users to do the same.',
+  robots: getRobotsMeta('/dmca'),
   alternates: {
     canonical: getCanonicalUrl('/dmca'),
   },
-  robots: getRobotsMeta('/dmca'),
 };
 
 export default function DMCAPage() {
