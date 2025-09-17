@@ -7,7 +7,7 @@ import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { AuthProvider } from '@/lib/auth-context'
 import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
-import { Edit, Trash2, Eye, Plus, Search, Filter } from 'lucide-react'
+import { Edit, Trash2, Eye, Plus, Search, Filter, Upload } from 'lucide-react'
 import { errorHandler } from '@/lib/error-handler'
 
 function PostsManagementPageContent() {
@@ -148,12 +148,22 @@ function PostsManagementPageContent() {
             <h1 className="text-2xl font-bold text-gray-900">Posts Management</h1>
             <p className="text-gray-600 mt-1">Manage your blog posts</p>
           </div>
-          <a
-            href="/admin/posts/create"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-          >
-            Create New Post
-          </a>
+          <div className="flex space-x-3">
+            <a
+              href="/admin/posts/bulk-upload"
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 flex items-center"
+            >
+              <Upload className="w-4 h-4 mr-2" />
+              Bulk Upload
+            </a>
+            <a
+              href="/admin/posts/create"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center"
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              Create New Post
+            </a>
+          </div>
         </div>
 
         {/* Stats */}
