@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: getCanonicalUrl('about'),
+    languages: {
+      'en-US': getCanonicalUrl('about'),
+      'x-default': getCanonicalUrl('about'),
+    },
   },
 }
 
@@ -88,7 +92,7 @@ export default function AboutPage() {
           <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%)' }}>
             <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
-                About ShareVault
+                About Us
               </h1>
               <p className="text-xl text-white/80 mb-6 max-w-2xl mx-auto">
                 Empowering lives through wisdom, inspiration, and motivation

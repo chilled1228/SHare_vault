@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: getBlogUrl(),
+    languages: {
+      'en-US': getBlogUrl(),
+      'x-default': getBlogUrl(),
+    },
   },
 }
 
@@ -97,6 +101,17 @@ export default async function BlogPage() {
         <Header />
       
       <main className="flex-1">
+        {/* Page Header */}
+        <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%)' }}>
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
+              Blog
+            </h1>
+            <p className="text-xl text-white/80 mb-6 max-w-2xl mx-auto">
+              Discover inspiring stories, life wisdom, and personal growth insights
+            </p>
+          </div>
+        </div>
 
         {/* Posts Grid */}
         <section className="py-12">

@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: getCanonicalUrl('contact'),
+    languages: {
+      'en-US': getCanonicalUrl('contact'),
+      'x-default': getCanonicalUrl('contact'),
+    },
   },
 }
 
@@ -67,7 +71,7 @@ export default function ContactPage() {
           <div className="py-16 text-center" style={{ background: 'linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%)' }}>
             <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{fontFamily: 'Anton, sans-serif'}}>
-                Contact Us
+                Get in Touch
               </h1>
               <p className="text-xl text-white/80 mb-6 max-w-2xl mx-auto">
                 We&apos;d love to hear from you! Reach out with questions, suggestions, or just to say hello.

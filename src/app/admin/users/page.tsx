@@ -138,7 +138,7 @@ function AdminManagementPageContent() {
                         {userData.photoURL && (
                           <img 
                             src={userData.photoURL} 
-                            alt={userData.displayName} 
+                            alt={userData.displayName || userData.email} 
                             className="w-8 h-8 rounded-full mr-3"
                           />
                         )}

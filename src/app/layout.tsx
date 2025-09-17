@@ -6,7 +6,7 @@ import WebVitals from "@/components/WebVitals";
 
 export const metadata: Metadata = {
   title: {
-    default: "ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives",
+    default: "ShareVault - Inspiring Stories & Life Wisdom That Transform Lives",
     template: "%s"
   },
   description: "Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.",
@@ -19,16 +19,15 @@ export const metadata: Metadata = {
     canonical: getCanonicalUrl(),
     languages: {
       'en-US': getCanonicalUrl(),
-      
-      
     },
+    'x-default': getCanonicalUrl(),
   },
   
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: getCanonicalUrl(),
-    title: 'ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    title: 'ShareVault - Inspiring Stories & Life Wisdom That Transform Lives',
     description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives. Get daily motivation, personal growth insights, and meaningful quotes for every situation.',
     siteName: 'ShareVault',
     images: [
@@ -42,13 +41,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShareVault - 1000+ Inspiring Stories & Life Wisdom Quotes That Transform Lives',
+    title: 'ShareVault - Inspiring Stories & Life Wisdom That Transform Lives',
     description: 'Discover 1000+ inspiring stories, powerful quotes, and life wisdom that transforms lives.',
     images: [getImageUrl('og-image.jpg')],
     creator: '@sharevault',
   },
   verification: {
     google: 'your-google-verification-code',
+  },
+  icons: {
+    icon: '/icon.svg',
   },
 };
 
@@ -100,10 +102,7 @@ export default function RootLayout({
         <meta name="p:domain_verify" content="71bd64919a32b7a70a990f19faaa7719" />
         
         {/* Internationalization and hreflang tags */}
-        <link rel="alternate" hrefLang="en-US" href={getCanonicalUrl()} />
         
-        
-        <link rel="alternate" hrefLang="x-default" href={getCanonicalUrl()} />
         
         {/* Critical resource preloading */}
         <link rel="preconnect" href="https://firestore.googleapis.com" />

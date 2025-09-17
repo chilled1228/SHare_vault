@@ -112,6 +112,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     },
     alternates: {
       canonical: getCategoryUrl(slug),
+      languages: {
+        'en-US': getCategoryUrl(slug),
+        'x-default': getCategoryUrl(slug),
+      },
     },
   }
 }

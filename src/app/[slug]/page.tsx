@@ -47,7 +47,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   if (!post) {
     return {
       title: 'Post Not Found - ShareVault',
-      description: 'The requested blog post could not be found.'
+      description: 'The requested blog post could not be found.',
+      robots: {
+        index: false,
+        follow: false,
+      },
     }
   }
 
@@ -55,7 +59,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const robotsMeta = getRobotsMeta(`/${post.slug}`)
   
   return {
-    title: `${post.title}`,
+    title: `${post.title} | ShareVault`,
     description: post.excerpt,
     keywords: post.tags,
     authors: [{ name: post.authorName, url: `${getCanonicalUrl(`author/${post.authorName.toLowerCase().replace(/\s+/g, '-')}`)}` }],
@@ -147,13 +151,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: post.imageUrl ? {
-      '@type': 'ImageObject',
-      url: post.imageUrl,
-      width: 1200,
-      height: 630,
-      caption: post.title
-    } : undefined,
+    ...(post.imageUrl && {
+      image: {
+        '@type': 'ImageObject',
+        url: post.imageUrl,
+        width: 1200,
+        height: 630,
+        caption: post.title
+      }
+    }),
+    
     author: {
       '@type': 'Person',
       name: post.authorName,
@@ -234,22 +241,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     temporalCoverage: '2024/Present',
     thumbnailUrl: post.imageUrl || getCanonicalUrl('og-image-blog.jpg'),
-    translationOfWork: {
-      '@type': 'CreativeWork',
-      name: post.title
-    },
-    workTranslation: [
-      {
-        '@type': 'CreativeWork',
-        inLanguage: 'en-GB',
-        name: post.title
-      },
-      {
-        '@type': 'CreativeWork',
-        inLanguage: 'en-CA',
-        name: post.title
-      }
-    ]
+    
   }
 
   const breadcrumbSchema = {

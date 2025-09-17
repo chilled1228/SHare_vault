@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admin Login | ShareVault',
+  description: 'Admin login page for ShareVault.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 'use client'
 
 import { useState, useEffect } from 'react'

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: getCanonicalUrl('categories'),
     images: [
       {
-        url: '/og-categories.jpg',
+        url: getCanonicalUrl('og-categories.jpg'),
         width: 1200,
         height: 630,
         alt: 'All Categories - ShareVault',
@@ -26,10 +26,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'All Categories | ShareVault',
     description: 'Explore inspiring content categories like motivation, life wisdom, and personal growth. Find the perfect stories and quotes for your journey.',
-    images: ['/og-categories.jpg'],
+    images: [getCanonicalUrl('og-categories.jpg')],
   },
   alternates: {
     canonical: getCanonicalUrl('categories'),
+    languages: {
+      'en-US': getCanonicalUrl('categories'),
+      'x-default': getCanonicalUrl('categories'),
+    },
   },
 }
 
