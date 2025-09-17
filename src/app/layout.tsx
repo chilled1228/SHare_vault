@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { BASE_URL, SITE_EMAIL, getCanonicalUrl, getRobotsMeta, getImageUrl } from "@/lib/seo-utils";
 import ClientProviders from "@/components/ClientProviders";
@@ -147,6 +148,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`antialiased`}>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-49J3HXQKQM"></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-49J3HXQKQM');
+          `}
+        </Script>
         <WebVitals />
         <ClientProviders>
           {children}
