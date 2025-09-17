@@ -19,8 +19,7 @@ export const metadata: Metadata = {
     canonical: getCanonicalUrl(),
     languages: {
       'en-US': getCanonicalUrl(),
-    },
-    'x-default': getCanonicalUrl(),
+    }
   },
   
   openGraph: {
