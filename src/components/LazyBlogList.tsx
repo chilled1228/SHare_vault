@@ -11,11 +11,11 @@ interface LazyBlogListProps {
   featured?: boolean
 }
 
-export default function LazyBlogList({ category, limit = 12, featured = false }: LazyBlogListProps) {
+export default function LazyBlogList({ category, limit, featured = false }: LazyBlogListProps) {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [displayCount, setDisplayCount] = useState(Math.min(6, limit))
+  const [displayCount, setDisplayCount] = useState(12)
 
   const fetchPosts = useCallback(async () => {
     try {
@@ -26,10 +26,19 @@ export default function LazyBlogList({ category, limit = 12, featured = false }:
       } else if (category) {
         fetchedPosts = await BlogService.getPostsByCategory(category, limit)
       } else {
-        fetchedPosts = await BlogService.getPosts(limit)
+        fetchedPosts = await BlogService.getPosts()
       }
       
       setPosts(fetchedPosts)
+      console.log(`✅ [LazyBlogList] Loaded ${fetchedPosts.length} posts`, {
+        component: 'LazyBlogList',
+        category,
+        limit,
+        featured,
+        metadata: {
+          totalPosts: fetchedPosts.length
+        }
+      })
     } catch (err) {
       setError('Failed to load posts')
       console.error('Error fetching posts:', err)
@@ -48,7 +57,7 @@ export default function LazyBlogList({ category, limit = 12, featured = false }:
   )
 
   const handleLoadMore = useCallback(() => {
-    setDisplayCount(prev => Math.min(prev + 6, posts.length))
+    setDisplayCount(prev => Math.min(prev + 12, posts.length))
   }, [posts.length])
 
   if (loading) {
@@ -133,14 +142,14 @@ export default function LazyBlogList({ category, limit = 12, featured = false }:
             <button
               onClick={handleLoadMore}
               className="btn btn-primary px-8 py-3 text-lg"
-              aria-label={`Load ${Math.min(6, posts.length - displayCount)} more posts`}
+              aria-label={`Load ${Math.min(12, posts.length - displayCount)} more posts`}
             >
               Load More Stories ({posts.length - displayCount} remaining)
             </button>
           </div>
         )}
 
-        {displayCount >= posts.length && posts.length >= limit && (
+        {displayCount >= posts.length && posts.length > 0 && (
           <div className="text-center mt-12">
             <p className="text-lg" style={{color: 'var(--muted-foreground)'}}>
               🎉 You&apos;ve seen all our latest stories! 

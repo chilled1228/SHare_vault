@@ -14,14 +14,28 @@ export class BlogService {
     return docRef.id
   }
 
-  static async getPosts(limitCount = 10): Promise<BlogPost[]> {
-    const q = query(
-      collection(db, 'posts'),
-      where('published', '==', true),
-      orderBy('createdAt', 'desc'),
-      limit(limitCount)
-    )
+  static async getPosts(limitCount?: number): Promise<BlogPost[]> {
+    let q;
+    if (limitCount) {
+      q = query(
+        collection(db, 'posts'),
+        where('published', '==', true),
+        orderBy('createdAt', 'desc'),
+        limit(limitCount)
+      )
+    } else {
+      q = query(
+        collection(db, 'posts'),
+        where('published', '==', true),
+        orderBy('createdAt', 'desc')
+      )
+    }
     const querySnapshot = await getDocs(q)
+    console.log(`✅ [BlogService.getPosts] Retrieved ${querySnapshot.docs.length} posts from Firebase`, {
+      limitCount,
+      hasLimit: !!limitCount,
+      totalDocs: querySnapshot.docs.length
+    })
     return querySnapshot.docs.map(doc => {
       const data = doc.data()
       return {
@@ -33,13 +47,21 @@ export class BlogService {
     })
   }
 
-  static async getAllPosts(limitCount = 10): Promise<BlogPost[]> {
+  static async getAllPosts(limitCount?: number): Promise<BlogPost[]> {
     try {
-      const q = query(
-        collection(db, 'posts'),
-        orderBy('createdAt', 'desc'),
-        limit(limitCount)
-      )
+      let q;
+      if (limitCount) {
+        q = query(
+          collection(db, 'posts'),
+          orderBy('createdAt', 'desc'),
+          limit(limitCount)
+        )
+      } else {
+        q = query(
+          collection(db, 'posts'),
+          orderBy('createdAt', 'desc')
+        )
+      }
       const querySnapshot = await getDocs(q)
       return querySnapshot.docs.map(doc => {
         const data = doc.data()
@@ -153,7 +175,7 @@ export class BlogService {
     await deleteObject(storageRef)
   }
 
-  static async getPostsByCategory(category: string, limitCount = 20): Promise<BlogPost[]> {
+  static async getPostsByCategory(category: string, limitCount?: number): Promise<BlogPost[]> {
     const q = query(
       collection(db, 'posts'),
       where('published', '==', true),
@@ -174,7 +196,7 @@ export class BlogService {
       post.category.toLowerCase() === category.toLowerCase()
     );
 
-    return filteredPosts.slice(0, limitCount);
+    return limitCount ? filteredPosts.slice(0, limitCount) : filteredPosts;
   }
 
   // Get all unique categories from published posts
@@ -197,13 +219,22 @@ export class BlogService {
   }
 
   // Get draft posts (for admin)
-  static async getDraftPosts(limitCount = 10): Promise<BlogPost[]> {
-    const q = query(
-      collection(db, 'posts'),
-      where('published', '==', false),
-      orderBy('updatedAt', 'desc'),
-      limit(limitCount)
-    )
+  static async getDraftPosts(limitCount?: number): Promise<BlogPost[]> {
+    let q;
+    if (limitCount) {
+      q = query(
+        collection(db, 'posts'),
+        where('published', '==', false),
+        orderBy('updatedAt', 'desc'),
+        limit(limitCount)
+      )
+    } else {
+      q = query(
+        collection(db, 'posts'),
+        where('published', '==', false),
+        orderBy('updatedAt', 'desc')
+      )
+    }
     const querySnapshot = await getDocs(q)
     return querySnapshot.docs.map(doc => {
       const data = doc.data()

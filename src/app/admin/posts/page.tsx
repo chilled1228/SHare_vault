@@ -34,7 +34,7 @@ function PostsManagementPageContent() {
 
   const fetchPosts = async () => {
     try {
-      const allPosts = await BlogService.getAllPosts(100)
+      const allPosts = await BlogService.getAllPosts()
       setPosts(allPosts)
     } catch (error) {
       errorHandler.error('Error fetching posts', error as Error, {

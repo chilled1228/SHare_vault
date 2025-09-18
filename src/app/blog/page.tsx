@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 async function getAllPosts(): Promise<BlogPost[]> {
   try {
-    return await BlogService.getPosts(50)
+    return await BlogService.getPosts()
   } catch (error) {
     console.error('Error fetching posts:', error)
     return []

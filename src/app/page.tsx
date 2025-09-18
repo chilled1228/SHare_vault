@@ -79,7 +79,7 @@ export default function Home() {
           </div>
 
           {/* All Blog Posts - Lazy loaded */}
-          <LazyBlogList limit={12} />
+          <LazyBlogList />
         </main>
 
         <LazyFooter />
