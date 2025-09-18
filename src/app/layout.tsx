@@ -129,6 +129,9 @@ export default function RootLayout({
           }}
         />
         
+        {/* RSS Feed for auto-publishing */}
+        <link rel="alternate" type="application/rss+xml" title="ShareVault RSS Feed" href={`${BASE_URL}/api/rss`} />
+
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         
