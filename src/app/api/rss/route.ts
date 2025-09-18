@@ -6,7 +6,7 @@ export async function GET() {
     const posts = await BlogService.getPosts()
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sharevault.in'
 
-    const rssItems = posts.slice(0, 20).map(post => {
+    const rssItems = posts.map(post => {
       const postUrl = `${siteUrl}/${post.slug}`
       const imageUrl = post.imageUrl ?
         (post.imageUrl.startsWith('http') ? post.imageUrl : `${siteUrl}${post.imageUrl}`) :
