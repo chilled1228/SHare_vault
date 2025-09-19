@@ -274,16 +274,16 @@ export class BlogService {
         limit(1)
       )
       const querySnapshot = await getDocs(q)
-      
+
       // If no documents found, slug is unique
       if (querySnapshot.empty) return true
-      
+
       // If we're editing a post, exclude it from the check
       if (excludeId) {
         const existingDoc = querySnapshot.docs[0]
         return existingDoc.id === excludeId
       }
-      
+
       // Slug already exists
       return false
     } catch (error) {
@@ -294,6 +294,25 @@ export class BlogService {
       })
       // If there's an error, allow the slug (fail safe)
       return true
+    }
+  }
+
+  // Bulk delete posts
+  static async bulkDeletePosts(postIds: string[]): Promise<void> {
+    try {
+      const deletePromises = postIds.map(id => {
+        const docRef = doc(db, 'posts', id)
+        return deleteDoc(docRef)
+      })
+
+      await Promise.all(deletePromises)
+    } catch (error) {
+      errorHandler.error('Error bulk deleting posts', error as Error, {
+        component: 'BlogService',
+        action: 'bulkDeletePosts',
+        metadata: { postIds, count: postIds.length }
+      })
+      throw error
     }
   }
 }

@@ -7,7 +7,7 @@ import { BlogService } from '@/lib/blog-service'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { AuthProvider } from '@/lib/auth-context'
 import AdminRouteGuard from '@/components/admin/AdminRouteGuard'
-import { Edit, Trash2, Eye, Plus, Search, Filter, Upload } from 'lucide-react'
+import { Edit, Trash2, Eye, Plus, Search, Filter, Upload, CheckSquare, Square } from 'lucide-react'
 import { errorHandler } from '@/lib/error-handler'
 
 function PostsManagementPageContent() {
@@ -23,6 +23,8 @@ function PostsManagementPageContent() {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState<'all' | 'published' | 'draft'>('all')
   const [deleteModal, setDeleteModal] = useState<{ open: boolean; post?: BlogPost }>({ open: false })
+  const [selectedPosts, setSelectedPosts] = useState<Set<string>>(new Set())
+  const [bulkDeleteModal, setBulkDeleteModal] = useState(false)
 
   useEffect(() => {
     fetchPosts()
@@ -104,10 +106,10 @@ function PostsManagementPageContent() {
 
   const toggleFeatured = async (post: BlogPost) => {
     if (!post.id) return
-    
+
     try {
       await BlogService.updatePost(post.id, { featured: !post.featured })
-      setPosts(posts.map(p => 
+      setPosts(posts.map(p =>
         p.id === post.id ? { ...p, featured: !p.featured } : p
       ))
     } catch (error) {
@@ -115,6 +117,40 @@ function PostsManagementPageContent() {
         component: 'PostsManagementPage',
         action: 'toggleFeatured',
         metadata: { postId: post.id }
+      })
+    }
+  }
+
+  const toggleSelectPost = (postId: string) => {
+    const newSelected = new Set(selectedPosts)
+    if (newSelected.has(postId)) {
+      newSelected.delete(postId)
+    } else {
+      newSelected.add(postId)
+    }
+    setSelectedPosts(newSelected)
+  }
+
+  const toggleSelectAll = () => {
+    if (selectedPosts.size === filteredPosts.length) {
+      setSelectedPosts(new Set())
+    } else {
+      setSelectedPosts(new Set(filteredPosts.map(post => post.id!)))
+    }
+  }
+
+  const handleBulkDelete = async () => {
+    try {
+      const postIds = Array.from(selectedPosts)
+      await BlogService.bulkDeletePosts(postIds)
+      setPosts(posts.filter(post => !selectedPosts.has(post.id!)))
+      setSelectedPosts(new Set())
+      setBulkDeleteModal(false)
+    } catch (error) {
+      errorHandler.error('Error bulk deleting posts', error as Error, {
+        component: 'PostsManagementPage',
+        action: 'bulkDelete',
+        metadata: { postIds: Array.from(selectedPosts) }
       })
     }
   }
@@ -149,6 +185,15 @@ function PostsManagementPageContent() {
             <p className="text-gray-600 mt-1">Manage your blog posts</p>
           </div>
           <div className="flex space-x-3">
+            {selectedPosts.size > 0 && (
+              <button
+                onClick={() => setBulkDeleteModal(true)}
+                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 flex items-center"
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                Delete Selected ({selectedPosts.size})
+              </button>
+            )}
             <a
               href="/admin/posts/bulk-upload"
               className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 flex items-center"
@@ -220,6 +265,19 @@ function PostsManagementPageContent() {
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <button
+                      onClick={toggleSelectAll}
+                      className="flex items-center hover:text-gray-700"
+                    >
+                      {selectedPosts.size === filteredPosts.length && filteredPosts.length > 0 ? (
+                        <CheckSquare className="w-4 h-4" />
+                      ) : (
+                        <Square className="w-4 h-4" />
+                      )}
+                      <span className="ml-2">Select</span>
+                    </button>
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                     Title
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
@@ -243,6 +301,18 @@ function PostsManagementPageContent() {
                 {filteredPosts.length > 0 ? (
                   filteredPosts.map((post) => (
                     <tr key={post.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4">
+                        <button
+                          onClick={() => toggleSelectPost(post.id!)}
+                          className="flex items-center justify-center p-1 hover:bg-gray-100 rounded"
+                        >
+                          {selectedPosts.has(post.id!) ? (
+                            <CheckSquare className="w-4 h-4 text-blue-600" />
+                          ) : (
+                            <Square className="w-4 h-4 text-gray-400" />
+                          )}
+                        </button>
+                      </td>
                       <td className="px-6 py-4">
                         <div className="text-sm font-medium text-gray-900 max-w-xs truncate">
                           {post.title}
@@ -314,7 +384,7 @@ function PostsManagementPageContent() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center">
+                    <td colSpan={7} className="px-6 py-12 text-center">
                       <p className="text-gray-500">No posts found</p>
                     </td>
                   </tr>
@@ -348,6 +418,36 @@ function PostsManagementPageContent() {
                   className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
                 >
                   Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Bulk Delete Confirmation Modal */}
+      {bulkDeleteModal && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+          <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div className="mt-3">
+              <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+                Delete Selected Posts
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">
+                Are you sure you want to delete {selectedPosts.size} selected post{selectedPosts.size !== 1 ? 's' : ''}? This action cannot be undone.
+              </p>
+              <div className="flex justify-end space-x-3">
+                <button
+                  onClick={() => setBulkDeleteModal(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleBulkDelete}
+                  className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                >
+                  Delete {selectedPosts.size} Post{selectedPosts.size !== 1 ? 's' : ''}
                 </button>
               </div>
             </div>

@@ -3,7 +3,8 @@ import { getCanonicalUrl, getImageUrl } from '@/lib/seo-utils'
 
 export async function GET() {
   try {
-    const posts = await BlogService.getPosts()
+    // Pinterest processes 200 pins/day and checks oldest first, so limit to recent posts
+    const posts = await BlogService.getPosts(200) // Optimal for Pinterest's daily limit
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sharevault.in'
 
     const rssItems = posts.map(post => {
@@ -12,20 +13,24 @@ export async function GET() {
         (post.imageUrl.startsWith('http') ? post.imageUrl : `${siteUrl}${post.imageUrl}`) :
         getImageUrl('og-image-blog.jpg')
 
+      // Get proper image type from URL extension
+      const imageType = imageUrl.includes('.webp') ? 'image/webp' :
+                       imageUrl.includes('.png') ? 'image/png' : 'image/jpeg'
+
       return `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <description><![CDATA[${post.excerpt || ''}]]></description>
+      <description><![CDATA[${post.excerpt || post.content?.substring(0, 200) || ''}]]></description>
       <link>${postUrl}</link>
       <guid isPermaLink="true">${postUrl}</guid>
       <pubDate>${new Date(post.createdAt).toUTCString()}</pubDate>
       <author>noreply@sharevault.in (ShareVault)</author>
       <category><![CDATA[${post.category || 'Blog'}]]></category>
       ${post.tags ? post.tags.map(tag => `<category><![CDATA[${tag}]]></category>`).join('\n      ') : ''}
-      <enclosure url="${imageUrl}" type="image/jpeg"/>
-      <media:content url="${imageUrl}" type="image/jpeg" medium="image">
+      <enclosure url="${imageUrl}" type="${imageType}"/>
+      <media:content url="${imageUrl}" type="${imageType}" medium="image" width="1200" height="630">
         <media:title><![CDATA[${post.title}]]></media:title>
-        <media:description><![CDATA[${post.excerpt || ''}]]></media:description>
+        <media:description><![CDATA[${post.excerpt || post.content?.substring(0, 200) || ''}]]></media:description>
       </media:content>
     </item>`
     }).join('')
@@ -79,4 +84,4 @@ export async function GET() {
   }
 }
 
-export const revalidate = 3600 // Revalidate every hour
+export const revalidate = 1800 // Revalidate every 30 minutes for faster Pinterest updates
