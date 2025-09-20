@@ -148,7 +148,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.firebaseapp.com *.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com fonts.googleapis.com; img-src 'self' data: blob: *.firebasestorage.app *.googleusercontent.com *.r2.dev; connect-src 'self' *.firebase.googleapis.com *.firebaseio.com *.googleapis.com *.gstatic.com; frame-src 'self' *.firebaseapp.com; object-src 'none'; base-uri 'self';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.firebaseapp.com *.googleapis.com *.gstatic.com apis.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com fonts.googleapis.com; img-src 'self' data: blob: *.firebasestorage.app *.googleusercontent.com *.r2.dev; connect-src 'self' *.firebase.googleapis.com *.firebaseio.com *.googleapis.com *.gstatic.com; frame-src 'self' *.firebaseapp.com; object-src 'none'; base-uri 'self';",
           },
         ],
       },

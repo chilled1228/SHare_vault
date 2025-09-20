@@ -1,0 +1,38 @@
+{"users": [
+{
+  "localId": "09QnTcYTytb4JTRyeDrarzdm9L83",
+  "email": "bipul281b@gmail.com",
+  "emailVerified": true,
+  "displayName": "Bipul “B*K” Kumar",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIF07xKpGicdxb19PgwhmLoIKk8I-K6zeiM4NQ6obrg0PZoPml0yw=s96-c",
+  "lastSignedInAt": "1758277597339",
+  "createdAt": "1757744206799",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "104167401585835838088",
+      "email": "bipul281b@gmail.com",
+      "displayName": "Bipul “B*K” Kumar",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIF07xKpGicdxb19PgwhmLoIKk8I-K6zeiM4NQ6obrg0PZoPml0yw=s96-c"
+    }
+  ]
+},
+{
+  "localId": "3qnFh8u3KpgRWltcd9rYDSGvLhD3",
+  "email": "bollywooodsong22@gmail.com",
+  "emailVerified": true,
+  "displayName": "Bollywood Song Lover",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c",
+  "lastSignedInAt": "1758277686218",
+  "createdAt": "1757744284930",
+  "customAttributes": "{\"admin\":\"true\"}",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "107571971356164499623",
+      "email": "bollywooodsong22@gmail.com",
+      "displayName": "Bollywood Song Lover",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK035wEPSCkd8Jmnz50ZXNBFQrtzXmzimlfiDjaokriKjPYw-E=s96-c"
+    }
+  ]
+}]}
